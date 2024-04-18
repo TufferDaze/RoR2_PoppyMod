@@ -23,7 +23,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float hopStrength = 5f;
         private float antiGravStrength = 30f;
         private float procCoefficient = 0.8f;
-        private float bounceDamageIncreaseCoefficient = 1.2f;
+        private float bounceDamageIncreaseCoefficient = 1.3f;
+        private float damageCoefficient = PoppyConfig.secondayDmgConfig.Value;
         private int maxBounces = 2;
         private float travelSpeed = 50f;
         private float bounceRange = 20f;
@@ -84,7 +85,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             }
             attemptedFire = true;
             ReboundProjectile bucklerAttack = new ReboundProjectile();
-            bucklerAttack.damageValue = characterBody.damage * PoppyStaticValues.secondaryDamageCoefficient;
+            bucklerAttack.damageValue = damageStat * damageCoefficient;
             bucklerAttack.isCrit = Util.CheckRoll(characterBody.crit, characterBody.master);
             bucklerAttack.teamIndex = TeamComponent.GetObjectTeam(gameObject);
             bucklerAttack.attacker = gameObject;

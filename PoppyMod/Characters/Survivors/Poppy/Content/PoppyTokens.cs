@@ -23,10 +23,12 @@ namespace PoppyMod.Survivors.Poppy
             string prefix = PoppySurvivor.POPPY_PREFIX;
 
             string desc = "Poppy: a small idiot rat thing with a tiny brain and a big heart.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine
-             + "< ! > Get up close and personal to do damage." + Environment.NewLine + Environment.NewLine
-             + "< ! > Use your crowd control to make enemies want to obliterate themselves." + Environment.NewLine + Environment.NewLine
-             //+ "< ! > Enemies killed with Keeper\'s Verdict are launched into the stratosphere. ;)" + Environment.NewLine + Environment.NewLine
-             + "< ! > Keeper\'s Verdict and Steadfast Presence are not done yet." + Environment.NewLine + Environment.NewLine;
+                + "< ! > Get up close and personal to do damage." + Environment.NewLine + Environment.NewLine
+                + "< ! > Iron Ambassador bounces to up to 3 enemies, increasing damage dealt each time." + Environment.NewLine + Environment.NewLine
+                + "< ! > Use your crowd control to make enemies want to obliterate themselves." + Environment.NewLine + Environment.NewLine
+                + "< ! > Heroic Charge carries smaller enemies and stops at larger ones, dealing bonus damage." + Environment.NewLine + Environment.NewLine
+                + "< ! > Steadfast Presence can be used to keep smaller flying enemies in check." + Environment.NewLine + Environment.NewLine
+                + "< ! > Enemies hit with Keeper\'s Verdict are launched into the stratosphere." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so she left to continue her search.";
             string outroFailure = "SHE DIED :,[";
@@ -34,7 +36,7 @@ namespace PoppyMod.Survivors.Poppy
             Language.Add(prefix + "NAME", "Poppy");
             Language.Add(prefix + "DESCRIPTION", desc);
             Language.Add(prefix + "SUBTITLE", "Keeper of the Hammer");
-            Language.Add(prefix + "LORE", "There is no place she isn\'t willing to go in order to find the hero.");
+            Language.Add(prefix + "LORE", "There is no place she isn\'t willing to go in order to find the fabled hero.");
             Language.Add(prefix + "OUTRO_FLAVOR", outro);
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
@@ -44,39 +46,39 @@ namespace PoppyMod.Survivors.Poppy
 
             #region Passive
             Language.Add(prefix + "PASSIVE_STEADFAST_NAME", "Stubborn to a Fault");
-            Language.Add(prefix + "PASSIVE_STEADFAST_DESCRIPTION", $"<style=cIsUtility>Take up to {100f*(1-(100f/(100f+PoppyStaticValues.passiveArmorIncreaseCoefficient*PoppyConfig.baseArmor)))}% less damage</style> when below <style=cIsHealth>{100f * PoppyStaticValues.passiveMissingHPThreshhold}% HP.</style>");
+            Language.Add(prefix + "PASSIVE_STEADFAST_DESCRIPTION", $"<style=cIsUtility>Take up to {100f*(1-(100f/(100f+PoppyConfig.passiveConfig.Value*PoppyStaticValues.baseArmor)))}% less damage</style> when below <style=cIsHealth>{100f * PoppyStaticValues.passiveMissingHPThreshhold}% HP.</style>");
             #endregion
 
             #region Primary
             Language.Add(prefix + "PRIMARY_HAMMER_NAME", "Uh... Hammer!");
-            Language.Add(prefix + "PRIMARY_HAMMER_DESCRIPTION", $"Swing hammer for <style=cIsDamage>{100f * PoppyStaticValues.primaryDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_HAMMER_DESCRIPTION", $"Swing hammer for <style=cIsDamage>{100f * PoppyConfig.primaryDmgConfig.Value}% damage</style>.");
             #endregion
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_BUCKLER_NAME", "Iron Ambassador");
-            Language.Add(prefix + "SECONDARY_BUCKLER_DESCRIPTION", $"Throw a buckler shield for <style=cIsDamage>{100f * PoppyStaticValues.secondaryDamageCoefficient}% damage</style>. Picking up the shield will grant a <style=cIsHealth>{100f * PoppyStaticValues.secondaryHPCoefficient}% max HP temporary barrier</style>.");
+            Language.Add(prefix + "SECONDARY_BUCKLER_DESCRIPTION", $"Throw a buckler shield for <style=cIsDamage>{100f * PoppyConfig.secondayDmgConfig.Value}% damage</style>. Picking up the shield will grant a <style=cIsHealth>{100f * PoppyConfig.secondayHPConfig.Value}% max HP temporary barrier</style>.");
             #endregion
 
             #region Utility
             Language.Add("KEYWORD_GROUNDING", $"{Tokens.KeywordText("Grounding", "Forces flying enemies to the ground for a short time.")}") ;
             Language.Add(prefix + "UTILITY_HEROICCHARGE_NAME", "Heroic Charge");
-            Language.Add(prefix + "UTILITY_HEROICCHARGE_DESCRIPTION", Tokens.heavyPrefix + " " + Tokens.stunningPrefix + $" Dash forward dealing <style=cIsDamage>{100f * PoppyStaticValues.utility1DamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "UTILITY_HEROICCHARGE_DESCRIPTION", Tokens.heavyPrefix + " " + Tokens.stunningPrefix + $" Dash forward dealing <style=cIsDamage>{100f * PoppyConfig.util1DmgConfig.Value}% damage</style>.");
 
             Language.Add(prefix + "UTILITY_STEADFAST_NAME", "Steadfast Presence");
-            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyStaticValues.utility2DamageCoefficient * 2f}% damage per second</style> for 3 seconds.");
+            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value}% damage per second</style> for 3 seconds.");
             #endregion
 
             #region Special
             Language.Add(prefix + "SPECIAL_KEEPERSVERDICT_NAME", "Keeper\'s Verdict");
-            Language.Add(prefix + "SPECIAL_KEEPERSVERDICT_DESCRIPTION", Tokens.stunningPrefix + $" Charge a shockwave dealing <style=cIsDamage>{100f * PoppyStaticValues.special1MinDamageCoefficient}%-{100f * PoppyStaticValues.special1MaxDamageCoefficient}% damage</style> and pulling enemies toward Poppy.");
+            Language.Add(prefix + "SPECIAL_KEEPERSVERDICT_DESCRIPTION", Tokens.stunningPrefix + $" Charge a shockwave dealing <style=cIsDamage>{100f * PoppyConfig.spec1MinDmgConfig.Value}%-{100f * PoppyConfig.spec1MaxDmgConfig.Value}% damage</style> and pulling enemies toward Poppy.");
 
             Language.Add(prefix + "SPECIAL_HAMMERSHOCK_NAME", "Hammer Shock");
-            Language.Add(prefix + "SPECIAL_HAMMERSHOCK_DESCRIPTION", Tokens.stunningPrefix + $" Smash the ground dealing <style=cIsDamage>{100f * PoppyStaticValues.special2DamageCoefficient}%+({100f * PoppyStaticValues.special2HPDamageCoefficient}% enemy max HP) damage</style>.");
+            Language.Add(prefix + "SPECIAL_HAMMERSHOCK_DESCRIPTION", Tokens.stunningPrefix + $" Smash the ground dealing <style=cIsDamage>{100f * PoppyConfig.spec2DmgConfig.Value}%+({100f * PoppyConfig.spec2HPConfig.Value}% enemy max HP) damage</style>.");
             #endregion
 
             #region Items
             Language.Add(prefix + "ITEM_SHIELDY_NAME", "Shieldy");
-            Language.Add(prefix + "ITEM_SHIELDY_DESCRIPTION", $"Gain a <style=cIsUtility>temporary barrier</style> for <style=cIsUtility>{100f * PoppyStaticValues.secondaryHPCoefficient}% max HP</style>.");
+            Language.Add(prefix + "ITEM_SHIELDY_DESCRIPTION", $"Gain a <style=cIsUtility>temporary barrier</style> for <style=cIsUtility>{100f * PoppyConfig.secondayHPConfig.Value}% max HP</style>.");
             Language.Add(prefix + "ITEM_SHIELDY_LORE", "A small buckler shield that looks tenderly cared for despite the years of wear.");
             Language.Add(prefix + "ITEM_SHIELDY_PICKUP", "Immediately gain a small temporary barrier.");
             #endregion

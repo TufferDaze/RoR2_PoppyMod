@@ -105,7 +105,7 @@ namespace PoppyMod.Modules.Characters
         //main stats
         public float maxHealth = 140f;
         public float healthRegen = 1f;
-        public float armor = PoppyConfig.baseArmor;
+        public float armor = PoppyStaticValues.baseArmor;
         public float shield = 0f; // base shield is a thing apparently. neat
 
         public int jumpCount = 1;

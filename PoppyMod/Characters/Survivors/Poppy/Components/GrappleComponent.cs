@@ -3,9 +3,9 @@ using System.Collections;
 using RoR2;
 using UnityEngine;
 
-namespace PoppyMod.Survivors.Poppy.SkillStates
+namespace PoppyMod.Characters.Survivors.Poppy.Components
 {
-    public class HeroicChargeGrapple : MonoBehaviour
+    public class GrappleComponent : MonoBehaviour
     {
         public Transform pivotTransform;
         private CharacterBody body;
@@ -20,7 +20,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 
         private void Awake()
         {
-            Debug.Log("HeroicChargeGrapple: Grapple component added successfully.");
+            //Debug.Log("HeroicChargeGrapple: Grapple component added successfully.");
             try
             {
                 stopwatch = 0f;
@@ -30,22 +30,22 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 modelLocator = GetComponent<ModelLocator>();
                 capsuleCollider = GetComponent<CapsuleCollider>();
                 sphereCollider = GetComponent<SphereCollider>();
-                if (this.direction)
+                if (direction)
                 {
-                    this.direction.enabled = false;
+                    direction.enabled = false;
                 }
-                if (this.capsuleCollider)
+                if (capsuleCollider)
                 {
-                    this.capsuleCollider.enabled = false;
+                    capsuleCollider.enabled = false;
                 }
-                if (this.sphereCollider)
+                if (sphereCollider)
                 {
-                    this.sphereCollider.enabled = false;
+                    sphereCollider.enabled = false;
                 }
-                if (this.modelLocator && this.modelLocator.modelTransform)
+                if (modelLocator && modelLocator.modelTransform)
                 {
-                    this.modelTransform = this.modelLocator.modelTransform;
-                    this.modelLocator.enabled = false;
+                    modelTransform = modelLocator.modelTransform;
+                    modelLocator.enabled = false;
                 }
             }
             catch (Exception e)
@@ -62,27 +62,14 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             {
                 Release();
             }
-            try
+            if (motor)
             {
-                if (motor)
-                {
-                    motor.disableAirControlUntilCollision = true;
-                    motor.velocity = Vector3.zero;
-                    motor.rootMotion = Vector3.zero;
-                    motor.Motor.SetPosition(pivotTransform.position, true);
-                }
-                modelTransform.position = pivotTransform.position;
+                motor.disableAirControlUntilCollision = true;
+                motor.velocity = Vector3.zero;
+                motor.rootMotion = Vector3.zero;
+                motor.Motor.SetPosition(pivotTransform.position, true);
             }
-            catch (Exception e)
-            {
-                Debug.LogError($"HeroicChargeGrapple: Target transform is null.\n{e}");
-            }
-        }
-
-        IEnumerator TimeRelease()
-        {
-            yield return new WaitForSecondsRealtime(1f);
-            Release();
+            modelTransform.position = pivotTransform.position;
         }
 
         public void Release()

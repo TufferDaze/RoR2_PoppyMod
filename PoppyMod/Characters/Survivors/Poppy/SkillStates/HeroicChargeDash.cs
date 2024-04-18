@@ -1,5 +1,6 @@
 ﻿using EntityStates;
 using EntityStates.Toolbot;
+using PoppyMod.Characters.Survivors.Poppy.Components;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public static float knockbackDamageCoefficient = 1.5f;
         public static float knockbackForce = 10.0f;
         private Vector3 dashDirection;
-        private float chargeDamageCoefficient = PoppyStaticValues.utility1DamageCoefficient;
+        private float chargeDamageCoefficient = PoppyConfig.util1DmgConfig.Value;
         public float speedMultiplier = 12.0f;
         private List<HurtBox> victimsStruck = new List<HurtBox>();
-        private HeroicChargeGrapple grappleCon;
+        private GrappleComponent grappleCon;
 
         //OnEnter() runs once at the start of the skill
         //All we do here is create a BulletAttack and fire it
@@ -132,7 +133,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                 }
                                 else
                                 {
-                                    grappleCon = hurtBox.healthComponent.body.gameObject.AddComponent<HeroicChargeGrapple>();
+                                    grappleCon = hurtBox.healthComponent.body.gameObject.AddComponent<GrappleComponent>();
                                     Transform grappleCarryLocation = gameObject.GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>().FindChild("GrappleCarryLocation");
                                     if (grappleCarryLocation)
                                     {
@@ -187,7 +188,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 {
                     foreach (HurtBox enemy in victimsStruck)
                     {
-                        grappleCon = enemy.healthComponent.body.gameObject.GetComponent<HeroicChargeGrapple>();
+                        grappleCon = enemy.healthComponent.body.gameObject.GetComponent<GrappleComponent>();
                         if (grappleCon)
                         {
                             grappleCon.Release();

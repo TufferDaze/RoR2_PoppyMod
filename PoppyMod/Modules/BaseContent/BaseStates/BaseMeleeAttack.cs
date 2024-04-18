@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using PoppyMod.Survivors.Poppy;
 using RoR2;
 using RoR2.Audio;
 using RoR2.Skills;
@@ -16,7 +17,7 @@ namespace PoppyMod.Modules.BaseStates
         protected string hitboxGroupName = "HammerGroup";
 
         protected DamageType damageType = DamageType.Generic;
-        protected float damageCoefficient = 1f;
+        protected float damageCoefficient = PoppyConfig.primaryDmgConfig.Value;
         protected float procCoefficient = 1f;
         protected float pushForce = 300f;
         protected Vector3 bonusForce = Vector3.zero;
@@ -57,8 +58,6 @@ namespace PoppyMod.Modules.BaseStates
             animator = GetModelAnimator();
             StartAimMode(0.5f + duration, false);
 
-            PlayAttackAnimation();
-
             attack = new OverlapAttack();
             attack.damageType = damageType;
             attack.attacker = gameObject;
@@ -72,6 +71,8 @@ namespace PoppyMod.Modules.BaseStates
             attack.hitBoxGroup = FindHitBoxGroup(hitboxGroupName);
             attack.isCrit = RollCrit();
             attack.impactSound = impactSound;
+
+            PlayAttackAnimation();
         }
 
         protected virtual void PlayAttackAnimation()

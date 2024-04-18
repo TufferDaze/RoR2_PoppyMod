@@ -1,4 +1,5 @@
-﻿using PoppyMod.Modules.BaseStates;
+﻿using PoppyMod.Modules;
+using PoppyMod.Modules.BaseStates;
 using RoR2;
 using UnityEngine;
 
@@ -8,10 +9,11 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
     {
         public override void OnEnter()
         {
+            base.OnEnter();
             hitboxGroupName = "HammerGroup";
 
             damageType = DamageType.Generic;
-            damageCoefficient = PoppyStaticValues.primaryDamageCoefficient;
+            damageCoefficient = PoppyConfig.primaryDmgConfig.Value;
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;
@@ -29,8 +31,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
 
+            if (PoppyConfig.bonkConfig.Value)
+            {
+                hitSoundString = "PlayPoppyBonkSmallSFX";
+            }
+            else
+            {
+                hitSoundString = "";
+            }
             swingSoundString = "HenrySwordSwing";
-            hitSoundString = "";
             muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = PoppyAssets.hammerSwingEffect;
@@ -38,16 +47,21 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 
             impactSound = PoppyAssets.hammerHitSoundEvent.index;
             Util.PlayAttackSpeedSound("PlayPoppyAttack", gameObject, attackSpeedStat);
-
-            base.OnEnter();
         }
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Attack" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
-            if (isGrounded & !GetModelAnimator().GetBool("isMoving"))
+            if (GetIsCrit())
             {
-                PlayCrossfade("FullBody, Override", "Attack" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
+                PlayCrossfade("FullBody, Override", "AttackCrit", playbackRateParam, duration, 0.1f * duration);
+            }
+            else
+            {
+                PlayCrossfade("Gesture, Override", "Attack" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
+                if (isGrounded & !GetModelAnimator().GetBool("isMoving"))
+                {
+                    PlayCrossfade("FullBody, Override", "Attack" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
+                }
             }
         }
 

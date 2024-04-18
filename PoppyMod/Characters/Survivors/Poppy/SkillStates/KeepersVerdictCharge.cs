@@ -10,15 +10,18 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 {
 	public class KeepersVerdictCharge : BaseSkillState
     {
-        private float baseChargeTime = 5f;
-        private float maxHoldTime = 10f;
+        private float baseChargeTime = 4f;
+        private float maxHoldTime = 7f;
         private float newMaxChargeTime;
-        private float minimumDamageCoefficient = 6f;
-        private float maximumDamageCoefficient = 36f;
-        private float damageCoefficient = 6f;
+        private float minimumDamageCoefficient = PoppyConfig.spec1MinDmgConfig.Value;
+        private float maximumDamageCoefficient = PoppyConfig.spec1MaxDmgConfig.Value;
+        private float damageCoefficient = PoppyConfig.spec1MinDmgConfig.Value;
         private float charge;
+        private float instantFireThreshhold = 0.1f;
         private float chargeThreshhold = 1.0f;
         private float walkSlowCoefficient = 0.5f;
+        private uint soundId1;
+        private uint soundId2;
         private Transform chargeVfxInstanceTransform;
         public static GameObject crosshairOverridePrefab;
         private CrosshairUtils.OverrideRequest crosshairOverrideRequest;
@@ -32,6 +35,16 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             if (base.characterBody)
             {
                 base.characterBody.isSprinting = false;
+            }
+            soundId1 = Util.PlaySound("PlayPoppyRCharge", gameObject);
+            soundId2 = Util.PlaySound("PlayPoppyRChargeSFX", gameObject);
+            if (!GetModelAnimator().GetBool("isMoving"))
+            {
+                PlayAnimation("FullBody, Override", "KeepersVerdictChargeIdle");
+            }
+            else
+            {
+                PlayAnimation("FullBody, Override", "KeepersVerdictChargeRun");
             }
         }
 
@@ -53,7 +66,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 {
                     this.crosshairOverrideRequest = CrosshairUtils.RequestOverrideForBody(base.characterBody, crosshairOverridePrefab, CrosshairUtils.OverridePriority.Skill);
                 }
-                Transform transform = base.FindModelChild(chargeVfxChildLocatorName);
+                /*Transform transform = base.FindModelChild(chargeVfxChildLocatorName);
                 if (transform)
                 {
                     this.chargeVfxInstanceTransform = UnityEngine.Object.Instantiate<GameObject>(chargeVfxPrefab, transform).transform;
@@ -62,37 +75,39 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                     {
                         component.newDuration = (1f - chargeThreshhold) * this.newMaxChargeTime;
                     }
-                }
+                }*/
             }
-            if (this.chargeVfxInstanceTransform)
-            {
-                base.characterMotor.walkSpeedPenaltyCoefficient = walkSlowCoefficient;
-            }
+            base.characterMotor.walkSpeedPenaltyCoefficient = walkSlowCoefficient;
             if (base.isAuthority)
             {
-                this.AuthorityFixedUpdate();
+                if (!this.ShouldKeepChargingAuthority() && charge < instantFireThreshhold)
+                {
+                    this.outer.SetNextState(new KeepersVerdictFire
+                    {
+                        damageCoefficient = this.minimumDamageCoefficient
+                    });
+                }
+                else if (!this.ShouldKeepChargingAuthority() && charge >= instantFireThreshhold)
+                {
+                    this.outer.SetNextState(new KeepersVerdictChargeSlam
+                    {
+                        damageCoefficient = this.damageCoefficient
+                    });
+                }
             }
         }
 
-        private void AuthorityFixedUpdate()
+        public override void OnExit()
         {
-            if (!this.ShouldKeepChargingAuthority())
-            {
-                this.outer.SetNextState(this.GetNextStateAuthority());
-            }
+            AkSoundEngine.StopPlayingID(soundId1);
+            AkSoundEngine.StopPlayingID(soundId2);
+            base.characterMotor.walkSpeedPenaltyCoefficient = 1f;
+            base.OnExit();
         }
 
         protected virtual bool ShouldKeepChargingAuthority()
         {
             return base.IsKeyDownAuthority();
-        }
-
-        protected virtual EntityState GetNextStateAuthority()
-        {
-            return new KeepersVerdictSlam
-            {
-                damageCoefficient = this.damageCoefficient
-            };
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

@@ -1,6 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
 using BepInEx.Configuration;
 using UnityEngine;
+using RiskOfOptions;
+using RiskOfOptions.OptionConfigs;
+using RiskOfOptions.Options;
 
 namespace PoppyMod.Modules
 {
@@ -71,27 +74,54 @@ namespace PoppyMod.Modules
             return configEntry;
         }
 
+        public static ConfigEntry<int> BindAndOptionsSlider(string section, string name, int defaultValue, string description = "", int min = 0, int max = 20, bool restartRequired = false)
+        {
+            if (string.IsNullOrEmpty(description))
+            {
+                description = name;
+            }
+
+            if (restartRequired)
+            {
+                description += " (restart required)";
+            }
+
+            ConfigEntry<int> configEntry = MyConfig.Bind(section, name, defaultValue, description);
+
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions"))
+            {
+                TryRegisterOptionSlider(configEntry, min, max, restartRequired);
+            }
+
+            return configEntry;
+        }
+
         //add risk of options dll to your project libs and uncomment this for a soft dependency
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static void TryRegisterOption<T>(ConfigEntry<T> entry, bool restartRequired)
         {
-            //if (entry is ConfigEntry<float>)
-            //{
-            //    ModSettingsManager.AddOption(new SliderOption(entry as ConfigEntry<float>, new SliderConfig() { min = 0, max = 20, formatString = "{0:0.00}", restartRequired = restartRequired }));
-            //}
-            //if (entry is ConfigEntry<int>)
-            //{
-            //    ModSettingsManager.AddOption(new IntSliderOption(entry as ConfigEntry<int>, restartRequired));
-            //}
-            //if (entry is ConfigEntry<bool>)
-            //{
-            //    ModSettingsManager.AddOption(new CheckBoxOption(entry as ConfigEntry<bool>, restartRequired));
-            //}
+            if (entry is ConfigEntry<float>)
+            {
+                ModSettingsManager.AddOption(new SliderOption(entry as ConfigEntry<float>, new SliderConfig() { min = 0.01f, max = 100f, formatString = "{0:0.00}", restartRequired = restartRequired }));
+            }
+            if (entry is ConfigEntry<int>)
+            {
+                ModSettingsManager.AddOption(new IntSliderOption(entry as ConfigEntry<int>, restartRequired));
+            }
+            if (entry is ConfigEntry<bool>)
+            {
+                ModSettingsManager.AddOption(new CheckBoxOption(entry as ConfigEntry<bool>, restartRequired));
+            }
         }
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static void TryRegisterOptionSlider(ConfigEntry<float> entry, float min, float max, bool restartRequired)
         {
-            //ModSettingsManager.AddOption(new SliderOption(entry as ConfigEntry<float>, new SliderConfig() { min = min, max = max, formatString = "{0:0.00}", restartRequired = restartRequired }));
+            ModSettingsManager.AddOption(new SliderOption(entry as ConfigEntry<float>, new SliderConfig() { min = min, max = max, formatString = "{0:0.00}", restartRequired = restartRequired }));
+        }
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void TryRegisterOptionSlider(ConfigEntry<int> entry, int min, int max, bool restartRequired)
+        {
+            ModSettingsManager.AddOption(new IntSliderOption(entry as ConfigEntry<int>, new IntSliderConfig() { min = min, max = max, restartRequired = restartRequired }));
         }
 
         //Taken from https://github.com/ToastedOven/CustomEmotesAPI/blob/main/CustomEmotesAPI/CustomEmotesAPI/CustomEmotesAPI.cs

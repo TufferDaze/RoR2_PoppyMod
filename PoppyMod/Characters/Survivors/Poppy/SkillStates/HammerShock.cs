@@ -13,7 +13,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public float minimumDuration = 0.1f;
         public float blastRadius = 10.0f;
         public float blastProcCoefficient = 1.0f;
-        public float blastDamageCoefficient = PoppyStaticValues.special2DamageCoefficient;
+        public float blastDamageCoefficient = PoppyConfig.spec2DmgConfig.Value;
         public float blastForce = 20.0f;
         public Vector3 blastBonusForce = new Vector3(0f, 0f, 5f);
         public float initialVerticalVelocity = 5.0f;
@@ -67,7 +67,14 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public override void OnExit()
         {
             PlayCrossfade("FullBody, Override", "HStoIdle", 0.1f);
-            Util.PlaySound("PlayPoppyQSFX", gameObject);
+            if (PoppyConfig.bonkConfig.Value)
+            {
+                Util.PlaySound("PlayPoppyBonkBigSFX", gameObject);
+            }
+            else
+            {
+                Util.PlaySound("PlayPoppyQSFX", gameObject);
+            }
             if (base.isAuthority)
             {
                 base.characterMotor.onMovementHit -= this.OnMovementHit;
@@ -125,7 +132,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                         DamageInfo damageInfo = new DamageInfo
                         {
                             attacker = gameObject,
-                            damage = enemy.hurtBox.healthComponent.fullCombinedHealth * PoppyStaticValues.special2HPDamageCoefficient,
+                            damage = enemy.hurtBox.healthComponent.fullCombinedHealth * PoppyConfig.spec2HPConfig.Value,
                             damageColorIndex = DamageColorIndex.Item,
                             damageType = DamageType.Generic,
                         };

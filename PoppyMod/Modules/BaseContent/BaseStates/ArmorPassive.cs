@@ -4,6 +4,7 @@ using PoppyMod.Modules.Characters;
 using UnityEngine;
 using UnityEngine.Networking;
 using PoppyMod.Survivors.Poppy;
+using UnityEngine.UIElements;
 
 namespace PoppyMod.Modules.BaseContent.BaseStates
 {
@@ -11,7 +12,7 @@ namespace PoppyMod.Modules.BaseContent.BaseStates
     {
         private CharacterBody body;
         private float missingHPThreshhold = PoppyStaticValues.passiveMissingHPThreshhold;
-        private float armorIncreaseCoef = PoppyStaticValues.passiveArmorIncreaseCoefficient;
+        private float armorIncreaseCoef = PoppyConfig.passiveConfig.Value;
 
         public void Awake()
         {
@@ -41,7 +42,7 @@ namespace PoppyMod.Modules.BaseContent.BaseStates
             float graphSlope = 2.5f * armorIncreaseCoef;
             float healthPercentage = GetCurrentHealthPercent();
             
-            int maxStacks = (int)(graphOffset - (graphSlope * healthPercentage));
+            int maxStacks = (int)Mathf.Clamp(graphOffset - (graphSlope * healthPercentage), 0f, armorIncreaseCoef);
             int currentStacks = body.GetBuffCount(PoppyBuffs.armorBuff);
 
             if (currentStacks < maxStacks)
@@ -54,7 +55,7 @@ namespace PoppyMod.Modules.BaseContent.BaseStates
             }
         }
 
-        public float GetCurrentHealthPercent()
+        private float GetCurrentHealthPercent()
         {
             return body.healthComponent.combinedHealthFraction;
         }

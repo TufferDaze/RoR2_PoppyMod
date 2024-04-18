@@ -21,16 +21,22 @@ namespace PoppyMod.Survivors.Poppy
             Modules.Content.AddEntityState(typeof(SteadfastPresence));
 
             // Special
+            Modules.Content.AddEntityState(typeof(KeepersVerdictFire));
             Modules.Content.AddEntityState(typeof(KeepersVerdictCharge));
+            Modules.Content.AddEntityState(typeof(KeepersVerdictChargeSlam));
 
             Modules.Content.AddEntityState(typeof(PreHammerShock));
             Modules.Content.AddEntityState(typeof(HammerShock));
 
-            Modules.Content.AddEntityState(typeof(ThrowBomb));
+            //Modules.Content.AddEntityState(typeof(ThrowBomb));
 
-            // Other
-            //Modules.Content.AddEntityState(typeof(BasePoppyState));
+            // Misc
+            Modules.Content.AddEntityState(typeof(BasePoppyState));
             Modules.Content.AddEntityState(typeof(BaseDeath));
+            Modules.Content.AddEntityState(typeof(JokeState));
+            Modules.Content.AddEntityState(typeof(TauntState));
+            Modules.Content.AddEntityState(typeof(DanceState));
+            Modules.Content.AddEntityState(typeof(LaughState));
         }
     }
 }

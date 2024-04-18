@@ -135,10 +135,12 @@ namespace PoppyMod.Survivors.Poppy
             ChildLocator childLocator = characterModelObject.GetComponent<ChildLocator>();
 
             //example of how to create a hitbox
-            Transform hitBoxTransform = childLocator.FindChild("HammerHitbox");
-            Prefabs.SetupHitBoxGroup(characterModelObject, "HammerGroup", hitBoxTransform);
-            hitBoxTransform = childLocator.FindChild("AuraHitbox");
-            Prefabs.SetupHitBoxGroup(characterModelObject, "AuraGroup", hitBoxTransform);
+            Transform hitBoxTransform1 = childLocator.FindChild("HammerHitbox");
+            Prefabs.SetupHitBoxGroup(characterModelObject, "HammerGroup", hitBoxTransform1);
+            Transform hitBoxTransform2 = childLocator.FindChild("AuraHitbox");
+            Prefabs.SetupHitBoxGroup(characterModelObject, "AuraGroup", hitBoxTransform2);
+            Transform hitBoxTransform3 = childLocator.FindChild("KeeperHitbox");
+            Prefabs.SetupHitBoxGroup(characterModelObject, "KeeperGroup", hitBoxTransform3);
         }
 
         public override void InitializeEntityStateMachines() 
@@ -150,9 +152,10 @@ namespace PoppyMod.Survivors.Poppy
             //if you set up a custom main characterstate, set it up here
                 //don't forget to register custom entitystates in your HenryStates.cs
             //the main "body" state machine has some special properties
-            Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(GenericCharacterMain), typeof(SpawnTeleporterState));
+            Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(BasePoppyState), typeof(SpawnTeleporterState));
 
             Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon");
+            Prefabs.AddEntityStateMachine(bodyPrefab, "Passive");
         }
 
         #region items
@@ -221,7 +224,7 @@ namespace PoppyMod.Survivors.Poppy
                     POPPY_PREFIX + "PRIMARY_HAMMER_NAME",
                     POPPY_PREFIX + "PRIMARY_HAMMER_DESCRIPTION",
                     assetBundle.LoadAsset<Sprite>("poppy_q"),
-                    new EntityStates.SerializableEntityStateType(typeof(SkillStates.HammerSwing)),
+                    new EntityStates.SerializableEntityStateType(typeof(HammerSwing)),
                     "Weapon",
                     false
                 ));
@@ -244,7 +247,7 @@ namespace PoppyMod.Survivors.Poppy
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(IronAmbassador)),
                 activationStateMachineName = "Weapon",
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                interruptPriority = EntityStates.InterruptPriority.Frozen,
 
                 baseRechargeInterval = 6f,
                 baseMaxStock = 1,
@@ -255,8 +258,8 @@ namespace PoppyMod.Survivors.Poppy
 
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = false,
-                dontAllowPastMaxStocks = true,
-                mustKeyPress = false,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = true,
                 beginSkillCooldownOnSkillEnd = false,
 
                 isCombatSkill = true,
@@ -281,13 +284,13 @@ namespace PoppyMod.Survivors.Poppy
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(HeroicChargeDash)),
                 activationStateMachineName = "Body",
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                interruptPriority = EntityStates.InterruptPriority.Frozen,
 
                 baseMaxStock = 1,
                 baseRechargeInterval = 8f,
 
                 isCombatSkill = true,
-                mustKeyPress = false,
+                mustKeyPress = true,
                 forceSprintDuringState = true,
                 cancelSprintingOnActivation = false,
             });
@@ -300,14 +303,15 @@ namespace PoppyMod.Survivors.Poppy
                 keywordTokens = new string[] { "KEYWORD_STUNNING", "KEYWORD_GROUNDING" },
                 skillIcon = assetBundle.LoadAsset<Sprite>("poppy_w"),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowBomb)),
-                activationStateMachineName = "Body",
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SteadfastPresence)),
+                activationStateMachineName = "Passive",
+                interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
-                baseRechargeInterval = 10f,
+                baseRechargeInterval = 8f,
 
                 isCombatSkill = true,
+                mustKeyPress = true,
                 forceSprintDuringState = true,
             });
 
@@ -326,17 +330,17 @@ namespace PoppyMod.Survivors.Poppy
                 keywordTokens = new string[] { "KEYWORD_STUNNING" },
                 skillIcon = assetBundle.LoadAsset<Sprite>("poppy_r"),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowBomb)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(KeepersVerdictCharge)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-                activationStateMachineName = "Weapon",
+                activationStateMachineName = "Passive",
                 interruptPriority = EntityStates.InterruptPriority.Frozen,
 
                 baseMaxStock = 1,
-                baseRechargeInterval = 12f,
+                baseRechargeInterval = 14f,
 
                 isCombatSkill = true,
-                mustKeyPress = false,
-                cancelSprintingOnActivation = false,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = true,
             });
 
             SkillDef specialSkilLDef2 = Skills.CreateSkillDef(new SkillDefInfo
@@ -361,12 +365,12 @@ namespace PoppyMod.Survivors.Poppy
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = true,
                 dontAllowPastMaxStocks = false,
-                mustKeyPress = false,
+                mustKeyPress = true,
                 beginSkillCooldownOnSkillEnd = false,
 
                 isCombatSkill = true,
                 canceledFromSprinting = false,
-                cancelSprintingOnActivation = false,
+                cancelSprintingOnActivation = true,
                 forceSprintDuringState = false,
 
             });
@@ -466,6 +470,7 @@ namespace PoppyMod.Survivors.Poppy
         private void AddHooks()
         {
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
+            Config.MyConfig.SettingChanged += MyConfig_SettingChanged;
         }
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
@@ -476,15 +481,29 @@ namespace PoppyMod.Survivors.Poppy
                 args.armorAdd = sender.baseArmor * (buffStacks-1);
             }
 
+            if (sender.HasBuff(PoppyBuffs.speedBuff))
+            {
+                float buffStacks = sender.GetBuffCount(PoppyBuffs.speedBuff);
+                args.baseMoveSpeedAdd = sender.baseMoveSpeed * PoppyConfig.util2SpdConfig.Value * buffStacks;
+            }
+
             /*if (sender.inventory.GetItemCount(ItemCatalog.FindItemIndex(Items.shieldyDef.name)) >= 1)
             {
-                sender.healthComponent.AddBarrier(sender.healthComponent.fullHealth * PoppyStaticValues.secondaryHPCoefficient);
+                sender.healthComponent.AddBarrier(sender.healthComponent.fullHealth * PoppyConfig.secondayHPConfig.Value);
                 sender.inventory.RemoveItem(Items.shieldyDef, 1);
                 if (sender.gameObject == bodyPrefab)
                 {
                     Util.PlaySound("PlayPoppyPassiveCollect", sender.gameObject);
                 }
             }*/
+        }
+
+        private void MyConfig_SettingChanged(object sender, SettingChangedEventArgs e)
+        {
+            if (sender == PoppyConfig.allVolumeConfig)
+            {
+                AkSoundEngine.SetRTPCValue(3695994288u, PoppyConfig.allVolumeConfig.Value);
+            }
         }
     }
 }
