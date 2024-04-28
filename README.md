@@ -3,7 +3,7 @@ PoppyMod was created under Riot Games' "Legal Jibber Jabber" policy using assets
 
 # PoppyMod
 I couldn't help but notice the absence of a certain small blue gremlin. Need I say more? Here she is.\
-<img style="float: center" src="/images/rat.png" alt="rat" height="256" width="256" />
+<img style="float: center;" src="/images/rat.png" alt="rat" height="256" width="256" />
 
 ## Stats
 * Health - 160(+60 per level)
