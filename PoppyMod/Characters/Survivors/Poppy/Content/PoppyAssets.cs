@@ -11,6 +11,7 @@ namespace PoppyMod.Survivors.Poppy
         // particle effects
         public static GameObject hammerSwingEffect;
         public static GameObject hammerHitImpactEffect;
+        public static GameObject masteryEmote;
 
         public static GameObject bombExplosionEffect;
 
@@ -27,7 +28,8 @@ namespace PoppyMod.Survivors.Poppy
 
             _assetBundle = assetBundle;
 
-            hammerHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
+            hammerHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("PoppyHit");
+            masteryEmote = PoppySurvivor.instance.assetBundle.LoadAsset<GameObject>("MasteryEmote");
 
             CreateEffects();
 

@@ -103,7 +103,7 @@ namespace PoppyMod.Modules.Characters
 
         #region Stats
         //main stats
-        public float maxHealth = 140f;
+        public float maxHealth = PoppyStaticValues.baseHealth;
         public float healthRegen = 1f;
         public float armor = PoppyStaticValues.baseArmor;
         public float shield = 0f; // base shield is a thing apparently. neat

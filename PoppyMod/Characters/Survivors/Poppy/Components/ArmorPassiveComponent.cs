@@ -6,9 +6,9 @@ using UnityEngine.Networking;
 using PoppyMod.Survivors.Poppy;
 using UnityEngine.UIElements;
 
-namespace PoppyMod.Modules.BaseContent.BaseStates
+namespace PoppyMod.Characters.Survivors.Poppy.Components
 {
-    public class ArmorPassive : NetworkBehaviour
+    public class ArmorPassiveComponent : NetworkBehaviour
     {
         private CharacterBody body;
         private float missingHPThreshhold = PoppyStaticValues.passiveMissingHPThreshhold;
@@ -41,8 +41,8 @@ namespace PoppyMod.Modules.BaseContent.BaseStates
             float graphOffset = 1.25f * armorIncreaseCoef;
             float graphSlope = 2.5f * armorIncreaseCoef;
             float healthPercentage = GetCurrentHealthPercent();
-            
-            int maxStacks = (int)Mathf.Clamp(graphOffset - (graphSlope * healthPercentage), 0f, armorIncreaseCoef);
+
+            int maxStacks = (int)Mathf.Clamp(graphOffset - graphSlope * healthPercentage, 0f, armorIncreaseCoef);
             int currentStacks = body.GetBuffCount(PoppyBuffs.armorBuff);
 
             if (currentStacks < maxStacks)

@@ -16,7 +16,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float duration = 0.25f;
         private OverlapAttack attack;
         private bool inHitPause = false;
-        private float hitPauseTimer = 0.1f;
+        private float hitPauseTimer = 0.015f;
         public static float hitPauseDuration = 0.1f;
         public static float recoilAmplitude = 5.0f;
         public static float massThresholdForKnockback = 300.0f;
@@ -107,7 +107,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                             HurtBox hurtBox = victimsStruck[i];
                             if (hurtBox.healthComponent)
                             {
-                                CharacterMotor component = hurtBox.healthComponent.GetComponent<CharacterMotor>();
+                                /*CharacterMotor component = hurtBox.healthComponent.GetComponent<CharacterMotor>();
                                 if (component)
                                 {
                                     num = component.mass;
@@ -131,7 +131,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                     });
                                     return;
                                 }
-                                else
+                                else*/
                                 {
                                     grappleCon = hurtBox.healthComponent.body.gameObject.AddComponent<GrappleComponent>();
                                     Transform grappleCarryLocation = gameObject.GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>().FindChild("GrappleCarryLocation");

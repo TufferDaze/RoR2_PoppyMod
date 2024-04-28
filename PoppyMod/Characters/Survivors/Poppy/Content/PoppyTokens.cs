@@ -25,7 +25,6 @@ namespace PoppyMod.Survivors.Poppy
             string desc = "Poppy: a small idiot rat thing with a tiny brain and a big heart.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine
                 + "< ! > Get up close and personal to do damage." + Environment.NewLine + Environment.NewLine
                 + "< ! > Iron Ambassador bounces to up to 3 enemies, increasing damage dealt each time." + Environment.NewLine + Environment.NewLine
-                + "< ! > Use your crowd control to make enemies want to obliterate themselves." + Environment.NewLine + Environment.NewLine
                 + "< ! > Heroic Charge carries smaller enemies and stops at larger ones, dealing bonus damage." + Environment.NewLine + Environment.NewLine
                 + "< ! > Steadfast Presence can be used to keep smaller flying enemies in check." + Environment.NewLine + Environment.NewLine
                 + "< ! > Enemies hit with Keeper\'s Verdict are launched into the stratosphere." + Environment.NewLine + Environment.NewLine;
@@ -65,12 +64,12 @@ namespace PoppyMod.Survivors.Poppy
             Language.Add(prefix + "UTILITY_HEROICCHARGE_DESCRIPTION", Tokens.heavyPrefix + " " + Tokens.stunningPrefix + $" Dash forward dealing <style=cIsDamage>{100f * PoppyConfig.util1DmgConfig.Value}% damage</style>.");
 
             Language.Add(prefix + "UTILITY_STEADFAST_NAME", "Steadfast Presence");
-            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value}% damage per second</style> for 3 seconds.");
+            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value * 3f}% damage</style> over 3 seconds and speeds you up.");
             #endregion
 
             #region Special
             Language.Add(prefix + "SPECIAL_KEEPERSVERDICT_NAME", "Keeper\'s Verdict");
-            Language.Add(prefix + "SPECIAL_KEEPERSVERDICT_DESCRIPTION", Tokens.stunningPrefix + $" Charge a shockwave dealing <style=cIsDamage>{100f * PoppyConfig.spec1MinDmgConfig.Value}%-{100f * PoppyConfig.spec1MaxDmgConfig.Value}% damage</style> and pulling enemies toward Poppy.");
+            Language.Add(prefix + "SPECIAL_KEEPERSVERDICT_DESCRIPTION", Tokens.stunningPrefix + $" Charge a shockwave dealing <style=cIsDamage>{100f * PoppyConfig.spec1MinDmgConfig.Value}%-{100f * PoppyConfig.spec1MaxDmgConfig.Value}% damage</style> and launches enemies up.");
 
             Language.Add(prefix + "SPECIAL_HAMMERSHOCK_NAME", "Hammer Shock");
             Language.Add(prefix + "SPECIAL_HAMMERSHOCK_DESCRIPTION", Tokens.stunningPrefix + $" Smash the ground dealing <style=cIsDamage>{100f * PoppyConfig.spec2DmgConfig.Value}%+({100f * PoppyConfig.spec2HPConfig.Value}% enemy max HP) damage</style>.");

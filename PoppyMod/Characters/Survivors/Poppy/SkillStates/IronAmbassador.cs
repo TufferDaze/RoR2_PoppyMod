@@ -52,9 +52,14 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 characterMotor.velocity.y = hopStrength;
             }
             PlayAnimation("FullBody, Override", "IronAmbassador", "IronAmbassador.playbackRate", duration);
-            Util.PlayAttackSpeedSound("PlayPoppyPassiveThrow", gameObject, attackSpeedStat);
+            Util.PlaySound("PlayPoppyPassiveThrow", gameObject);
+            Util.PlayAttackSpeedSound("PlayPoppyPassiveThrowSFX", gameObject, attackSpeedStat);
             characterBody.SetAimTimer(duration);
-		}
+            if (base.characterBody)
+            {
+                base.characterBody.SetAimTimer(this.duration);
+            }
+        }
 
         public override void FixedUpdate()
         {
@@ -103,6 +108,16 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 bucklerAttack.target = hurtBox;
                 OrbManager.instance.AddOrb(bucklerAttack);
             }
+        }
+
+        public override void OnSerialize(NetworkWriter writer)
+        {
+            writer.Write(HurtBoxReference.FromHurtBox(this.initialTarget));
+        }
+
+        public override void OnDeserialize(NetworkReader reader)
+        {
+            this.initialTarget = reader.ReadHurtBoxReference().ResolveHurtBox();
         }
     }
 }

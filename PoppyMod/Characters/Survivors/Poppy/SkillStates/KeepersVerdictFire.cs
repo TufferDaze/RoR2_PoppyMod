@@ -2,6 +2,7 @@
 using EntityStates.BrotherMonster;
 using RoR2;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
@@ -11,16 +12,16 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 	{
 		public float damageCoefficient;
         private Transform modelTransform;
-        private float attackDelay = 0.10f;
+        private float attackDelay = 0.25f;
         private float procCoefficient = 1f;
-        private float stopwatch;
+        private float upForceCoefficient = 500f;
         private OverlapAttack attack;
+        private List<HurtBox> enemiesHit = new List<HurtBox>();
         private float duration = 1f;
 
 		public override void OnEnter()
 		{
 			base.OnEnter();
-            stopwatch = 0f;
             modelTransform = base.GetModelTransform();
             attack = new OverlapAttack
             {
@@ -28,30 +29,31 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 inflictor = gameObject,
                 teamIndex = GetTeam(),
                 damage = damageStat * damageCoefficient,
-                forceVector = Vector3.upVector * 50f,
+                forceVector = new Vector3(0, upForceCoefficient, 0),
                 hitBoxGroup = Array.Find<HitBoxGroup>(this.modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "KeeperGroup"),
-                impactSound = WeaponSlam.weaponImpactSound.index,
                 procCoefficient = procCoefficient
             };
             Util.PlaySound("PlayPoppyRFire", gameObject);
-            if (PoppyConfig.bonkConfig.Value)
-            {
-                Util.PlaySound("PlayPoppyBonkBigSFX", gameObject);
-            }
-            else
-            {
-                Util.PlaySound("PlayPoppyRFireSFX", gameObject);
-            }
+            Util.PlaySound("PlayPoppyRFireSFX", gameObject);
             PlayAnimation("Fullbody, Override", "KeepersVerdictFire");
 		}
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            stopwatch += Time.fixedDeltaTime;
-            if (base.isAuthority && stopwatch >= attackDelay)
+            if (base.isAuthority && base.fixedAge >= attackDelay)
             {
-                attack.Fire();
+                if (attack.Fire(enemiesHit))
+                {
+                    if (PoppyConfig.bonkConfig.Value)
+                    {
+                        Util.PlaySound("PlayPoppyBonkBigSFX", gameObject);
+                    }
+                    else
+                    {
+                        Util.PlaySound("PlayPoppyRFireHitSFX", gameObject);
+                    }
+                }
             }
             if (base.fixedAge >= duration)
             {

@@ -4,8 +4,12 @@ namespace PoppyMod.Survivors.Poppy
 {
     public static class PoppyStaticValues
     {
-        // Passive Values
+        // Base Values
+        public const float baseHealth = 160f;
+
         public const float baseArmor = 20f;
+
+        // Passive Values
 
         public const float passiveMissingHPThreshhold = 0.5f;
 
@@ -22,20 +26,20 @@ namespace PoppyMod.Survivors.Poppy
         // Utility Values
         public const float utility1DamageCoefficient = 2.4f;
 
-        public const float utility2DamageCoefficient = 1.5f;
+        public const float utility2DamageCoefficient = 1f;
 
         public const float utility2MoveCoefficient = 0.4f;
 
         // Special Values
         public const float special1MinDamageCoefficient = 6f;
 
-        public const float special1MaxDamageCoefficient = 24f;
+        public const float special1MaxDamageCoefficient = 26f;
 
-        public const float special2DamageCoefficient = 32f;
+        public const float special2DamageCoefficient = 24f;
 
         public const float special2HPDamageCoefficient = 0.1f;
 
         // Misc Values
-        public const float groundingSpeed = 40f;
+        public const float groundingSpeed = 20f;
     }
 }

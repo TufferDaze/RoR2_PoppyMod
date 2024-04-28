@@ -32,7 +32,7 @@ namespace PoppyMod.Modules.BaseStates
         protected float attackRecoil = 0.75f;
         protected float hitHopVelocity = 4f;
 
-        protected string swingSoundString = "";
+        protected string swingString = "";
         protected string hitSoundString = "";
         protected string muzzleString = "SwingCenter";
         protected string playbackRateParam = "Slash.playbackRate";
@@ -136,7 +136,7 @@ namespace PoppyMod.Modules.BaseStates
         private void EnterAttack()
         {
             hasFired = true;
-            //Util.PlayAttackSpeedSound(swingSoundString, gameObject, attackSpeedStat);
+            Util.PlayAttackSpeedSound(swingString, gameObject, attackSpeedStat);
 
             PlaySwingEffect();
 

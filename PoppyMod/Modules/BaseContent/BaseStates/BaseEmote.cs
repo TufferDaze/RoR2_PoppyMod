@@ -12,23 +12,27 @@ namespace PoppyMod.Modules.BaseStates
         public string layerName = "FullBody, Override";
         public string animName = "";
         public string soundString = "";
-        public bool isLooping = false;
+        public string soundFXString = "";
+        public bool isLooping;
         public float clipLen;
-        private float stopwatch;
-        private uint[] soundIdArray = new uint[10];
+        private uint soundFXId;
+        private uint[] soundIdArray = new uint[8];
 
         public override void OnEnter()
         {
             base.OnEnter();
-            stopwatch = 0f;
             animator = GetModelAnimator();
             if (soundString != "")
             {
                 uint count = (uint)soundIdArray.Length;
                 AkSoundEngine.GetPlayingIDsFromGameObject(gameObject, ref count, soundIdArray);
-                if (soundIdArray[0] == 0u)
+                if (IsEmpty(soundIdArray))
                 {
                     Util.PlaySound(soundString, gameObject);
+                }
+                if (soundFXString != "")
+                {
+                    soundFXId = Util.PlaySound(soundFXString, gameObject);
                 }
             }
             if (animName != "")
@@ -40,10 +44,9 @@ namespace PoppyMod.Modules.BaseStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            stopwatch += Time.fixedDeltaTime;
             if (!isLooping)
             {
-                if (!isGrounded || IsInputDown() || stopwatch >= clipLen)
+                if (!isGrounded || IsInputDown() || base.fixedAge >= clipLen)
                 {
                     this.outer.SetNextStateToMain();
                     return;
@@ -62,6 +65,10 @@ namespace PoppyMod.Modules.BaseStates
 
         public override void OnExit()
         {
+            if (soundFXId != 0u)
+            {
+                AkSoundEngine.StopPlayingID(soundFXId);
+            }
             base.OnExit();
         }
 
@@ -81,7 +88,7 @@ namespace PoppyMod.Modules.BaseStates
                 }
                 if (Config.GetKeyPressed(PoppyConfig.danceConfig))
                 {
-                    this.outer.SetInterruptState(new DanceState(), InterruptPriority.Any);
+                    this.outer.SetInterruptState(new DanceIntroState(), InterruptPriority.Any);
                     return;
                 }
                 if (Config.GetKeyPressed(PoppyConfig.laughConfig))
@@ -99,6 +106,18 @@ namespace PoppyMod.Modules.BaseStates
                 return true;
             }
             return false;
+        }
+
+        private bool IsEmpty(uint[] idArray)
+        {
+            foreach (uint id in idArray)
+            {
+                if (id != 0u)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

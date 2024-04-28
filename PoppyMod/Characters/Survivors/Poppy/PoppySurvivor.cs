@@ -9,11 +9,14 @@ using PoppyMod.Survivors.Poppy.Components;
 using PoppyMod.Survivors.Poppy.SkillStates;
 using R2API;
 using RoR2;
+using RoR2.UI;
 using RoR2.Skills;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using PoppyMod.Modules.BaseStates;
+using PoppyMod.Characters.Survivors.Poppy.Components;
 
 namespace PoppyMod.Survivors.Poppy
 {
@@ -22,7 +25,7 @@ namespace PoppyMod.Survivors.Poppy
         //used to load the assetbundle for this character. must be unique
         public override string assetBundleName => "popmodassetbundle"; //if you do not change this, you are giving permission to deprecate the mod
 
-        public override string soundBankName => "PoppySoundBank.bnk";
+        public override string soundBankName => "PoppySoundBank.sound";
 
         //the name of the prefab we will create. conventionally ending in "Body". must be unique
         public override string bodyName => "PoppyBody"; //if you do not change this, you get the point by now
@@ -52,9 +55,9 @@ namespace PoppyMod.Survivors.Poppy
             crosshair = Assets.LoadCrosshair("Standard"),
             podPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
-            maxHealth = 150f,
+            maxHealth = PoppyStaticValues.baseHealth,
             healthRegen = 1.5f,
-            armor = 20f,
+            armor = PoppyStaticValues.baseArmor,
 
             jumpCount = 1,
         };
@@ -115,7 +118,7 @@ namespace PoppyMod.Survivors.Poppy
             InitializeEntityStateMachines();
             InitializeSkills();
             InitializeSkins();
-            //InitializeItems();
+            InitializeItems();
             InitializeCharacterMaster();
 
             AdditionalBodySetup();
@@ -126,15 +129,18 @@ namespace PoppyMod.Survivors.Poppy
         private void AdditionalBodySetup()
         {
             AddHitboxes();
+            bodyPrefab.gameObject.GetComponent<CharacterDeathBehavior>().deathState = new SerializableEntityStateType(typeof(BaseDeath));
+            bodyPrefab.gameObject.GetComponent<CharacterMotor>().mass = 300f;
+            bodyPrefab.gameObject.AddComponent<VOComponent>();
+            bodyPrefab.gameObject.AddComponent<ArmorPassiveComponent>();
+            bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
             //bodyPrefab.AddComponent<PoppyWeaponComponent>();
-            //anything else here
         }
 
         public void AddHitboxes()
         {
             ChildLocator childLocator = characterModelObject.GetComponent<ChildLocator>();
 
-            //example of how to create a hitbox
             Transform hitBoxTransform1 = childLocator.FindChild("HammerHitbox");
             Prefabs.SetupHitBoxGroup(characterModelObject, "HammerGroup", hitBoxTransform1);
             Transform hitBoxTransform2 = childLocator.FindChild("AuraHitbox");
@@ -166,8 +172,6 @@ namespace PoppyMod.Survivors.Poppy
 
         private void AddShieldy()
         {
-            ItemTierDef itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/Base/Common/BossTierDef.asset").WaitForCompletion();
-
             Items.shieldyDef = ScriptableObject.CreateInstance<ItemDef>();
             Items.shieldyDef.name = "Shieldy";
             Items.shieldyDef.nameToken = POPPY_PREFIX + "ITEM_SHIELDY_NAME";
@@ -175,12 +179,14 @@ namespace PoppyMod.Survivors.Poppy
             Items.shieldyDef.loreToken = POPPY_PREFIX + "ITEM_SHIELDY_LORE";
             Items.shieldyDef.pickupToken = POPPY_PREFIX + "ITEM_SHIELDY_PICKUP";
 
-            Items.shieldyDef._itemTierDef = itemTierDef;
+            Items.shieldyDef._itemTierDef = Items.itemTierDef;
             //Items.shieldyDef._itemTierDef._tier = ItemTier.NoTier;
             //Items.shieldyDef._itemTierDef.canScrap = false;
 
-            Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/Common/MiscIcons/texMysteryIcon.png").WaitForCompletion();
-            Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mystery/PickupMystery.prefab").WaitForCompletion();
+            //Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/Common/MiscIcons/texMysteryIcon.png").WaitForCompletion();
+            //Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mystery/PickupMystery.prefab").WaitForCompletion();
+            Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/SprintArmor/texBucklerIcon.png").WaitForCompletion();
+            Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/SprintArmor/PickupBuckler.prefab").WaitForCompletion();
 
             Items.shieldyDef.canRemove = true;
             Items.shieldyDef.hidden = false;
@@ -487,15 +493,18 @@ namespace PoppyMod.Survivors.Poppy
                 args.baseMoveSpeedAdd = sender.baseMoveSpeed * PoppyConfig.util2SpdConfig.Value * buffStacks;
             }
 
-            /*if (sender.inventory.GetItemCount(ItemCatalog.FindItemIndex(Items.shieldyDef.name)) >= 1)
+            try
             {
-                sender.healthComponent.AddBarrier(sender.healthComponent.fullHealth * PoppyConfig.secondayHPConfig.Value);
-                sender.inventory.RemoveItem(Items.shieldyDef, 1);
-                if (sender.gameObject == bodyPrefab)
+                if (sender.inventory.GetItemCount(ItemCatalog.FindItemIndex(Items.shieldyDef.name)) >= 1)
                 {
-                    Util.PlaySound("PlayPoppyPassiveCollect", sender.gameObject);
+                    sender.healthComponent.AddBarrier(sender.healthComponent.fullHealth * PoppyConfig.secondayHPConfig.Value);
+                    sender.inventory.RemoveItem(Items.shieldyDef, 1);
                 }
-            }*/
+            }
+            catch
+            {
+                // Do nothing
+            }
         }
 
         private void MyConfig_SettingChanged(object sender, SettingChangedEventArgs e)

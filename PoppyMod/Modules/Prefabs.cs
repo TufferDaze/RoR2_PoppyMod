@@ -215,12 +215,6 @@ namespace PoppyMod.Modules
             bodyComponent.hullClassification = HullClassification.Human;
 
             bodyComponent.isChampion = false;
-
-            bodyComponent.gameObject.GetComponent<CharacterDeathBehavior>().deathState = new SerializableEntityStateType(typeof(BaseStates.BaseDeath));
-
-            bodyComponent.gameObject.AddComponent<ArmorPassive>();
-
-            bodyComponent.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
         }
 
         private static Transform AddCharacterModelToSurvivorBody(GameObject bodyPrefab, Transform modelTransform, BodyInfo bodyInfo)

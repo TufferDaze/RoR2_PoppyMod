@@ -31,6 +31,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            HandleDamageCoefficients();
             this.newMaxChargeTime = baseChargeTime / this.attackSpeedStat;
             if (base.characterBody)
             {
@@ -108,6 +109,16 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         protected virtual bool ShouldKeepChargingAuthority()
         {
             return base.IsKeyDownAuthority();
+        }
+
+        private void HandleDamageCoefficients()
+        {
+            if (minimumDamageCoefficient > maximumDamageCoefficient)
+            {
+                float temp = minimumDamageCoefficient;
+                minimumDamageCoefficient = maximumDamageCoefficient;
+                maximumDamageCoefficient = temp;
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

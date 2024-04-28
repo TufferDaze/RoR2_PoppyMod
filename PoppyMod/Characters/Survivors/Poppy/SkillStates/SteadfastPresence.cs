@@ -18,8 +18,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private GameObject hitImpactPrefab;
         private CharacterBody body;
         private HitBoxGroup hitBoxGroup;
+        private float downForce = -10f;
         private float initialTime;
-        private bool isCrit;
         private bool inHitPause = false;
         private bool hasBlocked;
         private float hitPauseTimer;
@@ -33,7 +33,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
-            initialTime = Time.fixedTime;
+            initialTime = Time.fixedDeltaTime;
             hasBlocked = false;
             hitBoxGroup = null;
             Transform modelTransform = GetModelTransform();
@@ -47,12 +47,11 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             {
                 hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "AuraGroup");
             }
-            isCrit = RollCrit();
             CreateNewAttack();
             CreateIndicator();
             Util.PlaySound("PlayPoppyW", gameObject);
             Util.PlaySound("PlayPoppyWSFX", gameObject);
-            if (!GetModelAnimator().GetBool("isMoving"))
+            if (inputBank.moveVector == Vector3.zero)
             {
                 PlayAnimation("FullBody, Override", "SteadfastPresenceIdle");
                 //PlayCrossfade("FullBody, Override", "SteadfastPresenceIdle", "Roll.PlaybackRate", duration, 0.1f * duration);
@@ -88,11 +87,19 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                             if (hurtBox.healthComponent)
                             {
                                 CharacterMotor component = hurtBox.healthComponent.GetComponent<CharacterMotor>();
-                                Rigidbody component2 = hurtBox.healthComponent.GetComponent<Rigidbody>();
+                                RigidbodyMotor component2 = hurtBox.healthComponent.GetComponent<RigidbodyMotor>();
+                                bool isFlying = false;
+                                if (component)
+                                {
+                                    isFlying = !component.netIsGrounded;
+                                }
+                                else if (component2)
+                                {
+                                    isFlying = true;
+                                }
                                 GameObject enemyBody = hurtBox.healthComponent.body.gameObject;
-                                if ((component || component2)
-                                    && !enemyBody.GetComponent<GroundingComponent>()
-                                    && !component.netIsGrounded
+                                if (!enemyBody.GetComponent<GroundingComponent>()
+                                    && isFlying
                                     && !enemyBody.GetComponent<CharacterBody>().isChampion)
                                 {
                                     // add grounding component to this enemy
@@ -107,10 +114,11 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                         }
                         catch
                         {
-                            Debug.LogError("hurtBox null!");
+                            Debug.LogError("healthComponent null!");
                         }
                     }
-                    CreateNewAttack();
+                    //CreateNewAttack();
+                    attack.ResetIgnoredHealthComponents();
                     return;
                 }
             }
@@ -131,7 +139,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             {
                 Destroy(indicatorInstance.gameObject);
             }
-            base.cameraTargetParams.RemoveParamsOverride(this.handle);
+            base.cameraTargetParams.RemoveParamsOverride(this.handle, 1f);
             base.OnExit();
         }
 
@@ -146,10 +154,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 procCoefficient = this.procCoefficient,
                 damageType = DamageType.Stun1s,
                 hitEffectPrefab = ToolbotDash.impactEffectPrefab,
-                forceVector = Vector3.downVector,
+                forceVector = new Vector3(0, downForce, 0),
                 pushAwayForce = 0f,
                 hitBoxGroup = this.hitBoxGroup,
-                isCrit = this.isCrit
+                isCrit = RollCrit()
             };
         }
 
@@ -169,9 +177,9 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         {
             CameraTargetParams cameraTargetParams = base.cameraTargetParams;
             CharacterCameraParamsData cameraParamsData = cameraTargetParams.currentCameraParamsData;
-            float scalar = 1f+(float)Math.Pow(Time.fixedTime - this.initialTime, 1.5);
+            float scalar = (float)Math.Pow(1f + Time.fixedDeltaTime - this.initialTime, 2);
             Vector3 modifierVector = new Vector3(0f, 0f, -1f);
-            cameraParamsData.idealLocalCameraPos = PoppySurvivor.instance.bodyInfo.cameraPivotPosition + scalar * modifierVector;
+            cameraParamsData.idealLocalCameraPos = new Vector3(0f, 0f, -12f) + scalar * modifierVector;
             CameraTargetParams.CameraParamsOverrideRequest request = new CameraTargetParams.CameraParamsOverrideRequest
             {
                 cameraParamsData = cameraParamsData,

@@ -17,13 +17,13 @@ namespace PoppyMod.Modules.BaseStates
 			{
 				case 1:
 					clipLen = 4f;
-					break;
+                    break;
 				case 2:
 					clipLen = 2.625f;
 					break;
 				case 3:
 					clipLen = 5.917f;
-					break;
+                    break;
 			}
             base.OnEnter();
 		}

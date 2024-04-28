@@ -10,6 +10,7 @@ namespace PoppyMod.Modules.BaseStates
         {
             animName = "Taunt";
             soundString = "PlayPoppyTaunt";
+            soundFXString = "PlayPoppyTauntSFX";
             isLooping = false;
             clipLen = 5.333f;
             base.OnEnter();

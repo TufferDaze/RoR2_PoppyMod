@@ -8,6 +8,7 @@ namespace PoppyMod.Survivors.Poppy.Components
 	{
 		private CharacterBody body;
 		private CharacterMotor motor;
+		private RigidbodyMotor rigidMotor;
 		private float maxDuration = 4f;
 		private float stopwatch;
 		private float downForce = PoppyStaticValues.groundingSpeed;
@@ -17,6 +18,10 @@ namespace PoppyMod.Survivors.Poppy.Components
 			//Debug.Log("GroundingComponent: Grounding component added successfully!");
 			body = GetComponent<CharacterBody>();
 			motor = GetComponent<CharacterMotor>();
+			if (!motor)
+			{
+				rigidMotor = GetComponent<RigidbodyMotor>();
+			}
 			stopwatch = 0f;
 		}
 
@@ -31,6 +36,11 @@ namespace PoppyMod.Survivors.Poppy.Components
 			{
 				motor.rootMotion += Vector3.downVector * downForce * Time.fixedDeltaTime;
 			}
+			else if (rigidMotor)
+			{
+				rigidMotor.rootMotion += Vector3.downVector * downForce * Time.fixedDeltaTime;
+
+            }
         }
 
 		private void Release()

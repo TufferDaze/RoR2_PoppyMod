@@ -11,6 +11,19 @@ namespace PoppyMod.Modules
 	internal static class Items
 	{
         public static ItemDef shieldyDef;
+        public static ItemTierDef itemTierDef = new ItemTierDef
+        {
+            _tier = ItemTier.Boss,
+            bgIconTexture = LegacyResourcesAPI.Load<Texture2D>("Textures/ItemIcons/BG/texBossBGIcon"),
+            colorIndex = ColorCatalog.ColorIndex.BossItem,
+            darkColorIndex = ColorCatalog.ColorIndex.BossItemDark,
+            isDroppable = false,
+            canScrap = false,
+            canRestack = true,
+            pickupRules = ItemTierDef.PickupRules.Default,
+            highlightPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/UI/HighlightTier3Item"),
+            dropletDisplayPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/ItemPickups/BossOrb"),
+        };
         /*public static ItemDef shieldyDef = new ItemDef
         {
             name = "Shieldy",

@@ -59,6 +59,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 {
                     BlastAttack.Result targetsHit = DetonateAuthority();
                     DealMaxHPDamage(targetsHit);
+                    if (PoppyConfig.bonkConfig.Value && targetsHit.hitCount != 0)
+                    {
+                        Util.PlaySound("PlayPoppyBonkBigSFX", gameObject);
+                    }
                     outer.SetNextStateToMain();
                 }
             }
@@ -67,14 +71,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public override void OnExit()
         {
             PlayCrossfade("FullBody, Override", "HStoIdle", 0.1f);
-            if (PoppyConfig.bonkConfig.Value)
-            {
-                Util.PlaySound("PlayPoppyBonkBigSFX", gameObject);
-            }
-            else
-            {
-                Util.PlaySound("PlayPoppyQSFX", gameObject);
-            }
+            Util.PlaySound("PlayPoppyQSFX", gameObject);
             if (base.isAuthority)
             {
                 base.characterMotor.onMovementHit -= this.OnMovementHit;

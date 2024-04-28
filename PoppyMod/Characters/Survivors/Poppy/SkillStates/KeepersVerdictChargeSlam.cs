@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using EntityStates;
 using EntityStates.BrotherMonster;
+using UnityEngine.UIElements;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {
@@ -26,10 +27,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private bool hasFired;
         private float procCoefficient = 0.5f;
         public static float waveProjectileArc = 1f;
-        public static int waveProjectileCount = 10;
+        public static int waveProjectileCount = 3;
         public static float waveProjectileDamageCoefficient = 0.1f;
-        public static float waveProjectileForce = 10f;
-        public static float weaponForce = 10f;
+        public static float waveProjectileForce = 0f;
+        public static float slamForce = 0f;
         public static GameObject weaponHitEffectPrefab;
         public static NetworkSoundEventDef weaponImpactSound;
         private BlastAttack blastAttack;
@@ -67,7 +68,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 overlapAttack.impactSound = WeaponSlam.weaponImpactSound.index;
                 overlapAttack.inflictor = base.gameObject;
                 overlapAttack.procChainMask = default(ProcChainMask);
-                overlapAttack.pushAwayForce = WeaponSlam.weaponForce;
+                overlapAttack.pushAwayForce = slamForce;
                 overlapAttack.procCoefficient = procCoefficient;
                 overlapAttack.teamIndex = base.GetTeam();
                 this.weaponAttack = overlapAttack;
@@ -80,10 +81,6 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         {
             base.FixedUpdate();
             stopwatch += Time.fixedDeltaTime;
-            if (base.isAuthority)
-            {
-                this.weaponAttack.Fire(null);
-            }
             //EffectManager.SimpleMuzzleFlash(slamImpactEffect, base.gameObject, muzzleString, false);
             if (base.isAuthority)
             {
@@ -94,6 +91,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 //Transform transform2 = base.FindModelChild(muzzleString);
                 if (!hasFired && stopwatch >= blastDelay)
                 {
+                    this.weaponAttack.Fire(null);
                     if (PoppyConfig.bonkConfig.Value)
                     {
                         Util.PlaySound("PlayPoppyBonkBigSFX", gameObject);
@@ -104,9 +102,9 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                     }
                     hasFired = true;
                     Vector3 footPosition = base.characterBody.footPosition;
-                    float num = 90f / (float)ExitSkyLeap.waveProjectileCount;
+                    float num = 90f / (float)waveProjectileCount;
                     Vector3 point = Vector3.ProjectOnPlane(base.inputBank.aimDirection, Vector3.up);
-                    for (int i = 0; i < ExitSkyLeap.waveProjectileCount; i++)
+                    for (int i = 0; i < waveProjectileCount; i++)
                     {
                         Vector3 forward = Quaternion.AngleAxis((num * (float)i)-45f, Vector3.up) * point;
                         bool isAuthority2 = base.isAuthority;
@@ -115,7 +113,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                             FireProjectileInfo fireProjectileInfo = new FireProjectileInfo
                             {
                                 crit = base.RollCrit(),
-                                damage = damageStat * (this.damageCoefficient / (float)ExitSkyLeap.waveProjectileCount),
+                                damage = damageStat * (this.damageCoefficient / (float)waveProjectileCount),
                                 damageTypeOverride = new DamageType?(DamageType.Stun1s),
                                 damageColorIndex = DamageColorIndex.Default,
                                 force = waveProjectileForce,
@@ -125,7 +123,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                 projectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSunderWave.prefab").WaitForCompletion(),
                                 rotation = Util.QuaternionSafeLookRotation(forward),
                                 useFuseOverride = false,
-                                useSpeedOverride = false,
+                                useSpeedOverride = true,
+                                speedOverride = 10f,
                                 target = null
                             };
                             ProjectileManager.instance.FireProjectile(fireProjectileInfo);
@@ -142,6 +141,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 
         public override void OnExit()
         {
+            if (PoppyConfig.rChargeVOConfig.Value)
+            {
+                Util.PlaySound("PlayPoppyRComment", gameObject);
+            }
             if (!GetModelAnimator().GetBool("isMoving"))
             {
                 PlayAnimation("FullBody, Override", "KeepersVerdictToIdle");

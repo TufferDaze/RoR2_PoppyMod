@@ -15,6 +15,10 @@ namespace PoppyMod
 {
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInDependency(ItemAPI.PluginGUID)]
+    [BepInDependency(LanguageAPI.PluginGUID)]
+    [BepInDependency(PrefabAPI.PluginGUID)]
+    [BepInDependency(RecalculateStatsAPI.PluginGUID)]
+    [BepInDependency(SoundAPI.PluginGUID)]
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     public class PoppyPlugin : BaseUnityPlugin
     {

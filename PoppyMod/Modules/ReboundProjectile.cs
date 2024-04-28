@@ -116,14 +116,14 @@ namespace PoppyMod.Modules
                         }
                         else
                         {
-                            //SpawnSheildy(lastLocation);
+                            SpawnSheildy(lastLocation);
                         }
                     }
                     return;
                 }
                 else
                 {
-                    //SpawnSheildy(lastLocation);
+                    SpawnSheildy(lastLocation);
                 }
                 if (!this.failedToKill)
                 {

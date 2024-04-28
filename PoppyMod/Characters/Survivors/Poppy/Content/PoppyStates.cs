@@ -30,12 +30,15 @@ namespace PoppyMod.Survivors.Poppy
 
             //Modules.Content.AddEntityState(typeof(ThrowBomb));
 
-            // Misc
+            // Main States
             Modules.Content.AddEntityState(typeof(BasePoppyState));
             Modules.Content.AddEntityState(typeof(BaseDeath));
+
+            // Emotes
             Modules.Content.AddEntityState(typeof(JokeState));
             Modules.Content.AddEntityState(typeof(TauntState));
-            Modules.Content.AddEntityState(typeof(DanceState));
+            Modules.Content.AddEntityState(typeof(DanceIntroState));
+            Modules.Content.AddEntityState(typeof(DanceLoopState));
             Modules.Content.AddEntityState(typeof(LaughState));
         }
     }
