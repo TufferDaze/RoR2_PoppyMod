@@ -41,8 +41,8 @@ namespace PoppyMod.Survivors.Poppy
         {
             CreateBombExplosionEffect();
 
-            hammerSwingEffect = _assetBundle.LoadEffect("HenrySwordSwingEffect", true);
-            hammerHitImpactEffect = _assetBundle.LoadEffect("ImpactHenrySlash");
+            hammerSwingEffect = _assetBundle.LoadEffect("WeaponSwingEffect", true);
+            hammerHitImpactEffect = _assetBundle.LoadEffect("WeaponImpactEffect");
         }
 
         private static void CreateBombExplosionEffect()

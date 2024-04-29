@@ -1,16 +1,13 @@
-# Thingy
-PoppyMod was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
-
 # PoppyMod
-I couldn't help but notice the absence of a certain small blue gremlin. Need I say more? Here she is.\ \
-<img style="float: center;" src="/images/rat.png" alt="rat" height="256" width="256" />
+I couldn't help but notice the absence of a certain blue rat. Need I say more? Here she is.
+<p align="center"><img src="/images/rat.png" alt="rat" height="256" width="256" /></p>
 
 ## Stats
-* Health - 160(+60 per level)
-* Health Regen - 1/s(+0.2 per level)
+* Health - 160(+48 per level)
 * Damage - 12(+2.4 per level)
 * Speed - 7m/s
 * Armor - 20
+* Lots of config options available.
 
 ## Abilities
 ### Passive
@@ -31,12 +28,14 @@ I couldn't help but notice the absence of a certain small blue gremlin. Need I s
 ![Special2](/images/spec2.png)
 
 ## Install
-Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clean installation
+Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clean installation.
 
-## Known Issues
-* Standing still during Steadfast Pressence looks jank.
+## Credits
+* Lemonlust for allowing me to reference their emote and grab code.
+
+## Issues
+* Standing still during Steadfast Presence looks jank.
 * Iron Ambassador counts as a boss item, allowing you to print boss tier items with the Command artifact.
-* Charging into larger enemies with Heroic Charge may put you under the map.
 
 ## TODO
 * Tweak for better network play.

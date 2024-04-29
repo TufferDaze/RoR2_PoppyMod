@@ -19,6 +19,12 @@ namespace PoppyMod.Survivors.Poppy
         public static ConfigEntry<bool> rChargeVOConfig;
         public static ConfigEntry<bool> idleVOConfig;
         public static ConfigEntry<float> voFreqConfig;
+        public static ConfigEntry<int> baseHPConfig;
+        public static ConfigEntry<int> baseArmorConfig;
+        public static ConfigEntry<float> baseDamageConfig;
+        public static ConfigEntry<float> baseCritConfig;
+        public static ConfigEntry<float> baseAttackSpeedConfig;
+        public static ConfigEntry<float> baseMoveSpeedConfig;
         public static ConfigEntry<float> passiveConfig;
         public static ConfigEntry<float> primaryDmgConfig;
         public static ConfigEntry<float> secondayDmgConfig;
@@ -39,6 +45,7 @@ namespace PoppyMod.Survivors.Poppy
         public static void Init()
         {
             string volumeSection = "Audio";
+            string statSection = "Stats";
             string abilitySection = "Abilities";
             string emoteSection = "Emotes";
 
@@ -52,6 +59,14 @@ namespace PoppyMod.Survivors.Poppy
             rChargeVOConfig = Config.BindAndOptions(volumeSection, "Keepers Verdict Chatter", true, "Whether or not to say something when firing a charged Keepers Verdict.");
             idleVOConfig = Config.BindAndOptions(volumeSection, "Idle Chatter", true, "Whether or not the rat says something every 30 seconds.");
             voFreqConfig = Config.BindAndOptionsSlider(volumeSection, "Chatter Freqency", 1f, "Frequency of idle chatter.", 0f, 1f);
+
+            // Stats
+            baseHPConfig = Config.BindAndOptionsSlider(statSection, "Base HP", PoppyStaticValues.baseHealth, "", 1, 500, true);
+            baseArmorConfig = Config.BindAndOptions<int>(statSection, "Base Armor", PoppyStaticValues.baseArmor, "", true);
+            baseDamageConfig = Config.BindAndOptions<float>(statSection, "Base Damage", PoppyStaticValues.baseDamage, "", true);
+            baseCritConfig = Config.BindAndOptions<float>(statSection, "Base Crit", PoppyStaticValues.baseCrit, "", true);
+            baseAttackSpeedConfig = Config.BindAndOptions<float>(statSection, "Base Attack Speed", PoppyStaticValues.baseAttackSpeed, "", true);
+            baseMoveSpeedConfig = Config.BindAndOptions<float>(statSection, "Base Move Speed", PoppyStaticValues.baseMoveSpeed, "", true);
 
             // Passive
             passiveConfig = Config.BindAndOptions<float>(abilitySection, "Passive Armor", PoppyStaticValues.passiveArmorIncreaseCoefficient, "Percentage of your base armor to gain at max passive stacks.");

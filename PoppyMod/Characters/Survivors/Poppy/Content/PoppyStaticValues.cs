@@ -5,9 +5,17 @@ namespace PoppyMod.Survivors.Poppy
     public static class PoppyStaticValues
     {
         // Base Values
-        public const float baseHealth = 160f;
+        public const int baseHealth = 160;
 
-        public const float baseArmor = 20f;
+        public const int baseArmor = 20;
+
+        public const float baseDamage = 12f;
+
+        public const float baseCrit = 1f;
+
+        public const float baseAttackSpeed = 1f;
+
+        public const float baseMoveSpeed = 7f;
 
         // Passive Values
 

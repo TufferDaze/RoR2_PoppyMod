@@ -103,20 +103,20 @@ namespace PoppyMod.Modules.Characters
 
         #region Stats
         //main stats
-        public float maxHealth = PoppyStaticValues.baseHealth;
+        public float maxHealth = PoppyConfig.baseHPConfig.Value;
         public float healthRegen = 1f;
-        public float armor = PoppyStaticValues.baseArmor;
+        public float armor = PoppyConfig.baseArmorConfig.Value;
         public float shield = 0f; // base shield is a thing apparently. neat
 
         public int jumpCount = 1;
 
         //conventional base stats, consistent for all survivors
-        public float damage = 12f;
-        public float attackSpeed = 1f;
-        public float crit = 1f;
+        public float damage = PoppyConfig.baseDamageConfig.Value;
+        public float attackSpeed = PoppyConfig.baseAttackSpeedConfig.Value;
+        public float crit = PoppyConfig.baseCritConfig.Value;
 
         //misc stats
-        public float moveSpeed = 7f;
+        public float moveSpeed = PoppyConfig.baseMoveSpeedConfig.Value;
         public float acceleration = 80f;
         public float jumpPower = 15f;
 
@@ -127,7 +127,7 @@ namespace PoppyMod.Modules.Characters
         /// </summary>
         public bool autoCalculateLevelStats = true;
 
-        public float healthGrowth = 140f * 0.3f;
+        public float healthGrowth = 100f * 0.3f;
         public float regenGrowth = 1f * 0.2f;
         public float armorGrowth = 0f;
         public float shieldGrowth = 0f;

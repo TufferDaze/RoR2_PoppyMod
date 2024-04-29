@@ -105,10 +105,11 @@ namespace PoppyMod.Survivors.Poppy
         {
             //need the character unlockable before you initialize the survivordef
             PoppyUnlockables.Init();
+            PoppyConfig.Init();
 
             base.InitializeCharacter();
 
-            PoppyConfig.Init();
+            //PoppyConfig.Init();
             PoppyStates.Init();
             PoppyTokens.Init();
 
