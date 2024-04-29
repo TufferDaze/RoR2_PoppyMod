@@ -132,6 +132,7 @@ namespace PoppyMod.Survivors.Poppy
             bodyPrefab.gameObject.GetComponent<CharacterDeathBehavior>().deathState = new SerializableEntityStateType(typeof(BaseDeath));
             bodyPrefab.gameObject.GetComponent<CharacterMotor>().mass = 300f;
             bodyPrefab.gameObject.AddComponent<VOComponent>();
+            bodyPrefab.gameObject.AddComponent<MasteryEmoteComponent>();
             bodyPrefab.gameObject.AddComponent<ArmorPassiveComponent>();
             bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
             //bodyPrefab.AddComponent<PoppyWeaponComponent>();

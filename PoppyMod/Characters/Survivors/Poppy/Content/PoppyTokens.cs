@@ -25,17 +25,18 @@ namespace PoppyMod.Survivors.Poppy
             string desc = "Poppy: a small idiot rat thing with a tiny brain and a big heart.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine
                 + "< ! > Get up close and personal to do damage." + Environment.NewLine + Environment.NewLine
                 + "< ! > Iron Ambassador bounces to up to 3 enemies, increasing damage dealt each time." + Environment.NewLine + Environment.NewLine
-                + "< ! > Heroic Charge carries smaller enemies and stops at larger ones, dealing bonus damage." + Environment.NewLine + Environment.NewLine
-                + "< ! > Steadfast Presence can be used to keep smaller flying enemies in check." + Environment.NewLine + Environment.NewLine
+                + "< ! > Heroic Charge carries enemies forward." + Environment.NewLine + Environment.NewLine
+                + "< ! > Steadfast Presence can be used to keep smaller flying enemies on the ground." + Environment.NewLine + Environment.NewLine
                 + "< ! > Enemies hit with Keeper\'s Verdict are launched into the stratosphere." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so she left to continue her search.";
-            string outroFailure = "SHE DIED :,[";
+            string outroFailure = "You are definitely not the hero.";
 
             Language.Add(prefix + "NAME", "Poppy");
             Language.Add(prefix + "DESCRIPTION", desc);
             Language.Add(prefix + "SUBTITLE", "Keeper of the Hammer");
-            Language.Add(prefix + "LORE", "There is no place she isn\'t willing to go in order to find the fabled hero.");
+            //Language.Add(prefix + "LORE", "There is no place she isn\'t willing to go in order to find the fabled hero.");
+            Language.Add(prefix + "LORE", "What the Poppy doin\'? How did she get here?");
             Language.Add(prefix + "OUTRO_FLAVOR", outro);
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
@@ -64,7 +65,7 @@ namespace PoppyMod.Survivors.Poppy
             Language.Add(prefix + "UTILITY_HEROICCHARGE_DESCRIPTION", Tokens.heavyPrefix + " " + Tokens.stunningPrefix + $" Dash forward dealing <style=cIsDamage>{100f * PoppyConfig.util1DmgConfig.Value}% damage</style>.");
 
             Language.Add(prefix + "UTILITY_STEADFAST_NAME", "Steadfast Presence");
-            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value * 3f}% damage</style> over 3 seconds and speeds you up.");
+            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value * 3f}% damage</style> over 3 seconds and speeding you up.");
             #endregion
 
             #region Special

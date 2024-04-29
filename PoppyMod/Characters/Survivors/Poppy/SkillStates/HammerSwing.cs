@@ -26,7 +26,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             //this is the point at which the attack can be interrupted by itself, continuing a combo
             earlyExitPercentTime = 0.6f;
 
-            hitStopDuration = 0.012f;
+            hitStopDuration = 0.05f;
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
 

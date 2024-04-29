@@ -1,5 +1,4 @@
-﻿using System;
-using EntityStates;
+﻿using EntityStates;
 using RoR2;
 using UnityEngine;
 
@@ -7,10 +6,21 @@ namespace PoppyMod.Modules.BaseStates
 {
 	public class BaseDeath : GenericCharacterDeath
 	{
+        private float funnyDeathThreshhold = 0.25f;
+        private string animString = "";
+
         public override void OnEnter()
         {
             base.OnEnter();
-            PlayCrossfade("FullBody, Override", "Death", 0.1f);
+            if (Random.value <= funnyDeathThreshhold)
+            {
+                animString = "Death2";
+            }
+            else
+            {
+                animString = "Death1";
+            }
+            PlayCrossfade("FullBody, Override", animString, 0.1f);
             Util.PlaySound("PlayPoppyDeath", gameObject);
         }
 

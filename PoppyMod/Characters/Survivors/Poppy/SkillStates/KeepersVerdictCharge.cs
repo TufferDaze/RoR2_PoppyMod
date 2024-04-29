@@ -39,14 +39,16 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             }
             soundId1 = Util.PlaySound("PlayPoppyRCharge", gameObject);
             soundId2 = Util.PlaySound("PlayPoppyRChargeSFX", gameObject);
-            if (!GetModelAnimator().GetBool("isMoving"))
-            {
-                PlayAnimation("FullBody, Override", "KeepersVerdictChargeIdle");
-            }
-            else
+            /*if (GetModelAnimator().GetBool("isMoving"))
             {
                 PlayAnimation("FullBody, Override", "KeepersVerdictChargeRun");
             }
+            else
+            {
+                PlayAnimation("FullBody, Override", "KeepersVerdictChargeIdle");
+            }*/
+            PlayAnimation("Gesture, Override", "KeepersVerdictCharge");
+            GetModelAnimator().SetBool("isCharging", true);
         }
 
         public override void FixedUpdate()
@@ -102,6 +104,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         {
             AkSoundEngine.StopPlayingID(soundId1);
             AkSoundEngine.StopPlayingID(soundId2);
+            GetModelAnimator().SetBool("isCharging", false);
             base.characterMotor.walkSpeedPenaltyCoefficient = 1f;
             base.OnExit();
         }

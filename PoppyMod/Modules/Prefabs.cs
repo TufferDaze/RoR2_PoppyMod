@@ -531,7 +531,7 @@ namespace PoppyMod.Modules
             aimAnimator.yawRangeMax = 80f;
             aimAnimator.pitchGiveupRange = 30f;
             aimAnimator.yawGiveupRange = 10f;
-            aimAnimator.giveupDuration = 3f;
+            aimAnimator.giveupDuration = 0.5f;
             aimAnimator.inputBank = prefab.GetComponent<InputBankTest>();
         }
         #endregion

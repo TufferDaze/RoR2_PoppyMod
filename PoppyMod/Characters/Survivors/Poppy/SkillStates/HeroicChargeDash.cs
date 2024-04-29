@@ -16,8 +16,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float duration = 0.25f;
         private OverlapAttack attack;
         private bool inHitPause = false;
-        private float hitPauseTimer = 0.015f;
-        public static float hitPauseDuration = 0.1f;
+        private float hitPauseTimer = 0.01f;
+        public static float hitPauseDuration = 0.05f;
         public static float recoilAmplitude = 5.0f;
         public static float massThresholdForKnockback = 300.0f;
         public static float knockbackDamageCoefficient = 1.5f;

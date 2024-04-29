@@ -13,7 +13,7 @@ namespace PoppyMod.Survivors.Poppy.Components
         private float idleVoiceTimer = 60f;
         private float idleVoiceChance = PoppyConfig.voFreqConfig.Value;
         private float passiveStopwatch;
-        private float passiveVoiceTimer = 10f;
+        private float passiveVoiceTimer = 30f;
         private bool passiveVoiceCanFire;
         private bool hasFiredSpawn;
         private CharacterBody body;
@@ -48,7 +48,7 @@ namespace PoppyMod.Survivors.Poppy.Components
 
         public void FixedUpdate()
         {
-            if (PoppyConfig.idleVOConfig.Value)
+            if (PoppyConfig.idleVOConfig.Value && body.outOfCombat)
             {
                 HandleIdleVO();
             }
@@ -107,7 +107,7 @@ namespace PoppyMod.Survivors.Poppy.Components
 
         private void GlobalEventManager_OnInteractionsGlobal(Interactor sender, IInteractable interactInfo, GameObject interactObject)
         {
-            if (interactObject.GetComponent<PurchaseInteraction>())
+            if (interactObject.GetComponent<PurchaseInteraction>() && body.outOfCombat)
             {
                 AkSoundEngine.StopAll(gameObject);
                 Util.PlaySound("PlayPoppyItemBuy", gameObject);

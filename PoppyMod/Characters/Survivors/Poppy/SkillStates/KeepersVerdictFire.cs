@@ -29,6 +29,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 inflictor = gameObject,
                 teamIndex = GetTeam(),
                 damage = damageStat * damageCoefficient,
+                damageType = DamageType.Stun1s,
                 forceVector = new Vector3(0, upForceCoefficient, 0),
                 hitBoxGroup = Array.Find<HitBoxGroup>(this.modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "KeeperGroup"),
                 procCoefficient = procCoefficient

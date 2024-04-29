@@ -72,6 +72,7 @@ namespace PoppyMod.Modules.BaseStates
             attack.isCrit = RollCrit();
             attack.impactSound = impactSound;
 
+            Util.PlayAttackSpeedSound(swingString, gameObject, attackSpeedStat);
             PlayAttackAnimation();
         }
 
@@ -136,7 +137,7 @@ namespace PoppyMod.Modules.BaseStates
         private void EnterAttack()
         {
             hasFired = true;
-            Util.PlayAttackSpeedSound(swingString, gameObject, attackSpeedStat);
+            //Util.PlayAttackSpeedSound(swingString, gameObject, attackSpeedStat);
 
             PlaySwingEffect();
 
