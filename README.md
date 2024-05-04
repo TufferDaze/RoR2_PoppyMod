@@ -1,7 +1,7 @@
 # PoppyMod
 I couldn't help but notice the absence of a certain blue rat. Need I say more? Here she is.
 <p align="center">
-  <img src="![rat](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/0b1bd8cc-29b9-469d-947d-602825206e85)" alt="rat" height="256" width="256" />
+  <img src="https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/0b1bd8cc-29b9-469d-947d-602825206e85" alt="rat" height="256" width="256" />
 </p>
 
 ## Stats
