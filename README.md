@@ -13,7 +13,7 @@ I couldn't help but notice the absence of a certain blue rat. Need I say more? H
 
 ## Abilities
 ### Passive
-![passive](https://user-images.githubusercontent.com/118772744/22fb9b6d-2546-4393-9b40-1fb764b9371c.png)
+![passive](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/22fb9b6d-2546-4393-9b40-1fb764b9371c)
 
 ### Primary
 ![primary1](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/9ea37dd3-1e4f-4379-9318-7f8bc1b3e776)
