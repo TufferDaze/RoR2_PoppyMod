@@ -1,0 +1,12 @@
+{
+    "name": "PoppyMod",
+    "version_number": "1.0.1",
+    "website_url": "",
+    "description": "Small idiot rat thing.",
+    "dependencies": [
+        "tristanmcpherson-R2API-5.0.5",
+		"RiskofThunder-HookGenPatcher-1.2.3",
+		"bbepis-BepInExPack-5.4.2113",
+		"Rune580-Risk_Of_Options-2.7.1"
+    ]
+}
