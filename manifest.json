@@ -1,7 +1,7 @@
 {
     "name": "PoppyMod",
-    "version_number": "1.0.1",
-    "website_url": "",
+    "version_number": "1.0.2",
+    "website_url": "https://github.com/TufferDaze/RoR2_PoppyMod",
     "description": "Small idiot rat thing.",
     "dependencies": [
         "tristanmcpherson-R2API-5.0.5",
