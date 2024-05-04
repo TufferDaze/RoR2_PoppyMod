@@ -65,7 +65,7 @@ namespace PoppyMod.Survivors.Poppy
             Language.Add(prefix + "UTILITY_HEROICCHARGE_DESCRIPTION", Tokens.heavyPrefix + " " + Tokens.stunningPrefix + $" Dash forward dealing <style=cIsDamage>{100f * PoppyConfig.util1DmgConfig.Value}% damage</style>.");
 
             Language.Add(prefix + "UTILITY_STEADFAST_NAME", "Steadfast Presence");
-            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.stunningPrefix + " " + Tokens.groundingPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value * 3f}% damage</style> over 3 seconds and speeding you up.");
+            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.groundingPrefix + " " + Tokens.stunningPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value * 3f}% damage</style> over 3 seconds and speeding you up.");
             #endregion
 
             #region Special

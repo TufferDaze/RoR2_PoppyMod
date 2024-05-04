@@ -14,6 +14,9 @@ namespace PoppyMod.Survivors.Poppy.Components
         private float idleVoiceChance = PoppyConfig.voFreqConfig.Value;
         private float passiveStopwatch;
         private float passiveVoiceTimer = 30f;
+        private float shieldSoundStopwatch;
+        private float shieldSoundTimer = 0.5f;
+        private bool shieldVoiceCanFire = true;
         private bool passiveVoiceCanFire;
         private bool hasFiredSpawn;
         private CharacterBody body;
@@ -35,19 +38,26 @@ namespace PoppyMod.Survivors.Poppy.Components
         {
             if (body.inventory)
             {
-                if (body.inventory.GetItemCount(Items.shieldyDef) >= 1)
+                if (body.inventory.GetItemCount(Items.shieldyDef) >= 1 && shieldVoiceCanFire)
                 {
                     if (PoppyConfig.shieldyVOConfig.Value)
                     {
                         Util.PlaySound("PlayPoppyPassiveCollect", gameObject);
                     }
                     Util.PlaySound("PlayPoppyPassiveCollectSFX", gameObject);
+                    shieldVoiceCanFire = false;
                 }
             }
         }
 
         public void FixedUpdate()
         {
+            shieldSoundStopwatch += Time.fixedDeltaTime;
+            if (shieldSoundStopwatch >= shieldSoundTimer)
+            {
+                shieldVoiceCanFire = true;
+                shieldSoundStopwatch = 0f;
+            }
             if (PoppyConfig.idleVOConfig.Value && body.outOfCombat)
             {
                 HandleIdleVO();

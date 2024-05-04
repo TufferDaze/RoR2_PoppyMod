@@ -14,7 +14,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public static float duration = 0.8f;
         public float stopwatch;
         public static float blastDelay = 0.6f;
-        public float damageCoefficient = 6f;
+        public float damageCoefficient;
         public static float forceMagnitude = 16f;
         public static float upwardForce;
         public static float radius = 3f;
@@ -28,9 +28,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float procCoefficient = 0.5f;
         public static float waveProjectileArc = 1f;
         public static int waveProjectileCount = 3;
-        public static float waveProjectileDamageCoefficient = 0.1f;
-        public static float waveProjectileForce = 0f;
-        public static float slamForce = 0f;
+        public static float waveProjectileForce = 10f;
+        public static float slamForce = 10f;
         public static GameObject weaponHitEffectPrefab;
         public static NetworkSoundEventDef weaponImpactSound;
         private BlastAttack blastAttack;
@@ -101,35 +100,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                         Util.PlaySound("PlayPoppyRChargeFireSFX", gameObject);
                     }
                     hasFired = true;
-                    Vector3 footPosition = base.characterBody.footPosition;
-                    float num = 90f / (float)waveProjectileCount;
-                    Vector3 point = Vector3.ProjectOnPlane(base.inputBank.aimDirection, Vector3.up);
-                    for (int i = 0; i < waveProjectileCount; i++)
-                    {
-                        Vector3 forward = Quaternion.AngleAxis((num * (float)i)-45f, Vector3.up) * point;
-                        bool isAuthority2 = base.isAuthority;
-                        if (isAuthority2)
-                        {
-                            FireProjectileInfo fireProjectileInfo = new FireProjectileInfo
-                            {
-                                crit = base.RollCrit(),
-                                damage = damageStat * (this.damageCoefficient / (float)waveProjectileCount),
-                                damageTypeOverride = new DamageType?(DamageType.Stun1s),
-                                damageColorIndex = DamageColorIndex.Default,
-                                force = waveProjectileForce,
-                                owner = base.gameObject,
-                                position = footPosition,
-                                procChainMask = default(ProcChainMask),
-                                projectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSunderWave.prefab").WaitForCompletion(),
-                                rotation = Util.QuaternionSafeLookRotation(forward),
-                                useFuseOverride = false,
-                                useSpeedOverride = true,
-                                speedOverride = 10f,
-                                target = null
-                            };
-                            ProjectileManager.instance.FireProjectile(fireProjectileInfo);
-                        }
-                    }
+                    FireWave();
                 }
             }
             if (base.fixedAge >= duration && base.isAuthority)
@@ -154,6 +125,39 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 PlayAnimation("FullBody, Override", "KeepersVerdictToRun");
             }
             base.OnExit();
+        }
+
+        private void FireWave()
+        {
+            float num = 90f / (float)waveProjectileCount;
+            Vector3 point = Vector3.ProjectOnPlane(base.inputBank.aimDirection, Vector3.up);
+            Vector3 footPosition = base.characterBody.footPosition;
+            for (int i = 0; i < waveProjectileCount; i++)
+            {
+                Vector3 forward = Quaternion.AngleAxis((num * (float)i) - 45f, Vector3.up) * point;
+                bool isAuthority2 = base.isAuthority;
+                if (isAuthority2)
+                {
+                    FireProjectileInfo fireProjectileInfo = new FireProjectileInfo
+                    {
+                        crit = base.RollCrit(),
+                        damage = base.damageStat * (this.damageCoefficient / (float)waveProjectileCount),
+                        damageTypeOverride = new DamageType?(DamageType.Stun1s),
+                        damageColorIndex = DamageColorIndex.Default,
+                        force = waveProjectileForce,
+                        owner = base.gameObject,
+                        position = footPosition,
+                        procChainMask = default(ProcChainMask),
+                        projectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSunderWave.prefab").WaitForCompletion(),
+                        rotation = Util.QuaternionSafeLookRotation(forward),
+                        useFuseOverride = false,
+                        useSpeedOverride = true,
+                        speedOverride = 10f,
+                        target = null
+                    };
+                    ProjectileManager.instance.FireProjectile(fireProjectileInfo);
+                }
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
