@@ -54,13 +54,15 @@ namespace PoppyMod.Modules.Characters
             prefabCharacterModel = Modules.Prefabs.SetupCharacterModel(bodyPrefab, customRendererInfos);
         }
 
-        public virtual void InitializeItemDisplays() {
+        public virtual void InitializeItemDisplays()
+        {
             ItemDisplayRuleSet itemDisplayRuleSet = ScriptableObject.CreateInstance<ItemDisplayRuleSet>();
             itemDisplayRuleSet.name = "idrs" + bodyName;
-            
+
             prefabCharacterModel.itemDisplayRuleSet = itemDisplayRuleSet;
 
-            if (itemDisplays != null) {
+            if (itemDisplays != null)
+            {
                 Modules.ItemDisplays.queuedDisplays++;
                 RoR2.ContentManagement.ContentManager.onContentPacksAssigned += SetItemDisplays;
             }

@@ -33,15 +33,15 @@ namespace PoppyMod.Survivors.Poppy
 
             CreateEffects();
 
-            CreateProjectiles();
+            //CreateProjectiles();
         }
 
         #region effects
         private static void CreateEffects()
         {
-            CreateBombExplosionEffect();
+            //CreateBombExplosionEffect();
 
-            hammerSwingEffect = _assetBundle.LoadEffect("WeaponSwingEffect", true);
+            //hammerSwingEffect = _assetBundle.LoadEffect("WeaponSwingEffect", true);
             hammerHitImpactEffect = _assetBundle.LoadEffect("WeaponImpactEffect");
         }
 

@@ -92,7 +92,7 @@ namespace PoppyMod.Modules.BaseStates
 
         protected virtual void PlaySwingEffect()
         {
-            EffectManager.SimpleMuzzleFlash(swingEffectPrefab, gameObject, muzzleString, true);
+            //EffectManager.SimpleMuzzleFlash(swingEffectPrefab, gameObject, muzzleString, true);
         }
 
         protected virtual void OnHitEnemyAuthority()

@@ -39,7 +39,10 @@ namespace PoppyMod.Modules
 
         internal static void PopulateDisplays()
         {
+            PopulateFromBody("CommandoBody");
             PopulateFromBody("MercBody");
+            PopulateFromBody("CrocoBody");
+            PopulateFromBody("MageBody");
 
             PopulateCustomLightningArm();
 

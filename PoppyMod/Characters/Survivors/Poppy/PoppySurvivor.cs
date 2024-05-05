@@ -194,7 +194,22 @@ namespace PoppyMod.Survivors.Poppy
             Items.shieldyDef.hidden = false;
             Items.shieldyDef.tags = new ItemTag[] { ItemTag.Utility };
 
-            ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(null)));
+            //ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(null)));
+            ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(
+                new ItemDisplayRule[]
+                {
+                    new ItemDisplayRule
+                    {
+                        ruleType = ItemDisplayRuleType.ParentedPrefab,
+                        followerPrefab = ItemDisplays.LoadDisplay("DisplayBuckler"),
+                        childName = "LowerArmR",
+                        localPos = new Vector3(-0.005f, 0.285f, 0.0074f),
+                        localAngles = new Vector3(358.4802f, 192.347f, 88.4811f),
+                        localScale = new Vector3(0.3351f, 0.3351f, 0.3351f),
+                        limbMask = LimbFlags.None
+                    }
+                }
+            )));
         }
         #endregion
 

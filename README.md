@@ -36,6 +36,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Lemonlust for allowing me to reference their emote and grab code.
 
 ## Issues
+`Other bugs can be tossed over to the GitHub page up top^`
 * Standing still during Steadfast Presence looks jank.
 * Iron Ambassador counts as a boss item, allowing you to print boss tier items with the Command artifact.
 
@@ -49,3 +50,13 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add skins.
 * Add other skills.
 * Add something secret. ;)
+
+## Patch Notes
+`1.0.3`
+* Fixed incompatibility with Twitch mod(hopefully)
+
+`1.0.2`
+* Fixed README images
+
+`1.0.0`
+* Initial Release
