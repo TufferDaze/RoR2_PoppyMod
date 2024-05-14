@@ -38,7 +38,6 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 ## Issues
 `Other bugs can be tossed over to the GitHub page up top^`
 * Standing still during Steadfast Presence looks jank.
-* Iron Ambassador counts as a boss item, allowing you to print boss tier items with the Command artifact.
 
 ## TODO
 * Tweak for better network play.
@@ -52,6 +51,10 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add something secret. ;)
 
 ## Patch Notes
+`1.0.4`
+* Shieldy is no longer in the Boss item drop table
+* Massively increased Keepers Verdict knockup
+
 `1.0.3`
 * Fixed incompatibility with Twitch mod(hopefully)
 
