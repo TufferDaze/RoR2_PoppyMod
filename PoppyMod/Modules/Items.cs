@@ -21,7 +21,7 @@ namespace PoppyMod.Modules
             canScrap = false,
             canRestack = true,
             pickupRules = ItemTierDef.PickupRules.Default,
-            highlightPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/UI/HighlightTier3Item"),
+            highlightPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/UI/HighlightTier1Item"),
             dropletDisplayPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/ItemPickups/BossOrb"),
         };
         /*public static ItemDef shieldyDef = new ItemDef

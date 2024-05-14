@@ -14,7 +14,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private Transform modelTransform;
         private float attackDelay = 0.25f;
         private float procCoefficient = 1f;
-        private float upForceCoefficient = 500f;
+        private float upForceCoefficient = 3000f;
         private OverlapAttack attack;
         private List<HurtBox> enemiesHit = new List<HurtBox>();
         private float duration = 1f;

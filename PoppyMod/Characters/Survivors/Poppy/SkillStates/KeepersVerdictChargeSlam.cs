@@ -28,8 +28,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float procCoefficient = 0.5f;
         public static float waveProjectileArc = 1f;
         public static int waveProjectileCount = 3;
-        public static float waveProjectileForce = 10f;
-        public static float slamForce = 10f;
+        public static float waveProjectileForce = -2000;
+        public static float slamForce = 12000f;
         public static GameObject weaponHitEffectPrefab;
         public static NetworkSoundEventDef weaponImpactSound;
         private BlastAttack blastAttack;
@@ -67,7 +67,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 overlapAttack.impactSound = WeaponSlam.weaponImpactSound.index;
                 overlapAttack.inflictor = base.gameObject;
                 overlapAttack.procChainMask = default(ProcChainMask);
-                overlapAttack.pushAwayForce = slamForce;
+                overlapAttack.forceVector = new Vector3(0, slamForce, 0);
                 overlapAttack.procCoefficient = procCoefficient;
                 overlapAttack.teamIndex = base.GetTeam();
                 this.weaponAttack = overlapAttack;
@@ -151,8 +151,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                         projectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSunderWave.prefab").WaitForCompletion(),
                         rotation = Util.QuaternionSafeLookRotation(forward),
                         useFuseOverride = false,
-                        useSpeedOverride = true,
-                        speedOverride = 10f,
+                        useSpeedOverride = false,
                         target = null
                     };
                     ProjectileManager.instance.FireProjectile(fireProjectileInfo);

@@ -192,7 +192,7 @@ namespace PoppyMod.Survivors.Poppy
 
             Items.shieldyDef.canRemove = true;
             Items.shieldyDef.hidden = false;
-            Items.shieldyDef.tags = new ItemTag[] { ItemTag.Utility };
+            Items.shieldyDef.tags = new ItemTag[] { ItemTag.Utility, ItemTag.WorldUnique };
 
             //ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(null)));
             ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(
