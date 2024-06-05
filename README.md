@@ -46,11 +46,14 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Make new animations for walking sideways/backwards.
 * Clean up existing animations.
 * Add VFX for all skills.
-* Add skins.
 * Add other skills.
+* Add skin-unique animations.
 * Add something secret. ;)
 
 ## Patch Notes
+`1.1.0`
+* Added skins
+
 `1.0.4`
 * Shieldy is no longer in the Boss item drop table
 * Massively increased Keepers Verdict knockup
