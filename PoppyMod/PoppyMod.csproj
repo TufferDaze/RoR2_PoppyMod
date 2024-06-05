@@ -39,7 +39,7 @@
 
 	<ItemGroup>
 	  <Reference Include="RiskOfOptions">
-	    <HintPath>..\..\..\..\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\ROR2PopMod_Test\BepInEx\plugins\Rune580-Risk_Of_Options\RiskOfOptions.dll</HintPath>
+	    <HintPath>..\..\..\..\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\ROR2PopMod_Test\BepInEx\plugins\Rune580-Risk_Of_Options\RiskOfOptions\RiskOfOptions.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 	

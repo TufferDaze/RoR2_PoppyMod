@@ -66,12 +66,12 @@ namespace PoppyMod.Survivors.Poppy
         {
                 new CustomRendererInfo
                 {
-                    childName = "PopMesh",
+                    childName = "BASE_PopMesh",
                     //material = assetBundle.LoadMaterial("Poppy_Mat"),
                 },
                 new CustomRendererInfo
                 {
-                    childName = "PopHammer",
+                    childName = "BASE_PopHam",
                     //material = assetBundle.LoadMaterial("Poppy_Mat"),
                 }
         };
@@ -182,11 +182,6 @@ namespace PoppyMod.Survivors.Poppy
             Items.shieldyDef.pickupToken = POPPY_PREFIX + "ITEM_SHIELDY_PICKUP";
 
             Items.shieldyDef._itemTierDef = Items.itemTierDef;
-            //Items.shieldyDef._itemTierDef._tier = ItemTier.NoTier;
-            //Items.shieldyDef._itemTierDef.canScrap = false;
-
-            //Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/Common/MiscIcons/texMysteryIcon.png").WaitForCompletion();
-            //Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mystery/PickupMystery.prefab").WaitForCompletion();
             Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/SprintArmor/texBucklerIcon.png").WaitForCompletion();
             Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/SprintArmor/PickupBuckler.prefab").WaitForCompletion();
 
@@ -402,7 +397,7 @@ namespace PoppyMod.Survivors.Poppy
             Skills.AddSpecialSkills(bodyPrefab, specialSkilLDef2);
         }
         #endregion skills
-        
+
         #region skins
         public override void InitializeSkins()
         {
@@ -421,54 +416,291 @@ namespace PoppyMod.Survivors.Poppy
                 prefabCharacterModel.gameObject);
 
             //these are your Mesh Replacements. The order here is based on your CustomRendererInfos from earlier
-                //pass in meshes as they are named in your assetbundle
+            //pass in meshes as they are named in your assetbundle
             //currently not needed as with only 1 skin they will simply take the default meshes
-                //uncomment this when you have another skin
-            //defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshHenrySword",
-            //    "meshHenryGun",
-            //    "meshHenry");
+            //uncomment this when you have another skin
+            defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "BASE_PopMesh",
+                "BASE_PopHam");
+
+            defaultSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+            {
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("CAF_PopHamEyes"),
+                    shouldActivate = false,
+                }
+            };
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
             #endregion
 
             //uncomment this when you have a mastery skin
-            #region MasterySkin
-            
-            ////creating a new skindef as we did before
-            //SkinDef masterySkin = Modules.Skins.CreateSkinDef(HENRY_PREFIX + "MASTERY_SKIN_NAME",
-            //    assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
-            //    defaultRendererinfos,
-            //    prefabCharacterModel.gameObject,
-            //    HenryUnlockables.masterySkinUnlockableDef);
+            #region NoxSkin
 
-            ////adding the mesh replacements as above. 
-            ////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
-            //masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshHenrySwordAlt",
-            //    null,//no gun mesh replacement. use same gun mesh
-            //    "meshHenryAlt");
+            //creating a new skindef as we did before
+            SkinDef noxSkin = Skins.CreateSkinDef(POPPY_PREFIX + "NOX_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
 
-            ////masterySkin has a new set of RendererInfos (based on default rendererinfos)
-            ////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
-            //masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
-            //masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
-            //masterySkin.rendererInfos[2].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
+            //adding the mesh replacements as above. 
+            //if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
+            noxSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "NOX_PopMesh",
+                "NOX_PopHam");
 
-            ////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
-            //masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            //{
-            //    new SkinDef.GameObjectActivation
-            //    {
-            //        gameObject = childLocator.FindChildGameObject("GunModel"),
-            //        shouldActivate = false,
-            //    }
-            //};
-            ////simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
+            //masterySkin has a new set of RendererInfos (based on default rendererinfos)
+            //you can simply access the RendererInfos' materials and set them to the new materials for your skin.
+            noxSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("NOX_PopMat");
+            noxSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("NOX_PopMat");
 
-            //skins.Add(masterySkin);
-            
+            skins.Add(noxSkin);
+
+            #endregion
+
+            #region LolSkin
+            // Skin def
+            SkinDef lolSkin = Skins.CreateSkinDef(POPPY_PREFIX + "LOL_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            lolSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "LOL_PopMesh",
+                "LOL_PopHam");
+
+            // Materials
+            lolSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("LOL_PopMat");
+            lolSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("LOL_PopMat");
+
+            // Add skin
+            skins.Add(lolSkin);
+            #endregion
+
+            #region BlaSkin
+            // Skin def
+            SkinDef blaSkin = Skins.CreateSkinDef(POPPY_PREFIX + "BLA_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            blaSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "BLA_PopMesh",
+                "BLA_PopHam");
+
+            // Materials
+            blaSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("BLA_PopMat");
+            blaSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("BLA_PopMat");
+
+            // Add skin
+            skins.Add(blaSkin);
+            #endregion
+
+            #region RagSkin
+            // Skin def
+            SkinDef ragSkin = Skins.CreateSkinDef(POPPY_PREFIX + "RAG_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            ragSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "RAG_PopMesh",
+                "RAG_PopHam");
+
+            // Materials
+            ragSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("RAG_PopMat");
+            ragSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("RAG_PopMat");
+
+            // Add skin
+            skins.Add(ragSkin);
+            #endregion
+
+            #region RegSkin
+            // Skin def
+            SkinDef regSkin = Skins.CreateSkinDef(POPPY_PREFIX + "REG_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            regSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "REG_PopMesh",
+                "REG_PopHam");
+
+            // Materials
+            regSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("REG_PopMat");
+            regSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("REG_PopMat");
+
+            // Add skin
+            skins.Add(regSkin);
+            #endregion
+
+            #region ScrSkin
+            // Skin def
+            SkinDef scrSkin = Skins.CreateSkinDef(POPPY_PREFIX + "SCR_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            scrSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "SCR_PopMesh",
+                "SCR_PopHam");
+
+            // Materials
+            scrSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("SCR_PopMat");
+            scrSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("SCR_PopMat");
+
+            // Add skin
+            skins.Add(scrSkin);
+            #endregion
+
+            #region StrSkin
+            // Skin def
+            SkinDef strSkin = Skins.CreateSkinDef(POPPY_PREFIX + "STR_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            strSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "STR_PopMesh",
+                "STR_PopHam");
+
+            // Materials
+            strSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("STR_PopMat");
+            strSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("STR_PopMat");
+
+            // Add skin
+            skins.Add(strSkin);
+            #endregion
+
+            #region FwnSkin
+            // Skin def
+            SkinDef fwnSkin = Skins.CreateSkinDef(POPPY_PREFIX + "FWN_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            fwnSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "FWN_PopMesh",
+                "FWN_PopHam");
+
+            // Materials
+            fwnSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("FWN_PopMat");
+            fwnSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("FWN_PopMat");
+
+            // Add skin
+            skins.Add(fwnSkin);
+            #endregion
+
+            #region HexSkin
+            // Skin def
+            SkinDef hexSkin = Skins.CreateSkinDef(POPPY_PREFIX + "HEX_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            hexSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "HEX_PopMesh",
+                "HEX_PopHam");
+
+            // Materials
+            hexSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("HEX_PopMat");
+            hexSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("HEX_PopMat");
+
+            // Add skin
+            skins.Add(hexSkin);
+            #endregion
+
+            #region AstSkin
+            // Skin def
+            SkinDef astSkin = Skins.CreateSkinDef(POPPY_PREFIX + "AST_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            astSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "AST_PopMesh",
+                "AST_PopHam");
+
+            // Materials
+            astSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("AST_PopMat");
+            astSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("AST_PopMat");
+
+            // Add skin
+            skins.Add(astSkin);
+            #endregion
+
+            #region BewSkin
+            // Skin def
+            SkinDef bewSkin = Skins.CreateSkinDef(POPPY_PREFIX + "BEW_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            bewSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "BEW_PopMesh",
+                "BEW_PopHam");
+
+            // Materials
+            bewSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("BEW_PopMat");
+            bewSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("BEW_PopMat");
+
+            // Add skin
+            skins.Add(bewSkin);
+            #endregion
+
+            #region CafSkin
+            // Skin def
+            SkinDef cafSkin = Skins.CreateSkinDef(POPPY_PREFIX + "CAF_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                PoppyUnlockables.masterySkinUnlockableDef);
+
+            // Mesh
+            cafSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "CAF_PopMesh",
+                "CAF_PopHam");
+
+            // Materials
+            cafSkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("CAF_PopMat");
+            cafSkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("CAF_PopMat");
+
+            //here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
+            cafSkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
+            {
+                new SkinDef.GameObjectActivation
+                {
+                    gameObject = childLocator.FindChildGameObject("CAF_PopHamEyes"),
+                    shouldActivate = true,
+                }
+            };
+            //simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
+
+            // Add skin
+            skins.Add(cafSkin);
             #endregion
 
             skinController.skins = skins.ToArray();

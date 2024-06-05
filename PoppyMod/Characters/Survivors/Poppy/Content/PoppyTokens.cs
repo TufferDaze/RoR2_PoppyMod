@@ -41,7 +41,18 @@ namespace PoppyMod.Survivors.Poppy
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
             #region Skins
-            Language.Add(prefix + "MASTERY_SKIN_NAME", "Alternate");
+            Language.Add(prefix + "NOX_SKIN_NAME", "Noxus");
+            Language.Add(prefix + "LOL_SKIN_NAME", "Lollipoppy");
+            Language.Add(prefix + "BLA_SKIN_NAME", "Blacksmith");
+            Language.Add(prefix + "RAG_SKIN_NAME", "Ragdoll");
+            Language.Add(prefix + "REG_SKIN_NAME", "Battle Regalia");
+            Language.Add(prefix + "SCR_SKIN_NAME", "Scarlet Hammer");
+            Language.Add(prefix + "STR_SKIN_NAME", "Star Guardian");
+            Language.Add(prefix + "FWN_SKIN_NAME", "Snow Fawn");
+            Language.Add(prefix + "HEX_SKIN_NAME", "Hextech");
+            Language.Add(prefix + "AST_SKIN_NAME", "Astronaut");
+            Language.Add(prefix + "BEW_SKIN_NAME", "Bewitching");
+            Language.Add(prefix + "CAF_SKIN_NAME", "Cafe Cuties");
             #endregion
 
             #region Passive
