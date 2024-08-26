@@ -44,21 +44,21 @@ namespace PoppyMod.Survivors.Poppy
 
         public static void Init()
         {
-            string volumeSection = "Audio";
+            string audioSection = "Audio";
             string statSection = "Stats";
             string abilitySection = "Abilities";
             string emoteSection = "Emotes";
 
             // Volume Control
-            allVolumeConfig = Config.BindAndOptionsSlider(volumeSection, "Master Volume", 100, "Set the volume level for voicelines and sfx.", 0, 100);
-            bonkConfig = Config.BindAndOptions(volumeSection, "Bonk", false, "Enable only if you are really truely absolutely prepared for maximum bonkage.");
-            bossConfig = Config.BindAndOptions(volumeSection, "Boss Chatter", true, "Whether or not to say something when a teleporter boss spawns.");
-            purchaseVOConfig = Config.BindAndOptions(volumeSection, "Purchase Chatter", true, "Whether or not to say something when interacting with chests and the like.");
-            shieldyVOConfig = Config.BindAndOptions(volumeSection, "Shieldy Pickup Chatter", true, "Whether or not to say something when picking up Shieldy.");
-            passiveVOConfig = Config.BindAndOptions(volumeSection, "Passive Chatter", true, "Whether or not to say something when below 50% HP.");
-            rChargeVOConfig = Config.BindAndOptions(volumeSection, "Keepers Verdict Chatter", true, "Whether or not to say something when firing a charged Keepers Verdict.");
-            idleVOConfig = Config.BindAndOptions(volumeSection, "Idle Chatter", true, "Whether or not the rat says something every 30 seconds.");
-            voFreqConfig = Config.BindAndOptionsSlider(volumeSection, "Chatter Freqency", 1f, "Frequency of idle chatter.", 0f, 1f);
+            allVolumeConfig = Config.BindAndOptionsSlider(audioSection, "Master Volume", 100, "Set the volume level for voicelines and sfx.", 0, 100);
+            bonkConfig = Config.BindAndOptions(audioSection, "Bonk", false, "Enable only if you are really truely absolutely prepared for maximum bonkage.");
+            bossConfig = Config.BindAndOptions(audioSection, "Boss Chatter", true, "Whether or not to say something when a teleporter boss spawns.");
+            purchaseVOConfig = Config.BindAndOptions(audioSection, "Purchase Chatter", true, "Whether or not to say something when interacting with chests and the like.");
+            shieldyVOConfig = Config.BindAndOptions(audioSection, "Shieldy Pickup Chatter", true, "Whether or not to say something when picking up Shieldy.");
+            passiveVOConfig = Config.BindAndOptions(audioSection, "Passive Chatter", true, "Whether or not to say something when below 50% HP.");
+            rChargeVOConfig = Config.BindAndOptions(audioSection, "Keepers Verdict Chatter", true, "Whether or not to say something when firing a charged Keepers Verdict.");
+            idleVOConfig = Config.BindAndOptions(audioSection, "Idle Chatter", true, "Whether or not the rat says something every 30 seconds.");
+            voFreqConfig = Config.BindAndOptionsSlider(audioSection, "Chatter Freqency", 1f, "Frequency of idle chatter.", 0f, 1f);
 
             // Stats
             baseHPConfig = Config.BindAndOptionsSlider(statSection, "Base HP", PoppyStaticValues.baseHealth, "", 1, 500, true);

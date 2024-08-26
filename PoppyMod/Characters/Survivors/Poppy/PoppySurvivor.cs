@@ -17,6 +17,8 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using PoppyMod.Modules.BaseStates;
 using PoppyMod.Characters.Survivors.Poppy.Components;
+using System.Net.NetworkInformation;
+using MonoMod.Cil;
 
 namespace PoppyMod.Survivors.Poppy
 {
@@ -73,6 +75,10 @@ namespace PoppyMod.Survivors.Poppy
                 {
                     childName = "BASE_PopHam",
                     //material = assetBundle.LoadMaterial("Poppy_Mat"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "CAF_PopHamEyes",
                 }
         };
 
@@ -726,6 +732,16 @@ namespace PoppyMod.Survivors.Poppy
         {
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
             Config.MyConfig.SettingChanged += MyConfig_SettingChanged;
+            On.RoR2.PickupDropletController.OnCollisionEnter += PickupDropletController_OnCollisionEnter;
+        }
+
+        private void PickupDropletController_OnCollisionEnter(On.RoR2.PickupDropletController.orig_OnCollisionEnter orig, PickupDropletController self, Collision collision)
+        {
+            if (self.createPickupInfo.pickupIndex == PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)))
+            {
+                self.createPickupInfo.artifactFlag = GenericPickupController.PickupArtifactFlag.NONE;
+            }
+            orig(self, collision);
         }
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
