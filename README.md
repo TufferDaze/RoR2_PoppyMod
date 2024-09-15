@@ -36,7 +36,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Lemonlust for allowing me to reference their emote and grab code.
 
 ## Issues
-`Other bugs can be tossed over to the GitHub page up top^`
+`Other bugs or requests can be tossed over to the GitHub page up top^`
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
 
@@ -58,6 +58,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Added new behavior to Shieldy skill to bounce back to player on enemy kill
 * Hextech skin now shows up properly
 * Correct animation now plays when charging Keeper's Verdict
+* Volume issues should be resolved(PLEASE DELETE THE OLD CONFIG FILE)
 
 `1.1.0`
 * Added skins

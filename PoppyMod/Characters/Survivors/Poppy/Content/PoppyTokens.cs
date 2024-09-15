@@ -23,11 +23,11 @@ namespace PoppyMod.Survivors.Poppy
             string prefix = PoppySurvivor.POPPY_PREFIX;
 
             string desc = "Poppy: a small idiot rat thing with a tiny brain and a big heart.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine
-                + "< ! > Get up close and personal to do damage." + Environment.NewLine + Environment.NewLine
                 + "< ! > Iron Ambassador bounces to up to 3 enemies, increasing damage dealt each time." + Environment.NewLine + Environment.NewLine
-                + "< ! > Heroic Charge carries enemies forward." + Environment.NewLine + Environment.NewLine
-                + "< ! > Steadfast Presence can be used to keep smaller flying enemies on the ground." + Environment.NewLine + Environment.NewLine
-                + "< ! > Enemies hit with Keeper\'s Verdict are launched into the stratosphere." + Environment.NewLine + Environment.NewLine;
+                + "< ! > Iron Ambassador will bounce back to Poppy if it kills an enemy." + Environment.NewLine + Environment.NewLine
+                + "< ! > Heroic Charge carries enemies with you." + Environment.NewLine + Environment.NewLine
+                + "< ! > Steadfast Presence can be used to keep non-boss flying enemies on the ground." + Environment.NewLine + Environment.NewLine
+                + "< ! > Enemies hit with Keeper\'s Verdict are launched toward Poppy." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so she left to continue her search.";
             string outroFailure = "You are definitely not the hero.";
