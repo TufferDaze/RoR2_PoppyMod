@@ -1,12 +1,12 @@
 {
   "name": "PoppyMod",
-  "version_number": "1.1.0",
+  "version_number": "1.2.0",
   "website_url": "https://github.com/TufferDaze/RoR2_PoppyMod",
   "description": "Small idiot rat thing.",
   "dependencies": [
     "tristanmcpherson-R2API-5.0.5",
-    "RiskofThunder-HookGenPatcher-1.2.3",
-    "bbepis-BepInExPack-5.4.2113",
-    "Rune580-Risk_Of_Options-2.7.1"
+    "RiskofThunder-HookGenPatcher-1.2.4",
+    "bbepis-BepInExPack-5.4.2117",
+    "Rune580-Risk_Of_Options-2.8.2"
   ]
 }

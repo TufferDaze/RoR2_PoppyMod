@@ -10,7 +10,6 @@ namespace PoppyMod.Modules
 {
     public class ReboundProjectile : Orb
     {
-        public static event Action<ReboundProjectile> onLightningOrbKilledOnAllBounces;
         public float speed = 80f;
         public float damageValue;
         public GameObject attacker;
@@ -25,24 +24,22 @@ namespace PoppyMod.Modules
         public DamageColorIndex damageColorIndex;
         public float range;
         public float damageCoefficientPerBounce;
-        public int targetsToFindPerBounce = 1;
         public DamageType damageType;
-        private bool canBounceOnSameTarget;
         private bool failedToKill;
+        private bool dealDamage = true;
         private BullseyeSearch search;
 
         public override void Begin()
         {
             base.duration = 0.1f;
             string path = "Prefabs/Effects/OrbEffects/HuntressGlaiveOrbEffect";
-            base.duration = base.distanceToTarget / this.speed;
-            this.canBounceOnSameTarget = true;
+            base.duration = base.distanceToTarget / speed;
             EffectData effectData = new EffectData
             {
-                origin = this.origin,
+                origin = origin,
                 genericFloat = base.duration
             };
-            effectData.SetHurtBoxReference(this.target);
+            effectData.SetHurtBoxReference(target);
             prefab = LegacyResourcesAPI.Load<GameObject>(path);
             if (prefab)
             {
@@ -56,114 +53,133 @@ namespace PoppyMod.Modules
 
         public override void OnArrival()
         {
-            if (this.target)
+            if (target)
             {
                 Transform lastLocation = target.transform;
-                HealthComponent healthComponent = this.target.healthComponent;
-                if (healthComponent)
+                HealthComponent healthComponent = target.healthComponent;
+                if (healthComponent && dealDamage)
                 {
                     DamageInfo damageInfo = new DamageInfo();
-                    damageInfo.damage = this.damageValue;
-                    damageInfo.attacker = this.attacker;
-                    damageInfo.inflictor = this.inflictor;
+                    damageInfo.damage = damageValue;
+                    damageInfo.attacker = attacker;
+                    damageInfo.inflictor = inflictor;
                     damageInfo.force = Vector3.zero;
-                    damageInfo.crit = this.isCrit;
-                    damageInfo.procChainMask = this.procChainMask;
-                    damageInfo.procCoefficient = this.procCoefficient;
-                    damageInfo.position = this.target.transform.position;
-                    damageInfo.damageColorIndex = this.damageColorIndex;
-                    damageInfo.damageType = this.damageType;
+                    damageInfo.crit = isCrit;
+                    damageInfo.procChainMask = procChainMask;
+                    damageInfo.procCoefficient = procCoefficient;
+                    damageInfo.position = target.transform.position;
+                    damageInfo.damageColorIndex = damageColorIndex;
+                    damageInfo.damageType = damageType;
                     healthComponent.TakeDamage(damageInfo);
                     GlobalEventManager.instance.OnHitEnemy(damageInfo, healthComponent.gameObject);
                     GlobalEventManager.instance.OnHitAll(damageInfo, healthComponent.gameObject);
                 }
-                this.failedToKill |= (!healthComponent || healthComponent.alive);
-                if (this.bouncesRemaining > 0)
+                failedToKill = healthComponent.alive;
+                if (failedToKill && bouncesRemaining > 0)
                 {
-                    for (int i = 0; i < this.targetsToFindPerBounce; i++)
+                    if (bouncedObjects != null)
                     {
-                        if (this.bouncedObjects != null)
-                        {
-                            if (this.canBounceOnSameTarget)
-                            {
-                                this.bouncedObjects.Clear();
-                            }
-                            this.bouncedObjects.Add(this.target.healthComponent);
-                        }
-                        HurtBox hurtBox = this.PickNextTarget(this.target.transform.position);
-                        if (hurtBox)
-                        {
-                            ReboundProjectile projectile = new ReboundProjectile();
-                            projectile.search = this.search;
-                            projectile.origin = this.target.transform.position;
-                            projectile.target = hurtBox;
-                            projectile.attacker = this.attacker;
-                            projectile.inflictor = this.inflictor;
-                            projectile.teamIndex = this.teamIndex;
-                            projectile.damageValue = this.damageValue * this.damageCoefficientPerBounce;
-                            projectile.bouncesRemaining = this.bouncesRemaining - 1;
-                            projectile.isCrit = this.isCrit;
-                            projectile.bouncedObjects = this.bouncedObjects;
-                            projectile.procChainMask = this.procChainMask;
-                            projectile.procCoefficient = this.procCoefficient;
-                            projectile.damageColorIndex = this.damageColorIndex;
-                            projectile.damageCoefficientPerBounce = this.damageCoefficientPerBounce;
-                            projectile.speed = this.speed;
-                            projectile.range = this.range;
-                            projectile.damageType = this.damageType;
-                            projectile.failedToKill = this.failedToKill;
-                            OrbManager.instance.AddOrb(projectile);
-                        }
-                        else
-                        {
-                            SpawnSheildy(lastLocation);
-                        }
+                        bouncedObjects.Clear();
+                        bouncedObjects.Add(target.healthComponent);
+                    }
+                    HurtBox hurtBox = PickNextTarget(target.transform.position);
+                    if (hurtBox)
+                    {
+                        ReboundProjectile projectile = new ReboundProjectile();
+                        projectile.search = search;
+                        projectile.origin = target.transform.position;
+                        projectile.target = hurtBox;
+                        projectile.attacker = attacker;
+                        projectile.inflictor = inflictor;
+                        projectile.teamIndex = teamIndex;
+                        projectile.damageValue = damageValue * damageCoefficientPerBounce;
+                        projectile.bouncesRemaining = bouncesRemaining - 1;
+                        projectile.isCrit = isCrit;
+                        projectile.bouncedObjects = bouncedObjects;
+                        projectile.procChainMask = procChainMask;
+                        projectile.procCoefficient = procCoefficient;
+                        projectile.damageColorIndex = damageColorIndex;
+                        projectile.damageCoefficientPerBounce = damageCoefficientPerBounce;
+                        projectile.speed = speed;
+                        projectile.range = range;
+                        projectile.damageType = damageType;
+                        projectile.failedToKill = failedToKill;
+                        projectile.dealDamage = true;
+                        OrbManager.instance.AddOrb(projectile);
+                    }
+                    else
+                    {
+                        //Debug.Log("HURTBOX NULL");
+                        SpawnSheildy(lastLocation);
                     }
                     return;
                 }
-                else
+                else if (failedToKill)
                 {
-                    SpawnSheildy(lastLocation);
-                }
-                if (!this.failedToKill)
-                {
-                    Action<ReboundProjectile> action = ReboundProjectile.onLightningOrbKilledOnAllBounces;
-                    if (action == null)
+                    if (dealDamage)
                     {
-                        return;
+                        SpawnSheildy(lastLocation);
                     }
-                    action(this);
+                    else
+                    {
+                        SpawnSheildy(lastLocation, 0f);
+                    }
+                    //Debug.Log("FAILED TO KILL");
+                }
+                else if (bouncesRemaining > -1)
+                {
+                    ReboundProjectile projectile = new ReboundProjectile();
+                    projectile.search = search;
+                    projectile.origin = lastLocation.position;
+                    projectile.target = attacker.GetComponent<CharacterBody>().mainHurtBox;
+                    projectile.attacker = attacker;
+                    projectile.inflictor = inflictor;
+                    projectile.teamIndex = teamIndex;
+                    projectile.damageValue = 0;
+                    projectile.bouncesRemaining = -1;
+                    projectile.isCrit = false;
+                    projectile.bouncedObjects = bouncedObjects;
+                    projectile.procChainMask.mask = 0u;
+                    projectile.procCoefficient = 0f;
+                    projectile.damageColorIndex = damageColorIndex;
+                    projectile.damageCoefficientPerBounce = 0f;
+                    projectile.speed = speed * 1.5f;
+                    projectile.range = 9999;
+                    projectile.damageType = DamageType.NonLethal;
+                    projectile.failedToKill = failedToKill;
+                    projectile.dealDamage = false;
+                    OrbManager.instance.AddOrb(projectile);
                 }
             }
         }
 
         public HurtBox PickNextTarget(Vector3 position)
         {
-            if (this.search == null)
+            if (search == null)
             {
-                this.search = new BullseyeSearch();
+                search = new BullseyeSearch();
             }
-            this.search.searchOrigin = position;
-            this.search.searchDirection = Vector3.zero;
-            this.search.teamMaskFilter = TeamMask.allButNeutral;
-            this.search.teamMaskFilter.RemoveTeam(this.teamIndex);
-            this.search.filterByLoS = false;
-            this.search.sortMode = BullseyeSearch.SortMode.Distance;
-            this.search.maxDistanceFilter = this.range;
-            this.search.RefreshCandidates();
-            HurtBox hurtBox = (from v in this.search.GetResults()
-                               where !this.bouncedObjects.Contains(v.healthComponent)
+            search.searchOrigin = position;
+            search.searchDirection = Vector3.zero;
+            search.teamMaskFilter = TeamMask.allButNeutral;
+            search.teamMaskFilter.RemoveTeam(teamIndex);
+            search.filterByLoS = false;
+            search.sortMode = BullseyeSearch.SortMode.Distance;
+            search.maxDistanceFilter = range;
+            search.RefreshCandidates();
+            HurtBox hurtBox = (from v in search.GetResults()
+                               where !bouncedObjects.Contains(v.healthComponent)
                                select v).FirstOrDefault<HurtBox>();
             if (hurtBox)
             {
-                this.bouncedObjects.Add(hurtBox.healthComponent);
+                bouncedObjects.Add(hurtBox.healthComponent);
             }
             return hurtBox;
         }
 
-        private void SpawnSheildy(Transform enemy)
+        private void SpawnSheildy(Transform target, float velocity = 20f)
         {
-            PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)), enemy.position, enemy.forward * 20f);
+            PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)), target.position, target.forward * velocity);
         }
     }
 }

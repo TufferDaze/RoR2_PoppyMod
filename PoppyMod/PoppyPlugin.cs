@@ -28,7 +28,7 @@ namespace PoppyMod
         public const string PluginAuthor = "TufferDaze";
         public const string PluginGUID = "com." + PluginAuthor+ "." + PluginName;
         public const string PluginName = "PoppyMod";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.2.0";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "TUFF";

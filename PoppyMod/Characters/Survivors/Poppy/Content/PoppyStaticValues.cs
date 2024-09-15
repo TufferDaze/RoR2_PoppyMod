@@ -48,6 +48,6 @@ namespace PoppyMod.Survivors.Poppy
         public const float special2HPDamageCoefficient = 0.1f;
 
         // Misc Values
-        public const float groundingSpeed = 20f;
+        public const float groundingSpeed = 10f;
     }
 }

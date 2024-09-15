@@ -4,7 +4,7 @@ using PoppyMod.Modules.Achievements;
 namespace PoppyMod.Survivors.Poppy.Achievements
 {
     //automatically creates language tokens "ACHIEVMENT_{identifier.ToUpper()}_NAME" and "ACHIEVMENT_{identifier.ToUpper()}_DESCRIPTION" 
-    [RegisterAchievement(identifier, unlockableIdentifier, null, null)]
+    [RegisterAchievement(identifier, unlockableIdentifier, null, (uint)0)]
     public class PoppyMasteryAchievement : BaseMasteryAchievement
     {
         public const string identifier = PoppySurvivor.POPPY_PREFIX + "masteryAchievement";

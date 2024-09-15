@@ -93,7 +93,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             bucklerAttack.damageValue = damageStat * damageCoefficient;
             bucklerAttack.isCrit = Util.CheckRoll(characterBody.crit, characterBody.master);
             bucklerAttack.teamIndex = TeamComponent.GetObjectTeam(gameObject);
-            bucklerAttack.attacker = gameObject;
+            bucklerAttack.attacker = base.gameObject;
+            bucklerAttack.inflictor = base.gameObject;
             bucklerAttack.procCoefficient = procCoefficient;
             bucklerAttack.bouncesRemaining = maxBounces;
             bucklerAttack.speed = travelSpeed;

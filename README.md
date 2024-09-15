@@ -38,6 +38,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 ## Issues
 `Other bugs can be tossed over to the GitHub page up top^`
 * Standing still during Steadfast Presence looks jank.
+* Larger enemies may be clipped into terrain when using Heroic Charge.
 
 ## TODO
 * Tweak for better network play.
@@ -51,6 +52,13 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add something secret. ;)
 
 ## Patch Notes
+`1.2.0`
+* Updated for Seekers DLC
+* Forced Shieldy item to spawn when Command is on
+* Added new behavior to Shieldy skill to bounce back to player on enemy kill
+* Hextech skin now shows up properly
+* Correct animation now plays when charging Keeper's Verdict
+
 `1.1.0`
 * Added skins
 

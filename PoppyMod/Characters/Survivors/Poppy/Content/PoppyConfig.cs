@@ -10,7 +10,6 @@ namespace PoppyMod.Survivors.Poppy
 {
     public static class PoppyConfig
     {
-        public static ConfigEntry<int> allVolumeConfig;
         public static ConfigEntry<bool> bonkConfig;
         public static ConfigEntry<bool> bossConfig;
         public static ConfigEntry<bool> purchaseVOConfig;
@@ -50,7 +49,6 @@ namespace PoppyMod.Survivors.Poppy
             string emoteSection = "Emotes";
 
             // Volume Control
-            allVolumeConfig = Config.BindAndOptionsSlider(audioSection, "Master Volume", 100, "Set the volume level for voicelines and sfx.", 0, 100);
             bonkConfig = Config.BindAndOptions(audioSection, "Bonk", false, "Enable only if you are really truely absolutely prepared for maximum bonkage.");
             bossConfig = Config.BindAndOptions(audioSection, "Boss Chatter", true, "Whether or not to say something when a teleporter boss spawns.");
             purchaseVOConfig = Config.BindAndOptions(audioSection, "Purchase Chatter", true, "Whether or not to say something when interacting with chests and the like.");
