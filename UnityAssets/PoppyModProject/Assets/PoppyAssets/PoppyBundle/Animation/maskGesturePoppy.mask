@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: maskGesturePoppy
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: BASE_PopHam
+    m_Weight: 0
+  - m_Path: BASE_PopMesh
+    m_Weight: 0
+  - m_Path: BASE_PopSkel
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/Buffbone_Glb_Channel_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/Buffbone_Glb_Ground_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/C_Buffbone_Cstm_Healthbar_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/C_Buffbone_Glb_Center_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/C_Buffbone_Glb_Layout_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/C_Buffbone_Glb_Overhead_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/L_FootIKCON
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/L_FootIKCON/L_FootIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/L_KneeIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/R_FootIKCON
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/R_FootIKCON/R_FootIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/R_KneeIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_Hip
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_Hip/L_KneeUpper
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_Hip/L_KneeUpper/L_KneeLower
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_Hip/L_KneeUpper/L_KneeLower/L_Foot
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_Hip/L_KneeUpper/L_KneeLower/L_Foot/L_Buffbone_Glb_Foot_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_Hip/L_KneeUpper/L_KneeLower/L_Foot/L_Toe
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_HipIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_HipIK/L_KneeUpperIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/L_HipIK/L_KneeUpperIK/L_KneeLowerIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_Hip
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_Hip/R_KneeUpper
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_Hip/R_KneeUpper/R_KneeLower
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_Hip/R_KneeUpper/R_KneeLower/R_Foot
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_Hip/R_KneeUpper/R_KneeLower/R_Foot/R_Buffbone_Glb_Foot_Loc
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_Hip/R_KneeUpper/R_KneeLower/R_Foot/R_Toe
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_HipIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_HipIK/R_KneeUpperIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Pelvis/R_HipIK/R_KneeUpperIK/R_KneeLowerIK
+    m_Weight: 0
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/C_Buffbone_Glb_Chest_Loc
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Buffbone_Glb_Hand_Loc
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Index1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Index1/L_Index2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Middle1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Middle1/L_Middle2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Ring1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Ring1/L_Ring2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Thumb1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_Shoulder/L_Elbow/L_Hand/L_Thumb1/L_Thumb2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/L_Clavicle/L_ShoulderPad
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/C_Buffbone_Glb_Head_Loc
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/FrontHair_Ori
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/FrontHair_Ori/FrontHair1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/Jaw
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/Jaw/Bot_Lip
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/L_Ear01
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/L_Ear01/L_Ear02
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/L_Hair1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/L_Hair1/L_Hair2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/L_Hair1/L_Hair2/L_Hair3
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/L_Hair1/L_Hair2/L_Hair3/L_Hair4
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/Mid_Lip
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/R_Ear01
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/R_Ear01/R_Ear02
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/R_Hair1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/R_Hair1/R_Hair2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/R_Hair1/R_Hair2/R_Hair3
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/R_Hair1/R_Hair2/R_Hair3/R_Hair4
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Head/Top_Lip
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/L_EyeBase
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/L_EyeBrow
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/L_EyePupil
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/R_EyeBase
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/R_EyeBrow
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/R_EyePupil
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Neck/Teeth
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/BUFFBONE_GLB_WEAPON_1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Buffbone_Glb_Hand_Loc
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Index1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Index1/R_Index2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Middle1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Middle1/R_Middle2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Ring1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Ring1/R_Ring2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Thumb1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_Shoulder/R_Elbow/R_Hand/R_Thumb1/R_Thumb2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/R_Clavicle/R_ShoulderPad
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Weapon1
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Weapon1/Weapon2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Weapon1/Weapon2/Weapon3
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Weapon1/Weapon2/WeaponEndScale
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/Weapon1/Weapon2/WeaponEndScale2
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/ROOT/Root/Spine1/SpineMid/Spine2/WeaponPivot
+    m_Weight: 1
+  - m_Path: BASE_PopSkel/Snap_Weapon2World
+    m_Weight: 1
