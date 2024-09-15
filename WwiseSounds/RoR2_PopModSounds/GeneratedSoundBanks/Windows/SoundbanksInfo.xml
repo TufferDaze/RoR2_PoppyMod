@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3C99045D-5030-6089-3D83-1F5FFBA0F6EE}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+		<SoundBank Id="2705191942" Type="User" Language="SFX" Hash="{A1E27591-34D3-750D-80BD-CAD63C9CF4C3}">
+			<ShortName>PoppySoundBank</ShortName>
+			<Path>PoppySoundBank.bnk</Path>
+			<Media>
+				<File Id="7846490" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_jokesfx01.wav</ShortName>
+					<CachePath>SFX/poppy_world_jokesfx01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="10536344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn02.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="13358956" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_q_01.wav</ShortName>
+					<CachePath>SFX/poppy_q_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="20485435" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect07.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="21484888" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_bonk_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_bonk_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="32007833" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attack05.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attack05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="46107564" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_misc_mastery.wav</ShortName>
+					<CachePath>SFX/poppy_misc_mastery_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="61762404" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_q_06.wav</ShortName>
+					<CachePath>SFX/poppy_q_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="64793415" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_01.wav</ShortName>
+					<CachePath>SFX/poppy_e_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="71232771" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_passive_04.wav</ShortName>
+					<CachePath>SFX/poppy_w_passive_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="76631204" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn000.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn000_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="89360747" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_w_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_w_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="102138420" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle02.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="105987955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_e_04.wav</ShortName>
+					<CachePath>SFX/poppy_skill_e_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="107559792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect03.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="112134406" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_release_05.wav</ShortName>
+					<CachePath>SFX/poppy_r_release_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="117176457" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_laugh02.wav</ShortName>
+					<CachePath>SFX/poppy_world_laugh02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="117213986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle16.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle16_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="123300301" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_taunt01.wav</ShortName>
+					<CachePath>SFX/poppy_world_taunt01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="132852693" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_q_05.wav</ShortName>
+					<CachePath>SFX/poppy_q_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="133888734" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_dancesfx01.wav</ShortName>
+					<CachePath>SFX/poppy_world_dancesfx01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="142411385" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_release_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_release_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="147668836" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_09.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_09_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="163602363" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_01.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="163934382" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_02.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="170032719" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_q_04.wav</ShortName>
+					<CachePath>SFX/poppy_q_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="171468932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_laugh03.wav</ShortName>
+					<CachePath>SFX/poppy_world_laugh03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="173028513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_pickup_p_01.wav</ShortName>
+					<CachePath>SFX/poppy_pickup_p_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="176778119" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_death_02.wav</ShortName>
+					<CachePath>SFX/poppy_death_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="178290944" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_04.wav</ShortName>
+					<CachePath>SFX/poppy_w_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="180031298" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive_04.wav</ShortName>
+					<CachePath>SFX/poppy_passive_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="202021362" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_release_hit_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_release_hit_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="205983616" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle13.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle13_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="209585363" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_07.wav</ShortName>
+					<CachePath>SFX/poppy_e_07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="213012340" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive05.wav</ShortName>
+					<CachePath>SFX/poppy_passive05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="215470708" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_06.wav</ShortName>
+					<CachePath>SFX/poppy_menu_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="216440929" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive_02.wav</ShortName>
+					<CachePath>SFX/poppy_passive_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="218066870" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke08.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke08_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="229817802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_jokesfx02.wav</ShortName>
+					<CachePath>SFX/poppy_world_jokesfx02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="241319182" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_03.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="242601492" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle18.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle18_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="252609610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke01.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="257490424" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle21.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle21_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="268735367" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle17.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle17_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="270707528" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_05.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="279974170" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect04.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="282582844" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_07.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="284064820" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attackhit04.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attackhit04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="285706149" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn03.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="297251179" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive_01.wav</ShortName>
+					<CachePath>SFX/poppy_passive_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="297370849" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_e_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_e_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="298025998" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_05.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="304559857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_03.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="312154989" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_04.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="318727967" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_04.wav</ShortName>
+					<CachePath>SFX/poppy_e_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="342098606" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_01.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="359090296" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn_moon.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn_moon_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="359869917" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn04.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="360114882" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_07.wav</ShortName>
+					<CachePath>SFX/poppy_menu_07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="361496507" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_laugh01.wav</ShortName>
+					<CachePath>SFX/poppy_world_laugh01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="365403423" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle05.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="377152802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_bonk_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_bonk_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="392627866" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_03.wav</ShortName>
+					<CachePath>SFX/poppy_w_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="407899926" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_passive_03.wav</ShortName>
+					<CachePath>SFX/poppy_w_passive_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="417036074" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn_gold.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn_gold_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="417440074" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke09.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke09_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="424522998" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_passive_02.wav</ShortName>
+					<CachePath>SFX/poppy_w_passive_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="425774678" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_07.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="427291719" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_04.wav</ShortName>
+					<CachePath>SFX/poppy_menu_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="443030850" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_04.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="454990585" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_attack_04.wav</ShortName>
+					<CachePath>SFX/poppy_attack_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="456596241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_q_04.wav</ShortName>
+					<CachePath>SFX/poppy_skill_q_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="457598643" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_release_02.wav</ShortName>
+					<CachePath>SFX/poppy_r_release_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="464762828" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_q_03.wav</ShortName>
+					<CachePath>SFX/poppy_q_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="465727077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_06.wav</ShortName>
+					<CachePath>SFX/poppy_e_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="472762004" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_comment_06.wav</ShortName>
+					<CachePath>SFX/poppy_r_comment_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="484471897" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke05.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="487105984" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle01.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="487236199" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_08.wav</ShortName>
+					<CachePath>SFX/poppy_e_08_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="497348182" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_05.wav</ShortName>
+					<CachePath>SFX/poppy_e_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="503909327" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_10.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_10_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="504956921" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="505673168" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_attack_03.wav</ShortName>
+					<CachePath>SFX/poppy_attack_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="525160466" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle08.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle08_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="525633157" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_w_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_w_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="536037214" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_pickup_p_03.wav</ShortName>
+					<CachePath>SFX/poppy_pickup_p_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="536091900" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive_06.wav</ShortName>
+					<CachePath>SFX/poppy_passive_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="536353622" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle07.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="552909714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_01.wav</ShortName>
+					<CachePath>SFX/poppy_w_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="560074679" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_02.wav</ShortName>
+					<CachePath>SFX/poppy_w_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="563584063" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_06.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="564782577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive_07.wav</ShortName>
+					<CachePath>SFX/poppy_passive_07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="572550370" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_passive_03.wav</ShortName>
+					<CachePath>SFX/poppy_passive_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="581027283" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_release_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_release_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="583408512" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle12.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle12_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="583502795" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_charge_01.wav</ShortName>
+					<CachePath>SFX/poppy_r_charge_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="590914199" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_10.wav</ShortName>
+					<CachePath>SFX/poppy_menu_10_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="597141628" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="605359013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_laugh04.wav</ShortName>
+					<CachePath>SFX/poppy_world_laugh04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="607417924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_q_06.wav</ShortName>
+					<CachePath>SFX/poppy_skill_q_06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="611449624" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_bonk_04.wav</ShortName>
+					<CachePath>SFX/poppy_skill_bonk_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="619162345" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_hit_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_hit_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="633438800" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle03.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="633801652" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_q_02.wav</ShortName>
+					<CachePath>SFX/poppy_q_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="637986757" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_e_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_e_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="641493014" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn01.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="644933773" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle04.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="647003820" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_q_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_q_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="683036920" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_03.wav</ShortName>
+					<CachePath>SFX/poppy_menu_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="683339036" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="704093546" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_p_throw_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_p_throw_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="717128026" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_death_04.wav</ShortName>
+					<CachePath>SFX/poppy_death_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="718902919" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_laughsfx.wav</ShortName>
+					<CachePath>SFX/poppy_world_laughsfx_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="719295448" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_q_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_q_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="726753498" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle11.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle11_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="726810045" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attackhit03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attackhit03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="752010771" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_hit_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_hit_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="753263319" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect01.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="756122054" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_pickup_p_04.wav</ShortName>
+					<CachePath>SFX/poppy_pickup_p_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="764420155" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_q_07.wav</ShortName>
+					<CachePath>SFX/poppy_skill_q_07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="766192807" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_taunt02.wav</ShortName>
+					<CachePath>SFX/poppy_world_taunt02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="768586258" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle20.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle20_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="776523997" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke03.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="778657925" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle15.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle15_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="781246565" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_death_03.wav</ShortName>
+					<CachePath>SFX/poppy_death_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="784870991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_release_03.wav</ShortName>
+					<CachePath>SFX/poppy_r_release_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="787469857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attackhit01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attackhit01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="790212182" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_attack_01.wav</ShortName>
+					<CachePath>SFX/poppy_attack_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="793244350" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle06.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="793790375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn06.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="794052498" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect06.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="796186063" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_dancesfx02.wav</ShortName>
+					<CachePath>SFX/poppy_world_dancesfx02_D8A0D580.wem</CachePath>
+				</File>
+				<File Id="799992236" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_q_05.wav</ShortName>
+					<CachePath>SFX/poppy_skill_q_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="804565817" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_passive_01.wav</ShortName>
+					<CachePath>SFX/poppy_w_passive_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="817299352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_08.wav</ShortName>
+					<CachePath>SFX/poppy_menu_08_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="825298892" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_release_04.wav</ShortName>
+					<CachePath>SFX/poppy_r_release_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="828172754" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_pickup_p_02.wav</ShortName>
+					<CachePath>SFX/poppy_pickup_p_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="835513478" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_spawn05.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_spawn05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="839389029" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_bonk_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_bonk_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="839480957" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_charge_02.wav</ShortName>
+					<CachePath>SFX/poppy_r_charge_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="841702846" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_release_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_release_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="849450149" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_tauntsfx.wav</ShortName>
+					<CachePath>SFX/poppy_world_tauntsfx_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="855397441" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attack02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attack02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="857694635" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_03.wav</ShortName>
+					<CachePath>SFX/poppy_e_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="858775543" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_05.wav</ShortName>
+					<CachePath>SFX/poppy_menu_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="861765639" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect02.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="861899060" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle19.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle19_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="865969301" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_charge_03.wav</ShortName>
+					<CachePath>SFX/poppy_r_charge_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="866159123" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_p_throw_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_p_throw_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="879227150" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke02.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="899054514" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="904084983" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_bonk_05.wav</ShortName>
+					<CachePath>SFX/poppy_skill_bonk_05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="905904560" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_09.wav</ShortName>
+					<CachePath>SFX/poppy_menu_09_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="907551930" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_02.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="911041596" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_attack_02.wav</ShortName>
+					<CachePath>SFX/poppy_attack_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="921508358" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_e_02.wav</ShortName>
+					<CachePath>SFX/poppy_e_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="922670502" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle14.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle14_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="925938725" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_release_hit_02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_release_hit_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="926127285" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_taunt03.wav</ShortName>
+					<CachePath>SFX/poppy_world_taunt03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="936054875" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke06.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke06_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="936629972" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_release_01.wav</ShortName>
+					<CachePath>SFX/poppy_r_release_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="942763203" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_death_01.wav</ShortName>
+					<CachePath>SFX/poppy_death_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="944146455" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_04.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="944542343" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_hit_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_hit_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="946396535" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_02.wav</ShortName>
+					<CachePath>SFX/poppy_menu_02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="951025904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle09.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle09_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="955098669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_boss_death_moon.wav</ShortName>
+					<CachePath>SFX/poppy_world_boss_death_moon_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="958846208" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_e_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_e_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="967014971" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attack03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attack03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="972579495" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle22.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle22_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="974484984" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke04.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="977864638" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_r_charge_04.wav</ShortName>
+					<CachePath>SFX/poppy_r_charge_04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="978636785" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke10.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke10_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="981798531" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_release_hit_01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_release_hit_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="986563007" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attack01.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attack01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="996598876" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_r_charge_release_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_r_charge_release_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1002317437" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_joke07.wav</ShortName>
+					<CachePath>SFX/poppy_world_joke07_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1010593569" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_item_collect05.wav</ShortName>
+					<CachePath>SFX/poppy_world_item_collect05_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1048774831" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attack04.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attack04_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1053906452" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_attackhit02.wav</ShortName>
+					<CachePath>SFX/poppy_skill_attackhit02_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1053998369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_p_throw_03.wav</ShortName>
+					<CachePath>SFX/poppy_skill_p_throw_03_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1061070058" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_menu_01.wav</ShortName>
+					<CachePath>SFX/poppy_menu_01_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1067652842" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_skill_p_pickup.wav</ShortName>
+					<CachePath>SFX/poppy_skill_p_pickup_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1068339644" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_w_block_08.wav</ShortName>
+					<CachePath>SFX/poppy_w_block_08_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1069540161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>poppy_world_idle10.wav</ShortName>
+					<CachePath>SFX/poppy_world_idle10_EDCD4836.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="655162377" Name="PlayPoppyAttack">
+					<MediaRefs>
+						<MediaRef Id="454990585"/>
+						<MediaRef Id="505673168"/>
+						<MediaRef Id="790212182"/>
+						<MediaRef Id="911041596"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1719014569" Name="PlayPoppyAttackHitSFX">
+					<MediaRefs>
+						<MediaRef Id="284064820"/>
+						<MediaRef Id="726810045"/>
+						<MediaRef Id="787469857"/>
+						<MediaRef Id="1053906452"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="932071122" Name="PlayPoppyAttackSFX">
+					<MediaRefs>
+						<MediaRef Id="32007833"/>
+						<MediaRef Id="855397441"/>
+						<MediaRef Id="967014971"/>
+						<MediaRef Id="986563007"/>
+						<MediaRef Id="1048774831"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2473057238" Name="PlayPoppyBonkBigSFX">
+					<MediaRefs>
+						<MediaRef Id="904084983"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1097140347" Name="PlayPoppyBonkSmallSFX">
+					<MediaRefs>
+						<MediaRef Id="21484888"/>
+						<MediaRef Id="377152802"/>
+						<MediaRef Id="611449624"/>
+						<MediaRef Id="839389029"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3152461554" Name="PlayPoppyBossDeathGold">
+					<MediaRefs>
+						<MediaRef Id="417036074"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="686011435" Name="PlayPoppyBossDeathMoon">
+					<MediaRefs>
+						<MediaRef Id="955098669"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3328826179" Name="PlayPoppyBossSpawn">
+					<MediaRefs>
+						<MediaRef Id="10536344"/>
+						<MediaRef Id="285706149"/>
+						<MediaRef Id="359869917"/>
+						<MediaRef Id="641493014"/>
+						<MediaRef Id="793790375"/>
+						<MediaRef Id="835513478"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="242712220" Name="PlayPoppyBossSpawnMoon">
+					<MediaRefs>
+						<MediaRef Id="359090296"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1627163281" Name="PlayPoppyDanceLoopSFX">
+					<MediaRefs>
+						<MediaRef Id="796186063"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="200018059" Name="PlayPoppyDanceStartSFX">
+					<MediaRefs>
+						<MediaRef Id="133888734"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1454823549" Name="PlayPoppyDeath">
+					<MediaRefs>
+						<MediaRef Id="176778119"/>
+						<MediaRef Id="717128026"/>
+						<MediaRef Id="781246565"/>
+						<MediaRef Id="942763203"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3358096534" Name="PlayPoppyE">
+					<MediaRefs>
+						<MediaRef Id="64793415"/>
+						<MediaRef Id="209585363"/>
+						<MediaRef Id="318727967"/>
+						<MediaRef Id="465727077"/>
+						<MediaRef Id="487236199"/>
+						<MediaRef Id="497348182"/>
+						<MediaRef Id="857694635"/>
+						<MediaRef Id="921508358"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2452780295" Name="PlayPoppyESFX">
+					<MediaRefs>
+						<MediaRef Id="105987955"/>
+						<MediaRef Id="297370849"/>
+						<MediaRef Id="637986757"/>
+						<MediaRef Id="958846208"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1818263027" Name="PlayPoppyIdle">
+					<MediaRefs>
+						<MediaRef Id="102138420"/>
+						<MediaRef Id="117213986"/>
+						<MediaRef Id="205983616"/>
+						<MediaRef Id="242601492"/>
+						<MediaRef Id="257490424"/>
+						<MediaRef Id="268735367"/>
+						<MediaRef Id="365403423"/>
+						<MediaRef Id="487105984"/>
+						<MediaRef Id="525160466"/>
+						<MediaRef Id="536353622"/>
+						<MediaRef Id="583408512"/>
+						<MediaRef Id="633438800"/>
+						<MediaRef Id="644933773"/>
+						<MediaRef Id="726753498"/>
+						<MediaRef Id="768586258"/>
+						<MediaRef Id="778657925"/>
+						<MediaRef Id="793244350"/>
+						<MediaRef Id="861899060"/>
+						<MediaRef Id="922670502"/>
+						<MediaRef Id="951025904"/>
+						<MediaRef Id="972579495"/>
+						<MediaRef Id="1069540161"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2649129868" Name="PlayPoppyItemBuy">
+					<MediaRefs>
+						<MediaRef Id="20485435"/>
+						<MediaRef Id="107559792"/>
+						<MediaRef Id="279974170"/>
+						<MediaRef Id="753263319"/>
+						<MediaRef Id="794052498"/>
+						<MediaRef Id="861765639"/>
+						<MediaRef Id="1010593569"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="51420144" Name="PlayPoppyJoke">
+					<MediaRefs>
+						<MediaRef Id="218066870"/>
+						<MediaRef Id="252609610"/>
+						<MediaRef Id="417440074"/>
+						<MediaRef Id="484471897"/>
+						<MediaRef Id="776523997"/>
+						<MediaRef Id="879227150"/>
+						<MediaRef Id="936054875"/>
+						<MediaRef Id="974484984"/>
+						<MediaRef Id="978636785"/>
+						<MediaRef Id="1002317437"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="422338858" Name="PlayPoppyJoke1SFX">
+					<MediaRefs>
+						<MediaRef Id="7846490"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2546484435" Name="PlayPoppyJoke2SFX">
+					<MediaRefs>
+						<MediaRef Id="229817802"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2411948388" Name="PlayPoppyLaugh">
+					<MediaRefs>
+						<MediaRef Id="117176457"/>
+						<MediaRef Id="171468932"/>
+						<MediaRef Id="361496507"/>
+						<MediaRef Id="605359013"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="403293513" Name="PlayPoppyLaughSFX">
+					<MediaRefs>
+						<MediaRef Id="718902919"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1659331432" Name="PlayPoppyMastery">
+					<MediaRefs>
+						<MediaRef Id="46107564"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="21968044" Name="PlayPoppyMenu">
+					<MediaRefs>
+						<MediaRef Id="215470708"/>
+						<MediaRef Id="360114882"/>
+						<MediaRef Id="427291719"/>
+						<MediaRef Id="590914199"/>
+						<MediaRef Id="683036920"/>
+						<MediaRef Id="817299352"/>
+						<MediaRef Id="858775543"/>
+						<MediaRef Id="905904560"/>
+						<MediaRef Id="946396535"/>
+						<MediaRef Id="1061070058"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2644595610" Name="PlayPoppyPassiveCollect">
+					<MediaRefs>
+						<MediaRef Id="173028513"/>
+						<MediaRef Id="536037214"/>
+						<MediaRef Id="756122054"/>
+						<MediaRef Id="828172754"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2001443243" Name="PlayPoppyPassiveCollectSFX">
+					<MediaRefs>
+						<MediaRef Id="1067652842"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3387734604" Name="PlayPoppyPassiveThrow">
+					<MediaRefs>
+						<MediaRef Id="180031298"/>
+						<MediaRef Id="213012340"/>
+						<MediaRef Id="216440929"/>
+						<MediaRef Id="297251179"/>
+						<MediaRef Id="536091900"/>
+						<MediaRef Id="564782577"/>
+						<MediaRef Id="572550370"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2808316049" Name="PlayPoppyPassiveThrowSFX">
+					<MediaRefs>
+						<MediaRef Id="704093546"/>
+						<MediaRef Id="866159123"/>
+						<MediaRef Id="1053998369"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3358096514" Name="PlayPoppyQ">
+					<MediaRefs>
+						<MediaRef Id="13358956"/>
+						<MediaRef Id="61762404"/>
+						<MediaRef Id="132852693"/>
+						<MediaRef Id="170032719"/>
+						<MediaRef Id="464762828"/>
+						<MediaRef Id="633801652"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="539729395" Name="PlayPoppyQSFX">
+					<MediaRefs>
+						<MediaRef Id="456596241"/>
+						<MediaRef Id="607417924"/>
+						<MediaRef Id="647003820"/>
+						<MediaRef Id="719295448"/>
+						<MediaRef Id="764420155"/>
+						<MediaRef Id="799992236"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="149384849" Name="PlayPoppyRCharge">
+					<MediaRefs>
+						<MediaRef Id="583502795"/>
+						<MediaRef Id="839480957"/>
+						<MediaRef Id="865969301"/>
+						<MediaRef Id="977864638"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3416610741" Name="PlayPoppyRChargeFireHitSFX">
+					<MediaRefs>
+						<MediaRef Id="619162345"/>
+						<MediaRef Id="752010771"/>
+						<MediaRef Id="944542343"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="213577134" Name="PlayPoppyRChargeFireSFX">
+					<MediaRefs>
+						<MediaRef Id="504956921"/>
+						<MediaRef Id="597141628"/>
+						<MediaRef Id="944146455"/>
+						<MediaRef Id="996598876"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1983140410" Name="PlayPoppyRChargeSFX">
+					<MediaRefs>
+						<MediaRef Id="683339036"/>
+						<MediaRef Id="899054514"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1026729084" Name="PlayPoppyRComment">
+					<MediaRefs>
+						<MediaRef Id="163934382"/>
+						<MediaRef Id="241319182"/>
+						<MediaRef Id="282582844"/>
+						<MediaRef Id="298025998"/>
+						<MediaRef Id="342098606"/>
+						<MediaRef Id="443030850"/>
+						<MediaRef Id="472762004"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2215230373" Name="PlayPoppyRFire">
+					<MediaRefs>
+						<MediaRef Id="112134406"/>
+						<MediaRef Id="457598643"/>
+						<MediaRef Id="784870991"/>
+						<MediaRef Id="825298892"/>
+						<MediaRef Id="936629972"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2962578597" Name="PlayPoppyRFireHitSFX">
+					<MediaRefs>
+						<MediaRef Id="202021362"/>
+						<MediaRef Id="925938725"/>
+						<MediaRef Id="981798531"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="359448222" Name="PlayPoppyRFireSFX">
+					<MediaRefs>
+						<MediaRef Id="142411385"/>
+						<MediaRef Id="581027283"/>
+						<MediaRef Id="841702846"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3076004507" Name="PlayPoppyTaunt">
+					<MediaRefs>
+						<MediaRef Id="123300301"/>
+						<MediaRef Id="766192807"/>
+						<MediaRef Id="926127285"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="600020040" Name="PlayPoppyTauntSFX">
+					<MediaRefs>
+						<MediaRef Id="849450149"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3358096516" Name="PlayPoppyW">
+					<MediaRefs>
+						<MediaRef Id="178290944"/>
+						<MediaRef Id="392627866"/>
+						<MediaRef Id="552909714"/>
+						<MediaRef Id="560074679"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2321256551" Name="PlayPoppyWBlock">
+					<MediaRefs>
+						<MediaRef Id="147668836"/>
+						<MediaRef Id="163602363"/>
+						<MediaRef Id="270707528"/>
+						<MediaRef Id="304559857"/>
+						<MediaRef Id="312154989"/>
+						<MediaRef Id="425774678"/>
+						<MediaRef Id="503909327"/>
+						<MediaRef Id="563584063"/>
+						<MediaRef Id="907551930"/>
+						<MediaRef Id="1068339644"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4236934355" Name="PlayPoppyWPassive">
+					<MediaRefs>
+						<MediaRef Id="71232771"/>
+						<MediaRef Id="407899926"/>
+						<MediaRef Id="424522998"/>
+						<MediaRef Id="804565817"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4184129257" Name="PlayPoppyWSFX">
+					<MediaRefs>
+						<MediaRef Id="89360747"/>
+						<MediaRef Id="525633157"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{A6F4C296-659A-0467-746B-0D3F2D9A3AC2}</FileHash>
+</SoundBanksInfo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{723CCFE0-C318-4ACA-8D93-13089DB7533A}" SchemaVersion="97">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{723CCFE0-C318-4ACA-8D93-13089DB7533A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="PoppySoundBank" ID="{C2FC0B4C-888E-4C1D-9556-429ED7F2A2B2}">
+					<ObjectInclusionList>
+						<ObjectRef Name="PlayPoppyBonkSmallSFX" ID="{C7CC1585-E838-4078-B44B-6DE71986CDED}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyMastery" ID="{EA1ED7E0-2494-40CE-9B62-833D7EFB4898}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyTauntSFX" ID="{FE03B6EC-F80A-40D1-9754-8B3C1AC39175}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyBossSpawn" ID="{0C93B5AC-6FBA-40FA-BD01-8B9F4F605CF2}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyPassiveCollect" ID="{073F167D-C652-4115-BD1E-589482DA743F}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyItemBuy" ID="{BFF64135-211F-4121-AD55-35DEA6C388A7}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyJoke2SFX" ID="{CD2BDFA1-D908-4126-B800-6A658800B95C}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRCharge" ID="{D8574FDD-B2ED-41EF-B801-9EB2D21579C4}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyJoke1SFX" ID="{68D47E6D-2502-4208-9CE8-650AFF745FC7}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRChargeSFX" ID="{A0C596E8-1D77-436A-A5F1-C1F5D7A201DB}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyBossSpawnMoon" ID="{49515AF3-9AA7-437E-8B00-6C683175B5CF}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyIdle" ID="{1D0A064D-E0BA-4553-92D3-32BED3C87FE4}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyWBlock" ID="{89F737CF-11F4-4582-B131-5C70015BDF10}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyESFX" ID="{6F842A59-A3BE-45B4-A4E9-62A08862D475}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyBonkBigSFX" ID="{A9030853-2761-45C1-BEE5-45CAB9A2DB41}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRFireHitSFX" ID="{53A5DC40-6B0E-45D8-BF48-B226D3DEEAE2}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRChargeFireHitSFX" ID="{72EB544D-7FD4-46F5-B04C-DDA25EDF4528}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyDanceStartSFX" ID="{FDD5078A-AFAB-46FF-9277-1B244462BDB7}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyQ" ID="{36642494-745B-479D-838C-4D80C0091293}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyPassiveCollectSFX" ID="{FAE97949-F6A8-47A6-A971-5879DB8ED98B}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyWPassive" ID="{C6508E5F-DFA7-4876-87F9-B85F225AE646}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRComment" ID="{4E29045D-D360-491D-87E3-E8423AE4F17E}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyPassiveThrow" ID="{64B77635-8D4B-49B2-A0BB-CBA417F837DA}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Master Mixer" ID="{05547082-6217-4A09-93C1-C27834E97A9A}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyW" ID="{F05424B7-E4F3-4A1E-B8F9-5B86D4AFEDF5}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyTaunt" ID="{06964683-D106-4A47-A602-ED9E5664B22E}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyAttack" ID="{13CD915D-ED80-4AF7-AA2E-7910D617EE6D}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyLaughSFX" ID="{9D16570C-8FE7-4B35-A75E-4FD8590388D9}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyDeath" ID="{92748BD9-F3C8-4B89-A308-6C0DF03BCF94}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyAttackHitSFX" ID="{DDBCC862-26F4-4BE2-A07B-6501631774B3}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRChargeFireSFX" ID="{C928B356-B98B-4BFB-84A3-973C8D9A5C1D}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRFire" ID="{BB20E974-EB6E-4C25-99C2-D2224C596486}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyWSFX" ID="{57172CA0-41A8-4C6F-82C5-47524B82827A}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyDanceLoopSFX" ID="{F3D88820-52C9-4C8F-8E3C-16226B0F5E53}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyBossDeathMoon" ID="{CC53D421-35A7-4CD3-8C00-79B7E057ED6A}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyMenu" ID="{6EC325B6-F8BA-4D07-99F0-4FE54E21E3FB}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyPassiveThrowSFX" ID="{BD91EF20-447C-4D0C-B783-AAC5655B0D08}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyE" ID="{C74C4662-DDFA-4D34-B24A-3A362359580F}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyJoke" ID="{58C75D19-F69E-4D51-802D-B9F1F500FFE5}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyLaugh" ID="{A8DCB307-6AE6-4DBD-B747-F45083962E55}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyQSFX" ID="{03F3D947-B58B-4DC7-9458-CC84E9705953}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyAttackSFX" ID="{885F8760-D211-4E45-A90D-B4BBF762DAE6}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyBossDeathGold" ID="{C403D956-80EE-4E51-8D25-FB8E8D00A945}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayPoppyRFireSFX" ID="{1087ED71-5846-4F6A-888A-9617BFD6B2C3}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

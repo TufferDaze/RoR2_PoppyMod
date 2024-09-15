@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="PlayPoppyBonkBigSFX" ID="{A9030853-2761-45C1-BEE5-45CAB9A2DB41}">
+					<ChildrenList>
+						<Action Name="" ID="{7313AE1E-BCA6-494E-AEBC-F8EA78AFAE4E}" ShortID="57768394">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_skill_bonk_05" ID="{33DCC444-11E2-4489-B9C8-CF128886E7EB}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyAttack" ID="{13CD915D-ED80-4AF7-AA2E-7910D617EE6D}">
+					<ChildrenList>
+						<Action Name="" ID="{766CB9CB-6F02-4D8B-82BB-A6732B5AC649}" ShortID="413657178">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyAttack" ID="{B2C754C1-3B20-4B9D-BAE3-D6BBE9116F0D}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyBonkSmallSFX" ID="{C7CC1585-E838-4078-B44B-6DE71986CDED}">
+					<ChildrenList>
+						<Action Name="" ID="{B2AA620D-B27B-415E-997F-BF6158F7C2B6}" ShortID="1003092452">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyBonkSmallSFX" ID="{892868CE-EE5F-4C0E-917C-4791BC48BB69}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyDeath" ID="{92748BD9-F3C8-4B89-A308-6C0DF03BCF94}">
+					<ChildrenList>
+						<Action Name="" ID="{6B10C776-E6A3-4CE6-B05D-12341F92940F}" ShortID="529211894">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyDeath" ID="{F9F84884-69A9-4A71-A310-8E0577BAD06A}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyE" ID="{C74C4662-DDFA-4D34-B24A-3A362359580F}">
+					<ChildrenList>
+						<Action Name="" ID="{B8A3DE07-3FE7-4C0A-8CBA-FB9E9E9B2906}" ShortID="689307727">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyE" ID="{F136D012-7D14-4DE3-86B6-0879BEBB4486}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyESFX" ID="{6F842A59-A3BE-45B4-A4E9-62A08862D475}">
+					<ChildrenList>
+						<Action Name="" ID="{ADAC2599-953A-433E-8634-92614B6F96CA}" ShortID="511094344">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyESFX" ID="{5C116259-FF82-4665-81DD-A2F3072D1CE2}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyLaugh" ID="{A8DCB307-6AE6-4DBD-B747-F45083962E55}">
+					<ChildrenList>
+						<Action Name="" ID="{850BB260-1474-4DD1-A514-E145F0644F2A}" ShortID="729929932">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyLaugh" ID="{DE481491-A176-4A44-8479-5E6854FE1954}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyMenu" ID="{6EC325B6-F8BA-4D07-99F0-4FE54E21E3FB}">
+					<ChildrenList>
+						<Action Name="" ID="{5CB7CFCE-3B11-4D46-9EE6-BC2521936E3B}" ShortID="524602179">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyMenu" ID="{53E11AD0-01B2-4515-964F-E9268B44BD0C}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyPassiveCollect" ID="{073F167D-C652-4115-BD1E-589482DA743F}">
+					<ChildrenList>
+						<Action Name="" ID="{9C12D73D-0BE9-4182-A56B-14CBDD50E8E9}" ShortID="12848376">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyPassiveCollect" ID="{34FA729A-A04F-4775-BBD3-F6BBED40B09B}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyPassiveThrow" ID="{64B77635-8D4B-49B2-A0BB-CBA417F837DA}">
+					<ChildrenList>
+						<Action Name="" ID="{936D9F41-45EE-403C-9F86-68DB2F711C80}" ShortID="282972241">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyPassiveThrow" ID="{3D2DB118-470B-4370-87BF-359D77266005}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyQ" ID="{36642494-745B-479D-838C-4D80C0091293}">
+					<ChildrenList>
+						<Action Name="" ID="{94505F7E-0D4D-4A9E-BF61-3348F129D20F}" ShortID="113210259">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyQ" ID="{980EC0EC-C346-415D-905E-5CC3592C16B8}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyQSFX" ID="{03F3D947-B58B-4DC7-9458-CC84E9705953}">
+					<ChildrenList>
+						<Action Name="" ID="{4C49AE47-8B9C-493A-AFA6-44C797169F70}" ShortID="387758719">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyQSFX" ID="{6640184F-403B-4641-AF5F-F771D985FB52}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRCharge" ID="{D8574FDD-B2ED-41EF-B801-9EB2D21579C4}">
+					<ChildrenList>
+						<Action Name="" ID="{65ECD74A-0946-49F1-8DCD-0232ECBB7BC9}" ShortID="229873627">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRCharge" ID="{9B26E6CD-F5B5-477B-89FF-C2F3B158CB97}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRChargeFireSFX" ID="{C928B356-B98B-4BFB-84A3-973C8D9A5C1D}">
+					<ChildrenList>
+						<Action Name="" ID="{BC27285C-694B-42ED-8C06-42B4CE0A63F5}" ShortID="1014729466">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRChargeFireSFX" ID="{1A71A6AC-5D59-420D-A05B-F0AC262BD867}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRChargeSFX" ID="{A0C596E8-1D77-436A-A5F1-C1F5D7A201DB}">
+					<ChildrenList>
+						<Action Name="" ID="{BC61FC7A-61F5-4A85-B18E-FD9C50DC2502}" ShortID="832216231">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRChargeSFX" ID="{57B350BA-7967-4E7F-8602-D839F635EABE}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRComment" ID="{4E29045D-D360-491D-87E3-E8423AE4F17E}">
+					<ChildrenList>
+						<Action Name="" ID="{14459B14-8F6B-4AA7-B6BA-B4D62BBD5BAA}" ShortID="632645254">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRComment" ID="{4BD42B04-71EB-43A5-BBFD-BCF3090B87B0}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRFire" ID="{BB20E974-EB6E-4C25-99C2-D2224C596486}">
+					<ChildrenList>
+						<Action Name="" ID="{C289FCB8-6984-48F0-B477-5A7EAB98D16A}" ShortID="460065892">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRFire" ID="{2D7771EC-FCBB-4A7F-8EDC-BC00AF998294}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRFireSFX" ID="{1087ED71-5846-4F6A-888A-9617BFD6B2C3}">
+					<ChildrenList>
+						<Action Name="" ID="{3BCC956E-D5BB-445A-B429-5FFC212D976F}" ShortID="930609173">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRFireSFX" ID="{FEBA0D17-6254-4C1A-9ECB-EB289FCFD997}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyW" ID="{F05424B7-E4F3-4A1E-B8F9-5B86D4AFEDF5}">
+					<ChildrenList>
+						<Action Name="" ID="{F248CCC7-CA94-44AF-BB31-39B520512B26}" ShortID="472377010">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyW" ID="{05F45D62-438C-41A7-8B88-CD8798573237}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyWBlock" ID="{89F737CF-11F4-4582-B131-5C70015BDF10}">
+					<ChildrenList>
+						<Action Name="" ID="{B8E83A66-01CA-4429-9A2F-94EBCDEDB4DB}" ShortID="568811461">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyWBlock" ID="{70B34082-012B-4957-AE05-A3851DCDCC2D}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyWPassive" ID="{C6508E5F-DFA7-4876-87F9-B85F225AE646}">
+					<ChildrenList>
+						<Action Name="" ID="{8E8E3822-B20E-413C-B420-7903A363B684}" ShortID="58672214">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyWPassive" ID="{59DB0F1E-44F2-4D3E-A83C-20D7FE0F38B2}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyWSFX" ID="{57172CA0-41A8-4C6F-82C5-47524B82827A}">
+					<ChildrenList>
+						<Action Name="" ID="{4EB22EED-15B0-4F12-B161-9587AEB126B3}" ShortID="1032029738">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyWSFX" ID="{7D276C42-6E24-406F-83EA-4E0EB3DD2F9C}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyIdle" ID="{1D0A064D-E0BA-4553-92D3-32BED3C87FE4}">
+					<ChildrenList>
+						<Action Name="" ID="{44DA9A88-E58B-49A5-A9AC-82A0E50F7E79}" ShortID="572738281">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyIdle" ID="{57F3E888-2004-4C53-97B1-27A211113F4C}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyBossSpawn" ID="{0C93B5AC-6FBA-40FA-BD01-8B9F4F605CF2}">
+					<ChildrenList>
+						<Action Name="" ID="{30D94436-764D-4099-ABC3-EB61CF0BEA04}" ShortID="347608760">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyBossSpawn" ID="{83DB1CE1-94CF-4AD7-8C66-CE2D4D99F68A}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyItemBuy" ID="{BFF64135-211F-4121-AD55-35DEA6C388A7}">
+					<ChildrenList>
+						<Action Name="" ID="{9E7FE11B-090A-47F1-AB90-E343C0E11571}" ShortID="325717365">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyItemBuy" ID="{3FC385AE-1D78-42F1-9748-1F0CB8EC5356}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyJoke" ID="{58C75D19-F69E-4D51-802D-B9F1F500FFE5}">
+					<ChildrenList>
+						<Action Name="" ID="{F3BBBCC6-38C4-4796-A7A5-56A49D5EDBEC}" ShortID="884942287">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyJoke" ID="{12CE0042-7F42-4F20-A861-2B3B0A080CD4}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyTaunt" ID="{06964683-D106-4A47-A602-ED9E5664B22E}">
+					<ChildrenList>
+						<Action Name="" ID="{98DC3E05-2421-4340-B621-B475CC540A36}" ShortID="327199947">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyTaunt" ID="{0490BF5A-2495-4C73-B05D-229CAD6A12F0}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyBossDeathMoon" ID="{CC53D421-35A7-4CD3-8C00-79B7E057ED6A}">
+					<ChildrenList>
+						<Action Name="" ID="{59F6F674-FA46-4055-B812-ABCEB91DA656}" ShortID="644681175">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_boss_death_moon" ID="{A0C3150E-9D8F-493A-ADD7-92E8796D29A1}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyBossDeathGold" ID="{C403D956-80EE-4E51-8D25-FB8E8D00A945}">
+					<ChildrenList>
+						<Action Name="" ID="{DF5B439E-2BB2-4D49-BAB7-3841142AB2D8}" ShortID="754459999">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_boss_spawn_gold" ID="{0E6592C1-150A-49E8-8717-590E77961789}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyBossSpawnMoon" ID="{49515AF3-9AA7-437E-8B00-6C683175B5CF}">
+					<ChildrenList>
+						<Action Name="" ID="{FE27B9A7-01C3-4F04-924F-D6776D20A653}" ShortID="593952951">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_boss_spawn_moon" ID="{9159E6E3-F1E7-4B19-8DEA-55E00C93A517}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyDanceStartSFX" ID="{FDD5078A-AFAB-46FF-9277-1B244462BDB7}">
+					<ChildrenList>
+						<Action Name="" ID="{F73EEED7-1B09-4FDB-91B3-B21DAAEB0774}" ShortID="416275203">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_dancesfx01" ID="{E3DCDA74-40BD-4CFE-92F3-742BE138A4B4}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyDanceLoopSFX" ID="{F3D88820-52C9-4C8F-8E3C-16226B0F5E53}">
+					<ChildrenList>
+						<Action Name="" ID="{EA892B31-FA8D-42DC-9D43-A42A5B972301}" ShortID="269004886">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_dancesfx02" ID="{73FD3DAC-CDA2-420D-9697-E7CD304BE8FD}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyJoke1SFX" ID="{68D47E6D-2502-4208-9CE8-650AFF745FC7}">
+					<ChildrenList>
+						<Action Name="" ID="{259C894D-B162-49A7-8CBA-34C40E4305A2}" ShortID="550993687">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_jokesfx01" ID="{CD6B1F1B-33D3-4E9C-B7E5-57B66BB414F8}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyJoke2SFX" ID="{CD2BDFA1-D908-4126-B800-6A658800B95C}">
+					<ChildrenList>
+						<Action Name="" ID="{397D89DC-9D7A-4F41-BDFD-93BCF44D8736}" ShortID="517477767">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_jokesfx02" ID="{AB04DE7E-C20A-4926-B6D2-75AF66B9C7ED}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyLaughSFX" ID="{9D16570C-8FE7-4B35-A75E-4FD8590388D9}">
+					<ChildrenList>
+						<Action Name="" ID="{0FC94AA4-0FBB-4930-8085-81CA182253C2}" ShortID="3832080">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_laughsfx" ID="{7BD91491-3942-492F-BB9F-218150C08F73}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyTauntSFX" ID="{FE03B6EC-F80A-40D1-9754-8B3C1AC39175}">
+					<ChildrenList>
+						<Action Name="" ID="{D82369B3-9889-47EF-BA25-24A7DB1393DB}" ShortID="388068210">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_world_tauntsfx" ID="{EEFA25BA-545E-454D-A049-62B46C17B8B8}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyAttackSFX" ID="{885F8760-D211-4E45-A90D-B4BBF762DAE6}">
+					<ChildrenList>
+						<Action Name="" ID="{A373DBF9-FF0E-4241-B2AA-8B450D8B91F8}" ShortID="754775091">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyAttackSFX" ID="{72CD7C5D-86E1-43E9-9E27-8C0AEFD5647B}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRChargeFireHitSFX" ID="{72EB544D-7FD4-46F5-B04C-DDA25EDF4528}">
+					<ChildrenList>
+						<Action Name="" ID="{4154DBDB-2A82-47E6-94E7-06BE9DAE1575}" ShortID="951989280">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRChargeFireHitSFX" ID="{A097B5A8-2EAF-4843-B4B2-B50739F747C9}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyRFireHitSFX" ID="{53A5DC40-6B0E-45D8-BF48-B226D3DEEAE2}">
+					<ChildrenList>
+						<Action Name="" ID="{92BCD4C5-6B86-485D-A58E-58B4215D69B3}" ShortID="655693356">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyRFireHitSFX" ID="{DB0C338C-3FA5-4E8A-AB26-6E0A49EAF8CB}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyPassiveCollectSFX" ID="{FAE97949-F6A8-47A6-A971-5879DB8ED98B}">
+					<ChildrenList>
+						<Action Name="" ID="{14DFE35A-93DD-4D5E-862C-3236B79CB2DB}" ShortID="791132010">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_skill_p_pickup" ID="{DF6E3F46-97C3-46BB-92A3-9503877E6F4C}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyMastery" ID="{EA1ED7E0-2494-40CE-9B62-833D7EFB4898}">
+					<ChildrenList>
+						<Action Name="" ID="{81E98CB6-13F2-4C6A-9E92-B816E52674A7}" ShortID="531366216">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="poppy_misc_mastery" ID="{9CC15C34-0142-49A0-BDD8-54AEA20A6CEE}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyPassiveThrowSFX" ID="{BD91EF20-447C-4D0C-B783-AAC5655B0D08}">
+					<ChildrenList>
+						<Action Name="" ID="{9F68CAD6-3E92-4709-B5C4-2884DD19D7F2}" ShortID="370630910">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyPassiveThrowSFX" ID="{AD9D7616-9C9C-4958-9F1B-46EC6186FEFF}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayPoppyAttackHitSFX" ID="{DDBCC862-26F4-4BE2-A07B-6501631774B3}">
+					<ChildrenList>
+						<Action Name="" ID="{13468BBD-E248-45EF-9CB5-5DC8D0207BED}" ShortID="449223317">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayPoppyAttackHitSFX" ID="{6B32C60E-D52E-497B-BE1C-EF15E738C648}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
