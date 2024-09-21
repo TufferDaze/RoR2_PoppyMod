@@ -255,6 +255,12 @@ ModelImporter:
   - first:
       74: -3653356147190217254
     second: BASE_PopSkel|poppy_taunt_model
+  - first:
+      74: -3071212601118781674
+    second: BASE_PopSkel|poppy_attack3_model_alt
+  - first:
+      74: -8950461585497761222
+    second: BASE_PopSkel|poppy_attack2_model_alt
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -1546,6 +1552,64 @@ ModelImporter:
       internalID: 0
       firstFrame: 0
       lastFrame: 128
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BASE_PopSkel|poppy_attack3_model_alt
+      takeName: BASE_PopSkel|poppy_attack3_model_alt
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 56
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BASE_PopSkel|poppy_attack2_model_alt
+      takeName: BASE_PopSkel|poppy_attack2_model_alt
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 56
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
