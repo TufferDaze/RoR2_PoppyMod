@@ -50,6 +50,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 
 ## Patch Notes
 `1.2.1`
+* Added icons for skins
 * Primary skill no longer interrupts Iron Ambassador cast
 * Iron Ambassador now does not return until it has finished bouncing or no other targets can be found
 * Doppleganger AI has been implemented

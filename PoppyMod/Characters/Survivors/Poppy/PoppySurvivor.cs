@@ -441,7 +441,7 @@ namespace PoppyMod.Survivors.Poppy
 
             //creating a new skindef as we did before
             SkinDef noxSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "NOX_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("NOX_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -464,7 +464,7 @@ namespace PoppyMod.Survivors.Poppy
             #region LolSkin
             // Skin def
             SkinDef lolSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "LOL_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("LOL_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -485,7 +485,7 @@ namespace PoppyMod.Survivors.Poppy
             #region BlaSkin
             // Skin def
             SkinDef blaSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "BLA_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("BLA_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -506,7 +506,7 @@ namespace PoppyMod.Survivors.Poppy
             #region RagSkin
             // Skin def
             SkinDef ragSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "RAG_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("RAG_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -527,7 +527,7 @@ namespace PoppyMod.Survivors.Poppy
             #region RegSkin
             // Skin def
             SkinDef regSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "REG_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("REG_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -548,7 +548,7 @@ namespace PoppyMod.Survivors.Poppy
             #region ScrSkin
             // Skin def
             SkinDef scrSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "SCR_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("SCR_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -569,7 +569,7 @@ namespace PoppyMod.Survivors.Poppy
             #region StrSkin
             // Skin def
             SkinDef strSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "STR_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("STR_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -590,7 +590,7 @@ namespace PoppyMod.Survivors.Poppy
             #region FwnSkin
             // Skin def
             SkinDef fwnSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "FWN_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("FWN_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -611,7 +611,7 @@ namespace PoppyMod.Survivors.Poppy
             #region HexSkin
             // Skin def
             SkinDef hexSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "HEX_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("HEX_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -632,7 +632,7 @@ namespace PoppyMod.Survivors.Poppy
             #region AstSkin
             // Skin def
             SkinDef astSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "AST_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("AST_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -653,7 +653,7 @@ namespace PoppyMod.Survivors.Poppy
             #region BewSkin
             // Skin def
             SkinDef bewSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "BEW_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("BEW_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
@@ -674,7 +674,7 @@ namespace PoppyMod.Survivors.Poppy
             #region CafSkin
             // Skin def
             SkinDef cafSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "CAF_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("CAF_PoppyIcon"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 PoppyUnlockables.masterySkinUnlockableDef);
