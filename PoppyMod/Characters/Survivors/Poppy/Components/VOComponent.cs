@@ -1,6 +1,4 @@
-﻿using EntityStates;
-using PoppyMod.Modules.BaseStates;
-using PoppyMod.Modules;
+﻿using PoppyMod.Modules;
 using RoR2;
 using System;
 using UnityEngine;
@@ -117,10 +115,17 @@ namespace PoppyMod.Survivors.Poppy.Components
 
         private void GlobalEventManager_OnInteractionsGlobal(Interactor sender, IInteractable interactInfo, GameObject interactObject)
         {
-            if (interactObject.GetComponent<PurchaseInteraction>() && body.outOfCombat)
+            try
             {
-                AkSoundEngine.StopAll(gameObject);
-                Util.PlaySound("PlayPoppyItemBuy", gameObject);
+                if (interactObject.GetComponent<PurchaseInteraction>() && body.outOfCombat)
+                {
+                    AkSoundEngine.StopAll(gameObject);
+                    Util.PlaySound("PlayPoppyItemBuy", gameObject);
+                }
+            }
+            catch (Exception e)
+            {
+                //Debug.LogError($"{e}PoppyMod: VOComponent: CharacterBody body component null");
             }
         }
     }

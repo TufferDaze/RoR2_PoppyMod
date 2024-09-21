@@ -39,19 +39,24 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 `Other bugs or requests can be tossed over to the GitHub page up top^`
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
+* Opening a chest right after falling a distance does not play a voiceline.
 
 ## TODO
 * Tweak for better network play.
-* Improve Doppelganger AI.
 * Stop voicelines from overlapping/interrupting each other.
-* Make new animations for walking sideways/backwards.
-* Clean up existing animations.
-* Add VFX for all skills.
 * Add other skills.
 * Add skin-unique animations.
 * Add something secret. ;)
 
 ## Patch Notes
+`1.2.1`
+* Primary skill no longer interrupts Iron Ambassador cast
+* Iron Ambassador now does not return until it has finished bouncing or no other targets can be found
+* Doppleganger AI has been implemented
+* Removed unnessesary debug logs
+* Removed unnessesary emote SFX
+* Removed extra mesh from Bewitching skin
+
 `1.2.0`
 * Updated for Seekers DLC
 * Forced Shieldy item to spawn when Command is on

@@ -2,8 +2,6 @@
 using PoppyMod.Survivors.Poppy;
 using R2API.Utils;
 using R2API;
-using RoR2;
-using System.Collections.Generic;
 using System.Security;
 using System.Security.Permissions;
 
@@ -28,7 +26,7 @@ namespace PoppyMod
         public const string PluginAuthor = "TufferDaze";
         public const string PluginGUID = "com." + PluginAuthor+ "." + PluginName;
         public const string PluginName = "PoppyMod";
-        public const string PluginVersion = "1.2.0";
+        public const string PluginVersion = "1.2.1";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "TUFF";

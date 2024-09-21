@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PoppyMod.Survivors.Poppy
+﻿namespace PoppyMod.Survivors.Poppy
 {
     public static class PoppyStaticValues
     {

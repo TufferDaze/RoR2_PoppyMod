@@ -1,7 +1,4 @@
-﻿using System;
-using R2API;
-using R2API.Utils;
-using RoR2;
+﻿using RoR2;
 using UnityEngine;
 
 namespace PoppyMod.Modules.BaseContent.BaseStates

@@ -1,5 +1,4 @@
-﻿using PoppyMod.Modules;
-using PoppyMod.Modules.BaseStates;
+﻿using PoppyMod.Modules.BaseStates;
 using RoR2;
 using UnityEngine;
 

@@ -2,16 +2,9 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using RoR2;
-using RoR2.Skills;
-using R2API;
-using PoppyMod.Modules.Characters;
-using PoppyMod.Modules.BaseContent.BaseStates;
-using System;
-using System.Linq;
 using System.Collections.Generic;
 using RoR2.Orbs;
 using PoppyMod.Modules;
-using RoR2.CharacterAI;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {
@@ -100,6 +93,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             bucklerAttack.speed = travelSpeed;
             bucklerAttack.bouncedObjects = new List<HealthComponent>();
             bucklerAttack.range = bounceRange;
+            bucklerAttack.killConfirmed = false;
             bucklerAttack.damageCoefficientPerBounce = bounceDamageIncreaseCoefficient;
             HurtBox hurtBox = initialTarget;
             if (hurtBox)

@@ -1,13 +1,11 @@
 ﻿using System;
 using RoR2;
-using R2API;
 using EntityStates;
 using EntityStates.Toolbot;
 using System.Collections.Generic;
 using UnityEngine;
 using PoppyMod.Survivors.Poppy.Components;
 using EntityStates.Huntress;
-using PoppyMod.Modules.Characters;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {

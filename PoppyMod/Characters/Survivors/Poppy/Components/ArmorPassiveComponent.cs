@@ -1,10 +1,7 @@
-﻿using System;
-using RoR2;
-using PoppyMod.Modules.Characters;
+﻿using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
 using PoppyMod.Survivors.Poppy;
-using UnityEngine.UIElements;
 
 namespace PoppyMod.Characters.Survivors.Poppy.Components
 {

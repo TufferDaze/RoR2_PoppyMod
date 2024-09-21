@@ -1,7 +1,6 @@
 ﻿using RoR2;
 using UnityEngine;
 using PoppyMod.Modules;
-using System;
 using RoR2.Projectile;
 
 namespace PoppyMod.Survivors.Poppy

@@ -5,7 +5,6 @@ using RoR2;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 //Since we are using effects from Commando's Barrage skill, we will also be using the associated namespace
 //You can also use Addressables or LegacyResourcesAPI to load whichever effects you like
 
@@ -197,7 +196,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 }
                 catch (Exception e)
                 {
-                    Debug.LogWarning($"PoppyMod: HeroicCharge: All enemies died before being processed.\n{e}");
+                    //Debug.LogWarning($"PoppyMod: HeroicCharge: All enemies died before being processed.\n{e}");
                     victimsStruck.RemoveAll(delegate (HurtBox x) { return x == null; });
                     HandleGrappleRelease();
                 }

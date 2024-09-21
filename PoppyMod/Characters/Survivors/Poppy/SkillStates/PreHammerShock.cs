@@ -1,9 +1,7 @@
 ﻿using EntityStates;
 using RoR2;
-using UnityEngine;
 //Since we are using effects from Commando's Barrage skill, we will also be using the associated namespace
 //You can also use Addressables or LegacyResourcesAPI to load whichever effects you like
-using EntityStates.Commando.CommandoWeapon;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {

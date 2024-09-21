@@ -1,10 +1,8 @@
 ﻿using BepInEx.Configuration;
 using UnityEngine;
-using JetBrains.Annotations;
 using PoppyMod.Modules;
 using RiskOfOptions;
 using RiskOfOptions.Options;
-using RiskOfOptions.OptionConfigs;
 
 namespace PoppyMod.Survivors.Poppy
 {

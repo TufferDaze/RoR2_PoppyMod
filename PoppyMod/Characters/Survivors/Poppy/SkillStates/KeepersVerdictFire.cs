@@ -1,5 +1,4 @@
 ﻿using EntityStates;
-using EntityStates.BrotherMonster;
 using RoR2;
 using System;
 using System.Collections.Generic;

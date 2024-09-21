@@ -1,11 +1,8 @@
-﻿using System.Reflection;
-using R2API;
+﻿using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
 using RoR2;
-using System.IO;
 using System.Collections.Generic;
-using RoR2.UI;
 using RoR2.Projectile;
 using Path = System.IO.Path;
 

@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using EntityStates;
 using EntityStates.BrotherMonster;
-using UnityEngine.UIElements;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {

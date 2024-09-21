@@ -1,8 +1,6 @@
 ﻿using System;
 using PoppyMod.Modules;
 using PoppyMod.Survivors.Poppy.Achievements;
-using static UnityEngine.ParticleSystem.PlaybackState;
-using UnityEngine;
 
 namespace PoppyMod.Survivors.Poppy
 {

@@ -1,8 +1,5 @@
-﻿using EntityStates;
-using PoppyMod.Modules.BaseStates;
-using PoppyMod.Modules;
+﻿using PoppyMod.Modules;
 using RoR2;
-using System;
 using UnityEngine;
 
 namespace PoppyMod.Survivors.Poppy.Components

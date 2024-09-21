@@ -1,5 +1,4 @@
 ﻿using EntityStates;
-using System;
 
 namespace PoppyMod.Modules.BaseStates
 {

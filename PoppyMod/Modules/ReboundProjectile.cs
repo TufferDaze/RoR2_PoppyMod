@@ -1,10 +1,8 @@
-﻿using System;
+﻿using RoR2;
+using RoR2.Orbs;
 using System.Collections.Generic;
 using System.Linq;
-using RoR2;
-using RoR2.Orbs;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace PoppyMod.Modules
 {
@@ -26,6 +24,7 @@ namespace PoppyMod.Modules
         public float damageCoefficientPerBounce;
         public DamageType damageType;
         private bool failedToKill;
+        public bool killConfirmed;
         private bool dealDamage = true;
         private BullseyeSearch search;
 
@@ -75,7 +74,11 @@ namespace PoppyMod.Modules
                     GlobalEventManager.instance.OnHitAll(damageInfo, healthComponent.gameObject);
                 }
                 failedToKill = healthComponent.alive;
-                if (failedToKill && bouncesRemaining > 0)
+                if (!failedToKill)
+                {
+                    killConfirmed = true;
+                }
+                if (bouncesRemaining > 0)
                 {
                     if (bouncedObjects != null)
                     {
@@ -104,51 +107,40 @@ namespace PoppyMod.Modules
                         projectile.range = range;
                         projectile.damageType = damageType;
                         projectile.failedToKill = failedToKill;
+                        projectile.killConfirmed = killConfirmed;
                         projectile.dealDamage = true;
                         OrbManager.instance.AddOrb(projectile);
                     }
-                    else
+                    else if (!killConfirmed)
                     {
                         //Debug.Log("HURTBOX NULL");
                         SpawnSheildy(lastLocation);
                     }
-                    return;
-                }
-                else if (failedToKill)
-                {
-                    if (dealDamage)
-                    {
-                        SpawnSheildy(lastLocation);
-                    }
                     else
                     {
-                        SpawnSheildy(lastLocation, 0f);
+                        ReboundToPlayer(lastLocation);
                     }
+                    return;
+                }
+                else if (!killConfirmed)
+                {
+                    //if (dealDamage)
+                    //{
+                        SpawnSheildy(lastLocation);
+                    //}
+                    //else
+                    //{
+                    //    SpawnSheildy(lastLocation, 0f);
+                    //}
                     //Debug.Log("FAILED TO KILL");
                 }
                 else if (bouncesRemaining > -1)
                 {
-                    ReboundProjectile projectile = new ReboundProjectile();
-                    projectile.search = search;
-                    projectile.origin = lastLocation.position;
-                    projectile.target = attacker.GetComponent<CharacterBody>().mainHurtBox;
-                    projectile.attacker = attacker;
-                    projectile.inflictor = inflictor;
-                    projectile.teamIndex = teamIndex;
-                    projectile.damageValue = 0;
-                    projectile.bouncesRemaining = -1;
-                    projectile.isCrit = false;
-                    projectile.bouncedObjects = bouncedObjects;
-                    projectile.procChainMask.mask = 0u;
-                    projectile.procCoefficient = 0f;
-                    projectile.damageColorIndex = damageColorIndex;
-                    projectile.damageCoefficientPerBounce = 0f;
-                    projectile.speed = speed * 1.5f;
-                    projectile.range = 9999;
-                    projectile.damageType = DamageType.NonLethal;
-                    projectile.failedToKill = failedToKill;
-                    projectile.dealDamage = false;
-                    OrbManager.instance.AddOrb(projectile);
+                    ReboundToPlayer(lastLocation);
+                }
+                else
+                {
+                    SpawnSheildy(lastLocation, 0f);
                 }
             }
         }
@@ -175,6 +167,32 @@ namespace PoppyMod.Modules
                 bouncedObjects.Add(hurtBox.healthComponent);
             }
             return hurtBox;
+        }
+
+        private void ReboundToPlayer(Transform lastLocation)
+        {
+            ReboundProjectile projectile = new ReboundProjectile();
+            projectile.search = search;
+            projectile.origin = lastLocation.position;
+            projectile.target = attacker.GetComponent<CharacterBody>().mainHurtBox;
+            projectile.attacker = attacker;
+            projectile.inflictor = inflictor;
+            projectile.teamIndex = teamIndex;
+            projectile.damageValue = 0;
+            projectile.bouncesRemaining = -1;
+            projectile.isCrit = false;
+            projectile.bouncedObjects = bouncedObjects;
+            projectile.procChainMask.mask = 0u;
+            projectile.procCoefficient = 0f;
+            projectile.damageColorIndex = damageColorIndex;
+            projectile.damageCoefficientPerBounce = 0f;
+            projectile.speed = speed * 1.5f;
+            projectile.range = 9999;
+            projectile.damageType = DamageType.NonLethal;
+            projectile.failedToKill = failedToKill;
+            projectile.killConfirmed = killConfirmed;
+            projectile.dealDamage = false;
+            OrbManager.instance.AddOrb(projectile);
         }
 
         private void SpawnSheildy(Transform target, float velocity = 20f)

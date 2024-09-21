@@ -1,5 +1,4 @@
-﻿using BepInEx.Configuration;
-using RoR2;
+﻿using RoR2;
 using UnityEngine;
 using System.Collections.Generic;
 using RoR2.Skills;

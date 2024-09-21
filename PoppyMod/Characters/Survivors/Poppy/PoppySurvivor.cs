@@ -1,7 +1,4 @@
-﻿using BepInEx;
-using BepInEx.Configuration;
-using EntityStates;
-using EntityStates.CaptainSupplyDrop;
+﻿using EntityStates;
 using PoppyMod.Modules;
 using PoppyMod.Modules.BaseContent.BaseStates;
 using PoppyMod.Modules.Characters;
@@ -9,16 +6,12 @@ using PoppyMod.Survivors.Poppy.Components;
 using PoppyMod.Survivors.Poppy.SkillStates;
 using R2API;
 using RoR2;
-using RoR2.UI;
 using RoR2.Skills;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using PoppyMod.Modules.BaseStates;
 using PoppyMod.Characters.Survivors.Poppy.Components;
-using System.Net.NetworkInformation;
-using MonoMod.Cil;
 
 namespace PoppyMod.Survivors.Poppy
 {
@@ -168,7 +161,8 @@ namespace PoppyMod.Survivors.Poppy
             //the main "body" state machine has some special properties
             Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(BasePoppyState), typeof(SpawnTeleporterState));
 
-            Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon");
+            Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon1");
+            Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon2");
             Prefabs.AddEntityStateMachine(bodyPrefab, "Passive");
         }
 
@@ -249,7 +243,7 @@ namespace PoppyMod.Survivors.Poppy
                     POPPY_PREFIX + "PRIMARY_HAMMER_DESCRIPTION",
                     assetBundle.LoadAsset<Sprite>("poppy_q"),
                     new EntityStates.SerializableEntityStateType(typeof(HammerSwing)),
-                    "Weapon",
+                    "Weapon1",
                     false
                 ));
             //custom Skilldefs can have additional fields that you can set manually
@@ -270,8 +264,8 @@ namespace PoppyMod.Survivors.Poppy
                 skillIcon = assetBundle.LoadAsset<Sprite>("poppy_passive"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(IronAmbassador)),
-                activationStateMachineName = "Weapon",
-                interruptPriority = EntityStates.InterruptPriority.Frozen,
+                activationStateMachineName = "Weapon2",
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
                 baseRechargeInterval = 6f,
                 baseMaxStock = 1,
@@ -356,7 +350,7 @@ namespace PoppyMod.Survivors.Poppy
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(KeepersVerdictCharge)),
                 //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-                activationStateMachineName = "Passive",
+                activationStateMachineName = "Weapon1",
                 interruptPriority = EntityStates.InterruptPriority.Frozen,
 
                 baseMaxStock = 1,
@@ -376,7 +370,7 @@ namespace PoppyMod.Survivors.Poppy
                 skillIcon = assetBundle.LoadAsset<Sprite>("poppy_q"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(PreHammerShock)),
-                activationStateMachineName = "Weapon",
+                activationStateMachineName = "Weapon1",
                 interruptPriority = EntityStates.InterruptPriority.Frozen,
 
                 baseRechargeInterval = 10f,

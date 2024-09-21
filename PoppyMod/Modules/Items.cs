@@ -1,9 +1,5 @@
 ﻿using RoR2;
-using System;
-using UnityEngine.AddressableAssets;
 using UnityEngine;
-using PoppyMod.Survivors.Poppy;
-using System.Runtime.CompilerServices;
 
 
 namespace PoppyMod.Modules

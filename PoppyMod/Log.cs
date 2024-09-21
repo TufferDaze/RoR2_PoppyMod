@@ -1,6 +1,4 @@
 ﻿using BepInEx.Logging;
-using System.Security;
-using System.Security.Permissions;
 
 namespace PoppyMod
 {

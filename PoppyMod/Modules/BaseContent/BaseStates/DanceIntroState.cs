@@ -1,9 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using EntityStates;
-using UnityEngine;
-
-namespace PoppyMod.Modules.BaseStates
+﻿namespace PoppyMod.Modules.BaseStates
 {
     public class DanceIntroState : BaseEmote
     {

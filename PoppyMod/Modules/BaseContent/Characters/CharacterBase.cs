@@ -1,7 +1,5 @@
 ﻿using PoppyMod.Survivors.Poppy;
 using RoR2;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PoppyMod.Modules.Characters

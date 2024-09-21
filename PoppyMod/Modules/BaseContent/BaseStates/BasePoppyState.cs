@@ -1,11 +1,6 @@
-﻿using System;
-using RoR2;
-using EntityStates;
-using UnityEngine;
-using RoR2.Skills;
+﻿using EntityStates;
 using PoppyMod.Survivors.Poppy;
 using PoppyMod.Modules.BaseStates;
-using PoppyMod.Modules.Characters;
 
 namespace PoppyMod.Modules.BaseContent.BaseStates
 {

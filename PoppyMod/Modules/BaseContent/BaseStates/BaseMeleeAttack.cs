@@ -3,8 +3,6 @@ using PoppyMod.Survivors.Poppy;
 using RoR2;
 using RoR2.Audio;
 using RoR2.Skills;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 

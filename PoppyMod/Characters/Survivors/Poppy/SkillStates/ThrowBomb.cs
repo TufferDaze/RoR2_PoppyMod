@@ -1,8 +1,4 @@
 ﻿using EntityStates;
-using PoppyMod.Survivors.Poppy;
-using RoR2;
-using RoR2.Projectile;
-using UnityEngine;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using EntityStates;
-using UnityEngine;
-
-namespace PoppyMod.Modules.BaseStates
+﻿namespace PoppyMod.Modules.BaseStates
 {
     public class TauntState : BaseEmote
     {
@@ -10,7 +6,7 @@ namespace PoppyMod.Modules.BaseStates
         {
             animName = "Taunt";
             soundString = "PlayPoppyTaunt";
-            soundFXString = "PlayPoppyTauntSFX";
+            //soundFXString = "PlayPoppyTauntSFX";
             isLooping = false;
             clipLen = 5.333f;
             base.OnEnter();

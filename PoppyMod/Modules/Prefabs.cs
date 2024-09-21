@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using PoppyMod.Modules.Characters;
 using RoR2.CharacterAI;
-using static RoR2.CharacterAI.AISkillDriver;
-using RoR2.Skills;
 using System;
 using System.Linq;
 using PoppyMod.Modules.BaseContent.BaseStates;
-using EntityStates;
 
 namespace PoppyMod.Modules
 {

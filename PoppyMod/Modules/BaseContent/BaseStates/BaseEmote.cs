@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using RoR2;
 using EntityStates;
 using PoppyMod.Survivors.Poppy;

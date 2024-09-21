@@ -1,5 +1,4 @@
-﻿using EntityStates;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PoppyMod.Modules.BaseStates
 {
@@ -11,7 +10,7 @@ namespace PoppyMod.Modules.BaseStates
 		{
 			jokeIndex = Random.Range(1, 4);
 			animName = "Joke"+jokeIndex;
-			soundString = "PlayPoppyJoke";
+			//soundString = "PlayPoppyJoke";
 			isLooping = false;
 			switch (jokeIndex)
 			{
