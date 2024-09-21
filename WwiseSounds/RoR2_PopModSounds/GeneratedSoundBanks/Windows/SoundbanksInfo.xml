@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3C99045D-5030-6089-3D83-1F5FFBA0F6EE}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DA204A11-074F-8091-053A-81F4156D7CB6}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -29,6 +29,7 @@
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
 				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
 				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 				<GameParameter Id="3695994288" Name="Volume_Master"/>
 				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
 				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
@@ -163,7 +164,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="2705191942" Type="User" Language="SFX" Hash="{A1E27591-34D3-750D-80BD-CAD63C9CF4C3}">
+		<SoundBank Id="2705191942" Type="User" Language="SFX" Hash="{2552AB09-8F58-0C7C-6D76-DD26A1891081}">
 			<ShortName>PoppySoundBank</ShortName>
 			<Path>PoppySoundBank.bnk</Path>
 			<Media>
@@ -1267,9 +1268,10 @@
 				</Event>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 				<GameParameter Id="3695994288" Name="Volume_Master"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A6F4C296-659A-0467-746B-0D3F2D9A3AC2}</FileHash>
+	<FileHash>{7C135B8A-8CAF-6B65-7333-790820C20D63}</FileHash>
 </SoundBanksInfo>

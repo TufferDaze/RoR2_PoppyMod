@@ -18,6 +18,7 @@
 						<ObjectRef Name="PlayPoppyBossSpawnMoon" ID="{49515AF3-9AA7-437E-8B00-6C683175B5CF}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyIdle" ID="{1D0A064D-E0BA-4553-92D3-32BED3C87FE4}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyWBlock" ID="{89F737CF-11F4-4582-B131-5C70015BDF10}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX Mixer" ID="{027B7C7D-CA20-45AD-A887-EB09047797BF}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyESFX" ID="{6F842A59-A3BE-45B4-A4E9-62A08862D475}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyBonkBigSFX" ID="{A9030853-2761-45C1-BEE5-45CAB9A2DB41}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyRFireHitSFX" ID="{53A5DC40-6B0E-45D8-BF48-B226D3DEEAE2}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>

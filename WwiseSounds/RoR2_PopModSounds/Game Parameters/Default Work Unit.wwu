@@ -8,6 +8,7 @@
 						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Volume_SFX" ID="{9A2CBC55-3795-41EF-9BE5-09FF48A6AA77}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
