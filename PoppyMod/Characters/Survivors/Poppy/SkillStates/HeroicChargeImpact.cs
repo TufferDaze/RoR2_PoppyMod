@@ -35,7 +35,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 GlobalEventManager.instance.OnHitEnemy(damageInfo, this.victimHealthComponent.gameObject);
                 GlobalEventManager.instance.OnHitAll(damageInfo, this.victimHealthComponent.gameObject);
             }
-            base.healthComponent.TakeDamageForce(this.idealDirection * -HeroicChargeDash.knockbackForce, true, false);
+            //base.healthComponent.TakeDamageForce(this.idealDirection * -HeroicChargeDash.knockbackForce, true, false);
             if (base.isAuthority)
             {
                 base.AddRecoil(-0.5f * HeroicChargeDash.recoilAmplitude * 3f, -0.5f * HeroicChargeDash.recoilAmplitude * 3f, -0.5f * HeroicChargeDash.recoilAmplitude * 8f, 0.5f * HeroicChargeDash.recoilAmplitude * 3f);

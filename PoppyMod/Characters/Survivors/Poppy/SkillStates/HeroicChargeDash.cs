@@ -18,7 +18,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float hitPauseTimer = 0.01f;
         public static float hitPauseDuration = 0.05f;
         public static float recoilAmplitude = 5.0f;
-        public static float massThresholdForKnockback = 300.0f;
+        public static float massThresholdForKnockback = 1000.0f;
         public static float knockbackDamageCoefficient = 1.5f;
         public static float knockbackForce = 10.0f;
         private Vector3 dashDirection;
@@ -107,20 +107,21 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                             HurtBox hurtBox = victimsStruck[i];
                             if (hurtBox.healthComponent)
                             {
-                                /*CharacterMotor component = hurtBox.healthComponent.GetComponent<CharacterMotor>();
-                                if (component)
-                                {
-                                    num = component.mass;
-                                }
-                                else
-                                {
-                                    Rigidbody component2 = hurtBox.healthComponent.GetComponent<Rigidbody>();
-                                    if (component2)
-                                    {
-                                        num = component2.mass;
-                                    }
-                                }
-                                if (num >= massThresholdForKnockback)
+                                //CharacterMotor component = hurtBox.healthComponent.GetComponent<CharacterMotor>();
+                                //if (component)
+                                //{
+                                //    num = component.mass;
+                                //}
+                                //else
+                                //{
+                                //    Rigidbody component2 = hurtBox.healthComponent.GetComponent<Rigidbody>();
+                                //    if (component2)
+                                //    {
+                                //        num = component2.mass;
+                                //    }
+                                //}
+                                //if (hurtBox.healthComponent.body.gameObject.GetComponent<CharacterBody>().isChampion || num >= massThresholdForKnockback)
+                                if (hurtBox.healthComponent.body.gameObject.GetComponent<CharacterBody>().isChampion)
                                 {
                                     outer.SetNextState(new HeroicChargeImpact
                                     {
@@ -131,7 +132,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                     });
                                     return;
                                 }
-                                else*/
+                                else
                                 {
                                     grappleCon = hurtBox.healthComponent.body.gameObject.AddComponent<GrappleComponent>();
                                     Transform grappleCarryLocation = gameObject.GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>().FindChild("GrappleCarryLocation");

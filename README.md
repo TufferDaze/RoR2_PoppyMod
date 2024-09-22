@@ -39,6 +39,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 `Other bugs or requests can be tossed over to the GitHub page up top^`
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
+* Using Heroic Charge too close to bosses may clip the player into terrain.
 * Opening a chest right after falling a distance does not play a voiceline.
 
 ## TODO
@@ -49,6 +50,11 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add something secret. ;)
 
 ## Patch Notes
+`1.2.2`
+* Heroic Charge no longer pushes bosses
+* Heroic Charge now bounces off of bosses for extra damage
+* Doubled Keeper's Verdict knockup
+
 `1.2.1`
 * Added icons for skins
 * Primary skill no longer interrupts Iron Ambassador cast
