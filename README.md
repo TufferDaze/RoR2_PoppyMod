@@ -58,9 +58,9 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Walking primary skill animations have been realigned
 * Main attack hitbox has been extended forward slightly
 * Poppy sounds are now tied to game SFX instead of just game Master
-* Doppleganger AI has been implemented
-* Removed unnessesary debug logs
-* Removed unnessesary SFX
+* Doppelganger AI has been implemented
+* Removed unnecessary debug logs
+* Removed unnecessary SFX
 * Removed extra mesh from Bewitching skin
 
 `1.2.0`
