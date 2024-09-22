@@ -54,6 +54,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Heroic Charge no longer pushes bosses
 * Heroic Charge now bounces off of bosses for extra damage
 * Doubled Keeper's Verdict knockup
+* Fixed joke emote audio
 
 `1.2.1`
 * Added icons for skins
