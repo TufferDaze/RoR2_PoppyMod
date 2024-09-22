@@ -8,7 +8,7 @@ using PoppyMod.Modules;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {
-	public class IronAmbassador : BaseState
+	public class IronAmbassador : BaseSkillState
 	{
         private float stopwatch;
         private float baseDuration = 1.2f;
@@ -21,6 +21,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private int maxBounces = 2;
         private float travelSpeed = 50f;
         private float bounceRange = 20f;
+        private float selfInterruptPercentTime = 0.5f;
         private bool attemptedFire;
         private Transform mdlTransform;
         private HurtBox initialTarget;
@@ -58,12 +59,12 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         {
             base.FixedUpdate();
             stopwatch += Time.fixedDeltaTime;
-            if (!attemptedFire && stopwatch >= (animator.GetFloat("IronAmbassador.fire")/attackSpeedStat))
+            if (!attemptedFire && stopwatch >= (animator.GetFloat("IronAmbassador.fire")/attackSpeedStat) && isAuthority)
             {
                 FireBuckler();
             }
             characterMotor.velocity.y += antiGravStrength * Time.fixedDeltaTime * (1f - stopwatch / duration);
-            if (stopwatch >= duration)
+            if (stopwatch >= duration && isAuthority)
             {
                 outer.SetNextStateToMain();
                 return;
@@ -103,6 +104,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 bucklerAttack.target = hurtBox;
                 OrbManager.instance.AddOrb(bucklerAttack);
             }
+        }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            if (stopwatch >= duration * selfInterruptPercentTime)
+            {
+                return InterruptPriority.Any;
+            }
+            return InterruptPriority.Skill;
         }
 
         public override void OnSerialize(NetworkWriter writer)

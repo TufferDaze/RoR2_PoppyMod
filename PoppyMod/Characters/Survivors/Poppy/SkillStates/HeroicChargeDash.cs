@@ -63,6 +63,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             gameObject.layer = LayerIndex.fakeActor.intVal;
             characterMotor.Motor.RebuildCollidableLayers();
             characterMotor.Motor.ForceUnground();
+            characterMotor.velocity.y = 0;
             PlayAnimation("FullBody, Override", "HeroicCharge", "Roll.playbackRate", duration);
             Util.PlaySound("PlayPoppyE", gameObject);
             Util.PlaySound("PlayPoppyESFX", gameObject);

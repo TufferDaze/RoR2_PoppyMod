@@ -265,7 +265,7 @@ namespace PoppyMod.Survivors.Poppy
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(IronAmbassador)),
                 activationStateMachineName = "Weapon2",
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                interruptPriority = EntityStates.InterruptPriority.Any,
 
                 baseRechargeInterval = 6f,
                 baseMaxStock = 1,
@@ -277,7 +277,7 @@ namespace PoppyMod.Survivors.Poppy
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = false,
                 dontAllowPastMaxStocks = false,
-                mustKeyPress = true,
+                mustKeyPress = false,
                 beginSkillCooldownOnSkillEnd = false,
 
                 isCombatSkill = true,
