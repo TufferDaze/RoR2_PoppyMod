@@ -135,7 +135,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                 else
                                 {
                                     grappleCon = hurtBox.healthComponent.body.gameObject.AddComponent<GrappleComponent>();
-                                    Transform grappleCarryLocation = gameObject.GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>().FindChild("GrappleCarryLocation");
+                                    ChildLocator childLocator = GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>();
+                                    Transform grappleCarryLocation = childLocator.FindChild("GrappleCarryLocation");
                                     if (grappleCarryLocation)
                                     {
                                         grappleCon.pivotTransform = grappleCarryLocation;

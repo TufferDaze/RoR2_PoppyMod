@@ -23,6 +23,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float bounceRange = 20f;
         private float selfInterruptPercentTime = 0.5f;
         private bool attemptedFire;
+        private bool hasFired;
         private Transform mdlTransform;
         private HurtBox initialTarget;
         private ChildLocator childLocator;
@@ -33,15 +34,19 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 		{
 			base.OnEnter();
             tracker = GetComponent<HuntressTracker>();
-            initialTarget = tracker.GetTrackingTarget();
+            if (tracker && isAuthority)
+            {
+                initialTarget = tracker.GetTrackingTarget();
+            }
             stopwatch = 0f;
             attemptedFire = false;
+            hasFired = false;
             duration = baseDuration / attackSpeedStat;
             animator = base.GetModelAnimator();
             mdlTransform = base.GetModelTransform();
             childLocator = mdlTransform.GetComponent<ChildLocator>();
             characterMotor.Motor.ForceUnground();
-            if (tracker && hopStrength != 0)
+            if (characterMotor && hopStrength != 0)
             {
                 characterMotor.velocity.y = hopStrength;
             }
@@ -49,17 +54,13 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             Util.PlaySound("PlayPoppyPassiveThrow", gameObject);
             Util.PlayAttackSpeedSound("PlayPoppyPassiveThrowSFX", gameObject, attackSpeedStat);
             characterBody.SetAimTimer(duration);
-            if (base.characterBody)
-            {
-                base.characterBody.SetAimTimer(this.duration);
-            }
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
             stopwatch += Time.fixedDeltaTime;
-            if (!attemptedFire && stopwatch >= (animator.GetFloat("IronAmbassador.fire")/attackSpeedStat) && isAuthority)
+            if (!attemptedFire && stopwatch >= (animator.GetFloat("IronAmbassador.fire")/attackSpeedStat))
             {
                 FireBuckler();
             }
@@ -74,6 +75,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public override void OnExit()
         {
             base.OnExit();
+            if (!attemptedFire)
+            {
+                //Debug.LogWarning("IronAmbassador: OnExit fire used");
+                FireBuckler();
+            }
+            if (!hasFired && NetworkServer.active)
+            {
+                skillLocator.secondary.AddOneStock();
+            }
         }
 
         private void FireBuckler()
@@ -99,6 +109,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             HurtBox hurtBox = initialTarget;
             if (hurtBox)
             {
+                hasFired = true;
                 Transform transform = childLocator.FindChild("HandL");
                 bucklerAttack.origin = transform.position;
                 bucklerAttack.target = hurtBox;

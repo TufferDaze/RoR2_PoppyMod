@@ -100,7 +100,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7178252732705481576}
   m_Father: {fileID: 7274563064872794834}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -183,6 +184,8 @@ MonoBehaviour:
     transform: {fileID: 7668094984796997255}
   - name: Weapon3
     transform: {fileID: 7743959816049916158}
+  - name: MasteryEmote
+    transform: {fileID: 7178252732705481576}
 --- !u!1 &8337918356804861823
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,4 +479,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 654220616170314686, guid: 72f3b23f38c907548a2109525ba5f8bd,
     type: 3}
   m_PrefabInstance: {fileID: 7169389680043367737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9169248079249013993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3405272092280877801}
+    m_Modifications:
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063194365294206850, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+        type: 3}
+      propertyPath: m_Name
+      value: MasteryEmote
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a407fbbcbbbfeeb439e5b08a98f31355, type: 3}
+--- !u!4 &7178252732705481576 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2063194365294206849, guid: a407fbbcbbbfeeb439e5b08a98f31355,
+    type: 3}
+  m_PrefabInstance: {fileID: 9169248079249013993}
   m_PrefabAsset: {fileID: 0}

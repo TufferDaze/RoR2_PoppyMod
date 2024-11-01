@@ -1,54 +1,53 @@
-﻿using PoppyMod.Modules;
+﻿using EntityStates;
+using PoppyMod.Modules;
 using RoR2;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace PoppyMod.Survivors.Poppy.Components
 {
 	public class MasteryEmoteComponent : MonoBehaviour
 	{
-        private static GameObject masteryEmotePrefab;
-        private static GameObject masteryEmoteInstance;
-        private Transform masteryTransform;
+        private ChildLocator childLocator;
+        private Transform masteryEmote;
         private Animator masteryAnimator;
         private float masteryCoolDown = 1.7f;
         private float masteryStopwatch;
-        private ChildLocator childLocator;
+        private bool isLocal;
 
         public void Awake()
         {
-            childLocator = gameObject.GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>();
-            masteryTransform = childLocator.FindChild("MasteryEmoteLocation");
-            if (!masteryEmotePrefab)
+            childLocator = GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>();
+            masteryEmote = childLocator.FindChild("MasteryEmote");
+            if (masteryEmote)
             {
-                masteryEmotePrefab = PoppyAssets.masteryEmote;
+                masteryAnimator = masteryEmote.GetComponent<Animator>();
             }
-            if (!masteryEmoteInstance)
+            else
             {
-                masteryEmoteInstance = UnityEngine.Object.Instantiate(masteryEmotePrefab, masteryTransform);
+                Debug.LogError("MasteryEmoteComponent: masteryEmote NULL. Cannot get animator component.");
             }
-            if (!masteryAnimator)
-            {
-                masteryAnimator = masteryEmoteInstance.GetComponent<Animator>();
-            }
+            isLocal = ReferenceEquals(LocalUserManager.GetFirstLocalUser().cachedBodyObject, gameObject);
         }
 
         public void Update()
         {
-            CheckEmote();
-            if (masteryEmoteInstance)
+            if (masteryEmote)
             {
-                masteryEmoteInstance.transform.LookAt(Camera.main.transform);
+                CheckEmote();
+                masteryEmote.transform.LookAt(Camera.main.transform);
             }
         }
 
         public void FixedUpdate()
         {
+            isLocal = ReferenceEquals(LocalUserManager.GetFirstLocalUser().cachedBodyObject, gameObject);
             masteryStopwatch += Time.fixedDeltaTime;
         }
 
         private void CheckEmote()
         {
-            if (Config.GetKeyPressed(PoppyConfig.masteryConfig) && masteryStopwatch >= masteryCoolDown)
+            if (isLocal && Config.GetKeyPressed(PoppyConfig.masteryConfig) && masteryStopwatch >= masteryCoolDown)
             {
                 masteryStopwatch = 0f;
                 masteryAnimator.Update(0f);

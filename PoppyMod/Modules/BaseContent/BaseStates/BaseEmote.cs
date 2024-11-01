@@ -12,8 +12,8 @@ namespace PoppyMod.Modules.BaseStates
         public string animName = "";
         public string soundString = "";
         public string soundFXString = "";
-        public bool isLooping;
-        public float clipLen;
+        public bool isLooping = false;
+        public float clipLen = 1f;
         private uint soundFXId;
         private uint[] soundIdArray = new uint[8];
 

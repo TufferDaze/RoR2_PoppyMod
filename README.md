@@ -40,7 +40,6 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
 * Using Heroic Charge too close to bosses may clip the player into terrain.
-* Opening a chest right after falling a distance does not play a voiceline.
 
 ## TODO
 * Tweak for better network play.
@@ -50,6 +49,14 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add something secret. ;)
 
 ## Patch Notes
+`1.2.3`
+* Fixed a bug where Iron Ambassador would not fire in multiplayer games
+* Iron Ambassador cooldown is now refunded if it fails to fire on all checks
+* Fixed a bug where the Mastery Emote would only trigger on multiplayer hosts
+* Poppys can no longer trigger each others purchase voicelines
+* Idle and purchase voicelines now only require the player to be out of danger rather than out of combat
+* Added new voicelines for Mithrix fight
+
 `1.2.2`
 * Heroic Charge no longer pushes bosses
 * Heroic Charge now bounces off of bosses for extra damage
@@ -71,12 +78,13 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Removed extra mesh from Bewitching skin
 
 `1.2.0`
+* **PLEASE DELETE THE OLD CONFIG FILE**
 * Updated for Seekers DLC
 * Forced Shieldy item to spawn when Command is on
 * Added new behavior to Shieldy skill to bounce back to player on enemy kill
 * Hextech skin now shows up properly
 * Correct animation now plays when charging Keeper's Verdict
-* Volume issues should be resolved(PLEASE DELETE THE OLD CONFIG FILE)
+* Volume issues should be resolved(DELETE THE OLD CONFIG FILE)
 
 `1.1.0`
 * Added skins

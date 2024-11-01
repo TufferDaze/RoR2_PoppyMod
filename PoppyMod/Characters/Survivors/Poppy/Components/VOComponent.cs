@@ -17,6 +17,7 @@ namespace PoppyMod.Survivors.Poppy.Components
         private bool shieldVoiceCanFire = true;
         private bool passiveVoiceCanFire;
         private bool hasFiredSpawn;
+        private bool hasFiredDefeat;
         private CharacterBody body;
 
         public void Awake()
@@ -24,6 +25,7 @@ namespace PoppyMod.Survivors.Poppy.Components
             if (PoppyConfig.bossConfig.Value)
             {
                 BossGroup.onBossGroupStartServer += BossGroup_onBossGroupStartServer;
+                BossGroup.onBossGroupDefeatedServer += BossGroup_onBossGroupDefeatedServer; ;
             }
             if (PoppyConfig.purchaseVOConfig.Value)
             {
@@ -56,7 +58,7 @@ namespace PoppyMod.Survivors.Poppy.Components
                 shieldVoiceCanFire = true;
                 shieldSoundStopwatch = 0f;
             }
-            if (PoppyConfig.idleVOConfig.Value && body.outOfCombat)
+            if (PoppyConfig.idleVOConfig.Value && body.outOfDanger)
             {
                 HandleIdleVO();
             }
@@ -109,7 +111,27 @@ namespace PoppyMod.Survivors.Poppy.Components
             {
                 hasFiredSpawn = true;
                 AkSoundEngine.StopAll(gameObject);
-                Util.PlaySound("PlayPoppyBossSpawn", gameObject);
+                if (obj.bestObservedName == "BrotherBody")
+                {
+                    Util.PlaySound("PlayPoppyBossSpawnMoon", gameObject);
+                }
+                else
+                {
+                    Util.PlaySound("PlayPoppyBossSpawn", gameObject);
+                }
+            }
+        }
+
+        private void BossGroup_onBossGroupDefeatedServer(BossGroup obj)
+        {
+            if (!hasFiredDefeat)
+            {
+                hasFiredDefeat = true;
+                AkSoundEngine.StopAll(gameObject);
+                if (obj && (obj.bestObservedName == "BrotherBody"))
+                {
+                    Util.PlaySound("PlayPoppyBossDeathMoon", gameObject);
+                }
             }
         }
 
@@ -117,7 +139,7 @@ namespace PoppyMod.Survivors.Poppy.Components
         {
             try
             {
-                if (interactObject.GetComponent<PurchaseInteraction>() && body.outOfCombat)
+                if (interactObject.GetComponent<PurchaseInteraction>() && body.outOfDanger && ReferenceEquals(sender.gameObject, gameObject))
                 {
                     AkSoundEngine.StopAll(gameObject);
                     Util.PlaySound("PlayPoppyItemBuy", gameObject);

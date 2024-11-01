@@ -23,9 +23,11 @@ namespace PoppyMod.Survivors.Poppy
             string desc = "Poppy: a small idiot rat thing with a tiny brain and a big heart.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine
                 + "< ! > Iron Ambassador bounces to up to 3 enemies, increasing damage dealt each time." + Environment.NewLine + Environment.NewLine
                 + "< ! > Iron Ambassador will bounce back to Poppy if it kills an enemy." + Environment.NewLine + Environment.NewLine
-                + "< ! > Heroic Charge carries enemies with you." + Environment.NewLine + Environment.NewLine
+                + "< ! > Heroic Charge carries non-boss enemies with you." + Environment.NewLine + Environment.NewLine
+                + "< ! > Heroic Charge deals extra damage to bosses." + Environment.NewLine + Environment.NewLine
                 + "< ! > Steadfast Presence can be used to keep non-boss flying enemies on the ground." + Environment.NewLine + Environment.NewLine
-                + "< ! > Enemies hit with Keeper\'s Verdict are launched toward Poppy." + Environment.NewLine + Environment.NewLine;
+                + "< ! > Enemies hit with a Keeper\'s Verdict shockwave are launched toward Poppy." + Environment.NewLine + Environment.NewLine
+                + "< ! > Enemies hit with Keeper\'s Verdict are sent into the stratosphere." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so she left to continue her search.";
             string outroFailure = "You are definitely not the hero.";
@@ -33,7 +35,6 @@ namespace PoppyMod.Survivors.Poppy
             Language.Add(prefix + "NAME", "Poppy");
             Language.Add(prefix + "DESCRIPTION", desc);
             Language.Add(prefix + "SUBTITLE", "Keeper of the Hammer");
-            //Language.Add(prefix + "LORE", "There is no place she isn\'t willing to go in order to find the fabled hero.");
             Language.Add(prefix + "LORE", "What the Poppy doin\'? How did she get here?");
             Language.Add(prefix + "OUTRO_FLAVOR", outro);
             Language.Add(prefix + "OUTRO_FAILURE", outroFailure);
