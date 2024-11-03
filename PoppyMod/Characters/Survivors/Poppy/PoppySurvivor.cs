@@ -131,10 +131,10 @@ namespace PoppyMod.Survivors.Poppy
             AddHitboxes();
             bodyPrefab.gameObject.GetComponent<CharacterDeathBehavior>().deathState = new SerializableEntityStateType(typeof(BaseDeath));
             bodyPrefab.gameObject.GetComponent<CharacterMotor>().mass = 300f;
-            bodyPrefab.gameObject.AddComponent<VOComponent>();
             bodyPrefab.gameObject.AddComponent<MasteryEmoteComponent>();
             bodyPrefab.gameObject.AddComponent<ArmorPassiveComponent>();
             bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
+            bodyPrefab.gameObject.AddComponent<VOComponent>();
             //bodyPrefab.AddComponent<PoppyWeaponComponent>();
         }
 
@@ -408,6 +408,7 @@ namespace PoppyMod.Survivors.Poppy
 
             List<SkinDef> skins = new List<SkinDef>();
 
+            // 0
             #region DefaultSkin
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
@@ -436,7 +437,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(defaultSkin);
             #endregion
 
-            //uncomment this when you have a mastery skin
+            // 1
             #region NoxSkin
 
             //creating a new skindef as we did before
@@ -461,6 +462,7 @@ namespace PoppyMod.Survivors.Poppy
 
             #endregion
 
+            // 2
             #region LolSkin
             // Skin def
             SkinDef lolSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "LOL_SKIN_NAME",
@@ -482,6 +484,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(lolSkin);
             #endregion
 
+            // 3
             #region BlaSkin
             // Skin def
             SkinDef blaSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "BLA_SKIN_NAME",
@@ -503,6 +506,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(blaSkin);
             #endregion
 
+            // 4
             #region RagSkin
             // Skin def
             SkinDef ragSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "RAG_SKIN_NAME",
@@ -524,6 +528,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(ragSkin);
             #endregion
 
+            // 5
             #region RegSkin
             // Skin def
             SkinDef regSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "REG_SKIN_NAME",
@@ -545,6 +550,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(regSkin);
             #endregion
 
+            // 6
             #region ScrSkin
             // Skin def
             SkinDef scrSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "SCR_SKIN_NAME",
@@ -566,6 +572,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(scrSkin);
             #endregion
 
+            // 7
             #region StrSkin
             // Skin def
             SkinDef strSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "STR_SKIN_NAME",
@@ -587,6 +594,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(strSkin);
             #endregion
 
+            // 8
             #region FwnSkin
             // Skin def
             SkinDef fwnSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "FWN_SKIN_NAME",
@@ -608,6 +616,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(fwnSkin);
             #endregion
 
+            // 9
             #region HexSkin
             // Skin def
             SkinDef hexSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "HEX_SKIN_NAME",
@@ -629,6 +638,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(hexSkin);
             #endregion
 
+            // 10
             #region AstSkin
             // Skin def
             SkinDef astSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "AST_SKIN_NAME",
@@ -650,6 +660,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(astSkin);
             #endregion
 
+            // 11
             #region BewSkin
             // Skin def
             SkinDef bewSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "BEW_SKIN_NAME",
@@ -671,6 +682,7 @@ namespace PoppyMod.Survivors.Poppy
             skins.Add(bewSkin);
             #endregion
 
+            // 12
             #region CafSkin
             // Skin def
             SkinDef cafSkin = Modules.Skins.CreateSkinDef(POPPY_PREFIX + "CAF_SKIN_NAME",
@@ -725,19 +737,11 @@ namespace PoppyMod.Survivors.Poppy
         private void AddHooks()
         {
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
-            //Config.MyConfig.SettingChanged += MyConfig_SettingChanged;
             On.RoR2.PickupDropletController.OnCollisionEnter += PickupDropletController_OnCollisionEnter;
+            //On.RoR2.ModelSkinController.ApplySkin += ModelSkinController_ApplySkin;
         }
 
-        private void PickupDropletController_OnCollisionEnter(On.RoR2.PickupDropletController.orig_OnCollisionEnter orig, PickupDropletController self, Collision collision)
-        {
-            if (self.createPickupInfo.pickupIndex == PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)))
-            {
-                self.createPickupInfo.artifactFlag = GenericPickupController.PickupArtifactFlag.NONE;
-            }
-            orig(self, collision);
-        }
-
+        // Handles Passive armor buff and Steadfast Presence speedboost
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
         {
             if (sender.HasBuff(PoppyBuffs.armorBuff))
@@ -766,12 +770,62 @@ namespace PoppyMod.Survivors.Poppy
             }
         }
 
-        //private void MyConfig_SettingChanged(object sender, SettingChangedEventArgs e)
-        //{
-        //    if (sender == PoppyConfig.allVolumeConfig)
-        //    {
-        //        AkSoundEngine.SetRTPCValue(3695994288u, PoppyConfig.allVolumeConfig.Value);
-        //    }
-        //}
+        // Forces Shieldy to drop on when Command Artifact is enabled.
+        private void PickupDropletController_OnCollisionEnter(On.RoR2.PickupDropletController.orig_OnCollisionEnter orig, PickupDropletController self, Collision collision)
+        {
+            if (self.createPickupInfo.pickupIndex == PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)))
+            {
+                self.createPickupInfo.artifactFlag = GenericPickupController.PickupArtifactFlag.NONE;
+            }
+            orig(self, collision);
+        }
+
+        // Switches out animation controller when a new skin is selected.
+        private void ModelSkinController_ApplySkin(On.RoR2.ModelSkinController.orig_ApplySkin orig, ModelSkinController self, int skinIndex)
+        {
+            //Debug.LogWarning("PoppySurvivor: ApplySkin On-Hook: selfGameObject: " + self.gameObject + " prefabCharacterModel: " + prefabCharacterModel.gameObject);
+            orig(self, skinIndex);
+            if (self.gameObject.name == "mdlPoppy")
+            {
+                //Debug.LogWarning("PoppySurvivor: ApplySkin On-Hook: orig: " + orig + " self: " + self + " skinIndex: " + skinIndex);
+
+                switch (self.currentSkinIndex)
+                {
+                    case 0:
+                        RuntimeAnimatorController animatorController1 = instance.assetBundle.LoadAsset<RuntimeAnimatorController>("animPoppy");
+                        if (animatorController1)
+                        {
+                            self.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController1;
+                        }
+                        else
+                        {
+                            Debug.LogError("PoppySurvivor: ApplySkin On-Hook: cannot get animPoppy controller.");
+                        }
+                        break;
+                    case 7:
+                        RuntimeAnimatorController animatorController2 = instance.assetBundle.LoadAsset<RuntimeAnimatorController>("animPoppySG");
+                        if (animatorController2)
+                        {
+                            self.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController2;
+                        }
+                        else
+                        {
+                            Debug.LogError("PoppySurvivor: ApplySkin On-Hook: cannot get animPoppySG controller.");
+                        }
+                        break;
+                    case 8:
+                        //TODO add snow fawn anims
+                        break;
+                    case 10:
+                        //TODO add astronaut anims
+                        break;
+                    case 11:
+                        //TODO make/add bewitching anims
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

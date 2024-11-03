@@ -22,6 +22,7 @@
 						<ObjectRef Name="PlayPoppyESFX" ID="{6F842A59-A3BE-45B4-A4E9-62A08862D475}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyBonkBigSFX" ID="{A9030853-2761-45C1-BEE5-45CAB9A2DB41}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyRFireHitSFX" ID="{53A5DC40-6B0E-45D8-BF48-B226D3DEEAE2}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFXTweak" ID="{68D1E20C-BA54-4684-AAFD-30D6ED340753}" WorkUnitID="{FEEE14D4-4065-4CD2-B374-C509C481D1D1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyRChargeFireHitSFX" ID="{72EB544D-7FD4-46F5-B04C-DDA25EDF4528}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyDanceStartSFX" ID="{FDD5078A-AFAB-46FF-9277-1B244462BDB7}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPoppyQ" ID="{36642494-745B-479D-838C-4D80C0091293}" WorkUnitID="{D385B519-A471-40AB-B7BC-C87D1F6FF2CA}" Origin="Manual" Filter="7"/>

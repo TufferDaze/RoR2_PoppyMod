@@ -22,7 +22,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public float exitSlowdownCoefficient = 0.5f;
         public GameObject blastImpactPrefab;
         public GameObject fistEffectPrefab;
-        private GameObject fistEffectInstance;
+        //private GameObject fistEffectInstance;
         private bool detonateNextFrame = false;
         private float previousAirControl;
 

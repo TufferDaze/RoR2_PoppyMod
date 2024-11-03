@@ -26,8 +26,7 @@ namespace PoppyMod.Characters.Survivors.Poppy.Components
 
         private void FixedServerUpdate()
         {
-            float healthPercentage = GetCurrentHealthPercent();
-            if (healthPercentage <= missingHPThreshhold || body.HasBuff(PoppyBuffs.armorBuff))
+            if (GetCurrentHealthPercent() <= missingHPThreshhold || body.HasBuff(PoppyBuffs.armorBuff))
             {
                 ManagePassiveStack();
             }
@@ -37,9 +36,8 @@ namespace PoppyMod.Characters.Survivors.Poppy.Components
         {
             float graphOffset = 1.25f * armorIncreaseCoef;
             float graphSlope = 2.5f * armorIncreaseCoef;
-            float healthPercentage = GetCurrentHealthPercent();
 
-            int maxStacks = (int)Mathf.Clamp(graphOffset - graphSlope * healthPercentage, 0f, armorIncreaseCoef);
+            int maxStacks = (int)Mathf.Clamp(graphOffset - graphSlope * GetCurrentHealthPercent(), 0f, armorIncreaseCoef);
             int currentStacks = body.GetBuffCount(PoppyBuffs.armorBuff);
 
             if (currentStacks < maxStacks)

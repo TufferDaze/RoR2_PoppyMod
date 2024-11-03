@@ -13,7 +13,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 	{
         private float duration = 3f;
         private OverlapAttack attack;
-        private GameObject hitImpactPrefab;
+        //private GameObject hitImpactPrefab;
         private CharacterBody body;
         private HitBoxGroup hitBoxGroup;
         private float downForce = -10f;

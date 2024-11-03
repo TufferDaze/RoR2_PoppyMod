@@ -37,6 +37,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 
 ## Issues
 `Other bugs or requests can be tossed over to the GitHub page up top^`
+* Mastery emote cannot be seen nor heard by other players.
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
 * Using Heroic Charge too close to bosses may clip the player into terrain.
@@ -44,17 +45,20 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 ## TODO
 * Tweak for better network play.
 * Stop voicelines from overlapping/interrupting each other.
-* Add other skills.
 * Add skin-unique animations.
 * Add something secret. ;)
 
 ## Patch Notes
 `1.2.3`
+* **PLEASE DELETE OLD CONFIG FILE**
 * Fixed a bug where Iron Ambassador would not fire in multiplayer games
 * Iron Ambassador cooldown is now refunded if it fails to fire on all checks
+* Changed how force is applied by Keeper's Verdict
+* Keeper's Verdict now correctly sends enemies into the stratosphere(adjustable in mod config/settings)
 * Fixed a bug where the Mastery Emote would only trigger on multiplayer hosts
+* Fixed a bug where an error would be thrown upon interacting with the Shieldy pickup while having Squid Polyps
 * Poppys can no longer trigger each others purchase voicelines
-* Idle and purchase voicelines now only require the player to be out of danger rather than out of combat
+* Idle and purchase voicelines now only require the player to be out of danger(not taking damage) rather than out of combat(not using skills)
 * Added new voicelines for Mithrix fight
 
 `1.2.2`

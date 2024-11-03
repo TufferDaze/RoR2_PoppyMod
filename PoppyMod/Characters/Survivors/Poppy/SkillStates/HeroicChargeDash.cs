@@ -5,8 +5,6 @@ using RoR2;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-//Since we are using effects from Commando's Barrage skill, we will also be using the associated namespace
-//You can also use Addressables or LegacyResourcesAPI to load whichever effects you like
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {
@@ -17,18 +15,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private bool inHitPause = false;
         private float hitPauseTimer = 0.01f;
         public static float hitPauseDuration = 0.05f;
-        public static float recoilAmplitude = 5.0f;
-        public static float massThresholdForKnockback = 1000.0f;
         public static float knockbackDamageCoefficient = 1.5f;
-        public static float knockbackForce = 10.0f;
+        public static float recoilAmplitude = 5.0f;
+        public float grappleDuration = 1f;
         private Vector3 dashDirection;
         private float chargeDamageCoefficient = PoppyConfig.util1DmgConfig.Value;
         public float speedMultiplier = 12.0f;
         private List<HurtBox> victimsStruck = new List<HurtBox>();
         private GrappleComponent grappleCon;
 
-        //OnEnter() runs once at the start of the skill
-        //All we do here is create a BulletAttack and fire it
         public override void OnEnter()
         {
             base.OnEnter();
@@ -69,8 +64,6 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             Util.PlaySound("PlayPoppyESFX", gameObject);
         }
 
-        //FixedUpdate() runs almost every frame of the skill
-        //Here, we end the skill once it exceeds its intended duration
         public override void FixedUpdate()
         {
             base.FixedUpdate();
@@ -103,24 +96,9 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                         AddRecoil(-0.5f * recoilAmplitude, -0.5f * recoilAmplitude, -0.5f * recoilAmplitude, 0.5f * recoilAmplitude);
                         for (int i = 0; i < victimsStruck.Count; i++)
                         {
-                            float num = 0f;
                             HurtBox hurtBox = victimsStruck[i];
                             if (hurtBox.healthComponent)
                             {
-                                //CharacterMotor component = hurtBox.healthComponent.GetComponent<CharacterMotor>();
-                                //if (component)
-                                //{
-                                //    num = component.mass;
-                                //}
-                                //else
-                                //{
-                                //    Rigidbody component2 = hurtBox.healthComponent.GetComponent<Rigidbody>();
-                                //    if (component2)
-                                //    {
-                                //        num = component2.mass;
-                                //    }
-                                //}
-                                //if (hurtBox.healthComponent.body.gameObject.GetComponent<CharacterBody>().isChampion || num >= massThresholdForKnockback)
                                 if (hurtBox.healthComponent.body.gameObject.GetComponent<CharacterBody>().isChampion)
                                 {
                                     outer.SetNextState(new HeroicChargeImpact
@@ -135,6 +113,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                 else
                                 {
                                     grappleCon = hurtBox.healthComponent.body.gameObject.AddComponent<GrappleComponent>();
+                                    grappleCon.maxDuration = grappleDuration - fixedAge;
                                     ChildLocator childLocator = GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<CharacterModel>().GetComponent<ChildLocator>();
                                     Transform grappleCarryLocation = childLocator.FindChild("GrappleCarryLocation");
                                     if (grappleCarryLocation)
@@ -144,6 +123,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                     else
                                     {
                                         grappleCon.pivotTransform = this.gameObject.transform;
+                                        grappleCon.pivotTransform.position = new Vector3(0f, 0f, 5f);
                                     }
                                 }
                             }
@@ -204,12 +184,6 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                     HandleGrappleRelease();
                 }
             }
-        }
-
-        //GetMinimumInterruptPriority() returns the InterruptPriority required to interrupt this skill
-        public override InterruptPriority GetMinimumInterruptPriority()
-        {
-            return InterruptPriority.Frozen;
         }
     }
 }

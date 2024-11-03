@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace PoppyMod.Modules
 {
-    public class ReboundProjectile : Orb
+    public class ShieldyProjectile : Orb
     {
-        public float speed = 80f;
+        public float speed;
         public float damageValue;
         public GameObject attacker;
         public GameObject inflictor;
@@ -17,9 +17,7 @@ namespace PoppyMod.Modules
         public List<HealthComponent> bouncedObjects;
         public TeamIndex teamIndex;
         public bool isCrit;
-        public ProcChainMask procChainMask;
         public float procCoefficient;
-        public DamageColorIndex damageColorIndex;
         public float range;
         public float damageCoefficientPerBounce;
         public DamageType damageType;
@@ -46,7 +44,7 @@ namespace PoppyMod.Modules
             }
             else
             {
-                Debug.LogError("ReboundProjectile: Error getting huntress glaive prefab!");
+                Debug.LogError("ShieldyProjectile: Error getting huntress glaive prefab!");
             }
         }
 
@@ -59,16 +57,14 @@ namespace PoppyMod.Modules
                 if (healthComponent && dealDamage)
                 {
                     DamageInfo damageInfo = new DamageInfo();
+                    damageInfo.procCoefficient = procCoefficient;
+                    damageInfo.crit = isCrit;
                     damageInfo.damage = damageValue;
+                    damageInfo.damageType = damageType;
                     damageInfo.attacker = attacker;
                     damageInfo.inflictor = inflictor;
-                    damageInfo.force = Vector3.zero;
-                    damageInfo.crit = isCrit;
-                    damageInfo.procChainMask = procChainMask;
-                    damageInfo.procCoefficient = procCoefficient;
+                    //damageInfo.force = Vector3.zero;
                     damageInfo.position = target.transform.position;
-                    damageInfo.damageColorIndex = damageColorIndex;
-                    damageInfo.damageType = damageType;
                     healthComponent.TakeDamage(damageInfo);
                     GlobalEventManager.instance.OnHitEnemy(damageInfo, healthComponent.gameObject);
                     GlobalEventManager.instance.OnHitAll(damageInfo, healthComponent.gameObject);
@@ -88,24 +84,22 @@ namespace PoppyMod.Modules
                     HurtBox hurtBox = PickNextTarget(target.transform.position);
                     if (hurtBox)
                     {
-                        ReboundProjectile projectile = new ReboundProjectile();
+                        ShieldyProjectile projectile = new ShieldyProjectile();
                         projectile.search = search;
-                        projectile.origin = target.transform.position;
-                        projectile.target = hurtBox;
+                        projectile.procCoefficient = procCoefficient;
+                        projectile.isCrit = isCrit;
+                        projectile.speed = speed;
+                        projectile.range = range;
+                        projectile.damageValue = damageValue * damageCoefficientPerBounce;
+                        projectile.damageCoefficientPerBounce = damageCoefficientPerBounce;
+                        projectile.bouncesRemaining = bouncesRemaining - 1;
                         projectile.attacker = attacker;
                         projectile.inflictor = inflictor;
                         projectile.teamIndex = teamIndex;
-                        projectile.damageValue = damageValue * damageCoefficientPerBounce;
-                        projectile.bouncesRemaining = bouncesRemaining - 1;
-                        projectile.isCrit = isCrit;
                         projectile.bouncedObjects = bouncedObjects;
-                        projectile.procChainMask = procChainMask;
-                        projectile.procCoefficient = procCoefficient;
-                        projectile.damageColorIndex = damageColorIndex;
-                        projectile.damageCoefficientPerBounce = damageCoefficientPerBounce;
-                        projectile.speed = speed;
-                        projectile.range = range;
                         projectile.damageType = damageType;
+                        projectile.origin = target.transform.position;
+                        projectile.target = hurtBox;
                         projectile.failedToKill = failedToKill;
                         projectile.killConfirmed = killConfirmed;
                         projectile.dealDamage = true;
@@ -113,33 +107,29 @@ namespace PoppyMod.Modules
                     }
                     else if (!killConfirmed)
                     {
-                        //Debug.Log("HURTBOX NULL");
+                        //Debug.LogWarning($"ReboundProjectile: {bouncesRemaining} bounces left. No additional targets found. Did not kill.");
                         SpawnSheildy(lastLocation);
                     }
                     else
                     {
+                        //Debug.LogWarning($"ReboundProjectile: {bouncesRemaining} bounces left. No additional targets found. Did kill. Returning to player.");
                         ReboundToPlayer(lastLocation);
                     }
-                    return;
+                    //return;
                 }
                 else if (!killConfirmed)
                 {
-                    //if (dealDamage)
-                    //{
-                        SpawnSheildy(lastLocation);
-                    //}
-                    //else
-                    //{
-                    //    SpawnSheildy(lastLocation, 0f);
-                    //}
-                    //Debug.Log("FAILED TO KILL");
+                    //Debug.Log("ReboundProjectile: No bounces left. Did not kill.");
+                    SpawnSheildy(lastLocation);
                 }
                 else if (bouncesRemaining > -1)
                 {
+                    //Debug.Log("ReboundProjectile: No bounces left. Did kill. Has not returned to player.");
                     ReboundToPlayer(lastLocation);
                 }
                 else
                 {
+                    //Debug.Log("ReboundProjectile: No bounces left. Did kill. Has returned to player.");
                     SpawnSheildy(lastLocation, 0f);
                 }
             }
@@ -171,24 +161,22 @@ namespace PoppyMod.Modules
 
         private void ReboundToPlayer(Transform lastLocation)
         {
-            ReboundProjectile projectile = new ReboundProjectile();
+            ShieldyProjectile projectile = new ShieldyProjectile();
             projectile.search = search;
-            projectile.origin = lastLocation.position;
-            projectile.target = attacker.GetComponent<CharacterBody>().mainHurtBox;
+            projectile.procCoefficient = 0f;
+            projectile.isCrit = false;
+            projectile.speed = speed * 1.5f;
+            projectile.range = 9999f;
+            projectile.damageValue = 0f;
+            projectile.damageCoefficientPerBounce = 0f;
+            projectile.bouncesRemaining = -1;
             projectile.attacker = attacker;
             projectile.inflictor = inflictor;
-            projectile.teamIndex = teamIndex;
-            projectile.damageValue = 0;
-            projectile.bouncesRemaining = -1;
-            projectile.isCrit = false;
-            projectile.bouncedObjects = bouncedObjects;
-            projectile.procChainMask.mask = 0u;
-            projectile.procCoefficient = 0f;
-            projectile.damageColorIndex = damageColorIndex;
-            projectile.damageCoefficientPerBounce = 0f;
-            projectile.speed = speed * 1.5f;
-            projectile.range = 9999;
             projectile.damageType = DamageType.NonLethal;
+            projectile.teamIndex = teamIndex;
+            projectile.bouncedObjects = bouncedObjects;
+            projectile.origin = lastLocation.position;
+            projectile.target = attacker.GetComponent<CharacterBody>().mainHurtBox;
             projectile.failedToKill = failedToKill;
             projectile.killConfirmed = killConfirmed;
             projectile.dealDamage = false;

@@ -2,36 +2,33 @@
 using RoR2;
 using RoR2.Projectile;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using EntityStates;
 using EntityStates.BrotherMonster;
+using UnityEngine.AddressableAssets;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {
     public class KeepersVerdictChargeSlam : BaseSkillState
     {
-        public static float duration = 0.8f;
+        public float duration = 0.8f;
         public float stopwatch;
-        public static float blastDelay = 0.6f;
+        public float blastDelay = 0.6f;
         public float damageCoefficient;
-        public static float forceMagnitude = 16f;
-        public static float upwardForce;
-        public static float radius = 3f;
-        public static string attackSoundString;
-        //public static string muzzleString;
-        public static GameObject slamImpactEffect;
-        public static float durationBeforePriorityReduces;
-        //public static GameObject waveProjectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleGuardBodySecondaryFamily.asset").WaitForCompletion();
-        public static GameObject waveProjectilePrefab;
+        public float forceMagnitude = 16f;
+        public float upwardForce;
+        public float radius = 3f;
+        public string attackSoundString;
+        public string muzzleString = "Weapon3";
+        public GameObject slamImpactEffect;
+        //public static float durationBeforePriorityReduces;
+        public GameObject waveProjectilePrefab;
         private bool hasFired;
         private float procCoefficient = 0.5f;
-        public static float waveProjectileArc = 1f;
-        public static int waveProjectileCount = 3;
-        public static float waveProjectileForce = -2000;
-        public static float slamForce = 12000f;
-        public static GameObject weaponHitEffectPrefab;
-        public static NetworkSoundEventDef weaponImpactSound;
-        private BlastAttack blastAttack;
+        public float waveProjectileArc = 1f;
+        public int waveProjectileCount = 3;
+        public float slamForceDirect = PoppyStaticValues.specialSlamForce;
+        public float slamForceWave = PoppyStaticValues.specialWaveForce;
+        public NetworkSoundEventDef weaponImpactSound;
         private OverlapAttack weaponAttack;
         private Animator modelAnimator;
         private Transform modelTransform;
@@ -41,7 +38,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             base.OnEnter();
             hasFired = false;
             stopwatch = 0f;
-            waveProjectilePrefab = LegacyResourcesAPI.Load<GameObject>("RoR2/Base/Brother/BrotherSunderWave");
+            slamImpactEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/LoaderGroundSlam.prefab").WaitForCompletion();
+            waveProjectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSunderWave.prefab").WaitForCompletion();
             this.modelAnimator = base.GetModelAnimator();
             this.modelTransform = base.GetModelTransform();
             if (base.characterDirection)
@@ -61,12 +59,12 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 OverlapAttack overlapAttack = new OverlapAttack();
                 overlapAttack.attacker = base.gameObject;
                 overlapAttack.damage = damageCoefficient * this.damageStat;
-                //overlapAttack.hitEffectPrefab = WeaponSlam.weaponHitEffectPrefab;
+                overlapAttack.hitEffectPrefab = WeaponSlam.weaponHitEffectPrefab;
                 overlapAttack.hitBoxGroup = Array.Find<HitBoxGroup>(this.modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "KeeperGroup");
                 overlapAttack.impactSound = WeaponSlam.weaponImpactSound.index;
                 overlapAttack.inflictor = base.gameObject;
                 overlapAttack.procChainMask = default(ProcChainMask);
-                overlapAttack.forceVector = new Vector3(0, slamForce, 0);
+                overlapAttack.forceVector = new Vector3(0, slamForceDirect, 0);
                 overlapAttack.procCoefficient = procCoefficient;
                 overlapAttack.teamIndex = base.GetTeam();
                 this.weaponAttack = overlapAttack;
@@ -79,16 +77,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         {
             base.FixedUpdate();
             stopwatch += Time.fixedDeltaTime;
-            //EffectManager.SimpleMuzzleFlash(slamImpactEffect, base.gameObject, muzzleString, false);
             if (base.isAuthority)
             {
                 if (base.characterDirection)
                 {
                     base.characterDirection.moveVector = base.characterDirection.forward;
                 }
-                //Transform transform2 = base.FindModelChild(muzzleString);
                 if (!hasFired && stopwatch >= blastDelay)
                 {
+                    EffectManager.SimpleMuzzleFlash(slamImpactEffect, gameObject, muzzleString, false);
                     this.weaponAttack.Fire(null);
                     if (PoppyConfig.bonkConfig.Value)
                     {
@@ -137,17 +134,19 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 bool isAuthority2 = base.isAuthority;
                 if (isAuthority2)
                 {
+                    waveProjectilePrefab.GetComponent<ProjectileOverlapAttack>().forceVector = new Vector3(0f, slamForceWave, 0f);
+
                     FireProjectileInfo fireProjectileInfo = new FireProjectileInfo
                     {
                         crit = base.RollCrit(),
                         damage = base.damageStat * (this.damageCoefficient / (float)waveProjectileCount),
                         damageTypeOverride = new DamageType?(DamageType.Stun1s),
                         damageColorIndex = DamageColorIndex.Default,
-                        force = waveProjectileForce,
+                        force = 0f,
                         owner = base.gameObject,
                         position = footPosition,
                         procChainMask = default(ProcChainMask),
-                        projectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Brother/BrotherSunderWave.prefab").WaitForCompletion(),
+                        projectilePrefab = waveProjectilePrefab,
                         rotation = Util.QuaternionSafeLookRotation(forward),
                         useFuseOverride = false,
                         useSpeedOverride = false,
@@ -158,13 +157,13 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             }
         }
 
-        public override InterruptPriority GetMinimumInterruptPriority()
-        {
-            if (base.fixedAge <= durationBeforePriorityReduces)
-            {
-                return InterruptPriority.PrioritySkill;
-            }
-            return InterruptPriority.Skill;
-        }
+        //public override InterruptPriority GetMinimumInterruptPriority()
+        //{
+        //    if (base.fixedAge <= durationBeforePriorityReduces)
+        //    {
+        //        return InterruptPriority.PrioritySkill;
+        //    }
+        //    return InterruptPriority.Skill;
+        //}
     }
 }

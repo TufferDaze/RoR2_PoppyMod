@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using RoR2;
-using System.Collections.Generic;
 using RoR2.Orbs;
 using PoppyMod.Modules;
+using System.Collections.Generic;
 
 namespace PoppyMod.Survivors.Poppy.SkillStates
 {
@@ -77,7 +77,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             base.OnExit();
             if (!attemptedFire)
             {
-                //Debug.LogWarning("IronAmbassador: OnExit fire used");
+                //Debug.LogWarning("IronAmbassador: OnExit fire used.");
                 FireBuckler();
             }
             if (!hasFired && NetworkServer.active)
@@ -93,19 +93,20 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 return;
             }
             attemptedFire = true;
-            ReboundProjectile bucklerAttack = new ReboundProjectile();
-            bucklerAttack.damageValue = damageStat * damageCoefficient;
+            ShieldyProjectile bucklerAttack = new ShieldyProjectile();
+            bucklerAttack.procCoefficient = procCoefficient;
             bucklerAttack.isCrit = Util.CheckRoll(characterBody.crit, characterBody.master);
+            bucklerAttack.damageValue = damageStat * damageCoefficient;
+            bucklerAttack.damageType = DamageType.Generic;
+            bucklerAttack.damageCoefficientPerBounce = bounceDamageIncreaseCoefficient;
             bucklerAttack.teamIndex = TeamComponent.GetObjectTeam(gameObject);
             bucklerAttack.attacker = base.gameObject;
             bucklerAttack.inflictor = base.gameObject;
-            bucklerAttack.procCoefficient = procCoefficient;
             bucklerAttack.bouncesRemaining = maxBounces;
             bucklerAttack.speed = travelSpeed;
             bucklerAttack.bouncedObjects = new List<HealthComponent>();
             bucklerAttack.range = bounceRange;
             bucklerAttack.killConfirmed = false;
-            bucklerAttack.damageCoefficientPerBounce = bounceDamageIncreaseCoefficient;
             HurtBox hurtBox = initialTarget;
             if (hurtBox)
             {

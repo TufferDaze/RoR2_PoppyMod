@@ -164,7 +164,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="2705191942" Type="User" Language="SFX" Hash="{2552AB09-8F58-0C7C-6D76-DD26A1891081}">
+		<SoundBank Id="2705191942" Type="User" Language="SFX" Hash="{00D1C496-0EEE-C5BC-D317-906BEA137A78}">
 			<ShortName>PoppySoundBank</ShortName>
 			<Path>PoppySoundBank.bnk</Path>
 			<Media>
@@ -1273,5 +1273,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7C135B8A-8CAF-6B65-7333-790820C20D63}</FileHash>
+	<FileHash>{61AFDFFE-20CC-9F39-488C-E2159FB72483}</FileHash>
 </SoundBanksInfo>

@@ -2500,6 +2500,9 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="SFXTweakAttenuation" ID="{B074DB03-282E-42BF-9F63-56CFCD601E8B}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
 												</Reference>
@@ -2523,8 +2526,12 @@
 										<Sound Name="poppy_world_boss_spawn_moon" ID="{9159E6E3-F1E7-4B19-8DEA-55E00C93A517}" ShortID="668687253">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="SFXTweakAttenuation" ID="{B074DB03-282E-42BF-9F63-56CFCD601E8B}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
 												</Reference>
@@ -4202,55 +4209,27 @@
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
-								<Folder Name="SFX" ID="{72982993-334F-43B3-BD1D-7C233FCEEDE2}" ShortID="949535292">
+								<ActorMixer Name="SFXTweak" ID="{68D1E20C-BA54-4684-AAFD-30D6ED340753}" ShortID="690363759">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="SFXTweakAttenuation" ID="{B074DB03-282E-42BF-9F63-56CFCD601E8B}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+										</Reference>
+									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="poppy_skill_bonk_05" ID="{33DCC444-11E2-4489-B9C8-CF128886E7EB}" ShortID="315639215">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
+										<Folder Name="SFX" ID="{72982993-334F-43B3-BD1D-7C233FCEEDE2}" ShortID="949535292">
 											<ChildrenList>
-												<AudioFileSource Name="poppy_skill_bonk_05" ID="{F3A1E34D-1DD7-424D-BF29-65DB641D870B}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_skill_bonk_05.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="904084983"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_skill_bonk_05" ID="{F3A1E34D-1DD7-424D-BF29-65DB641D870B}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<RandomSequenceContainer Name="PlayPoppyBonkSmallSFX" ID="{892868CE-EE5F-4C0E-917C-4791BC48BB69}" ShortID="1040538184">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_bonk_01" ID="{81E55F5B-9A37-4904-9E90-875396EA37A2}" ShortID="978670939">
+												<Sound Name="poppy_skill_bonk_05" ID="{33DCC444-11E2-4489-B9C8-CF128886E7EB}" ShortID="315639215">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -4261,25 +4240,23 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_bonk_01" ID="{80D9F06C-E6F7-4DA7-B44A-580C00E92852}">
+														<AudioFileSource Name="poppy_skill_bonk_05" ID="{F3A1E34D-1DD7-424D-BF29-65DB641D870B}">
 															<Language>SFX</Language>
-															<AudioFile>poppy_skill_bonk_01.wav</AudioFile>
+															<AudioFile>poppy_skill_bonk_05.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="377152802"/>
+																<MediaID ID="904084983"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_bonk_01" ID="{80D9F06C-E6F7-4DA7-B44A-580C00E92852}" Platform="Linked"/>
+														<ActiveSource Name="poppy_skill_bonk_05" ID="{F3A1E34D-1DD7-424D-BF29-65DB641D870B}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="poppy_skill_bonk_02" ID="{5E28C79F-EDE0-47E0-B060-76B770D5E482}" ShortID="124388680">
+												<RandomSequenceContainer Name="PlayPoppyBonkSmallSFX" ID="{892868CE-EE5F-4C0E-917C-4791BC48BB69}" ShortID="1040538184">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -4290,827 +4267,130 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_bonk_02" ID="{FC6A9A9D-3C89-4142-884C-55CE3C8909FD}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_bonk_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="21484888"/>
-															</MediaIDList>
-														</AudioFileSource>
+														<Sound Name="poppy_skill_bonk_01" ID="{81E55F5B-9A37-4904-9E90-875396EA37A2}" ShortID="978670939">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_bonk_01" ID="{80D9F06C-E6F7-4DA7-B44A-580C00E92852}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_bonk_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="377152802"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_bonk_01" ID="{80D9F06C-E6F7-4DA7-B44A-580C00E92852}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_bonk_02" ID="{5E28C79F-EDE0-47E0-B060-76B770D5E482}" ShortID="124388680">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_bonk_02" ID="{FC6A9A9D-3C89-4142-884C-55CE3C8909FD}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_bonk_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="21484888"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_bonk_02" ID="{FC6A9A9D-3C89-4142-884C-55CE3C8909FD}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_bonk_03" ID="{59CDF650-B853-4F67-B00C-B1EAA82B6B9F}" ShortID="429659784">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_bonk_03" ID="{C6AC73E0-CCBB-406E-96EA-D1326BFBF435}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_bonk_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="839389029"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_bonk_03" ID="{C6AC73E0-CCBB-406E-96EA-D1326BFBF435}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_bonk_04" ID="{D8B7BCB5-5459-4B48-BEE0-1BAA96CF375D}" ShortID="1011099690">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_bonk_04" ID="{30489DB7-9C02-44BD-97FC-D52E38FD749E}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_bonk_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="611449624"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_bonk_04" ID="{30489DB7-9C02-44BD-97FC-D52E38FD749E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_bonk_02" ID="{FC6A9A9D-3C89-4142-884C-55CE3C8909FD}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_bonk_03" ID="{59CDF650-B853-4F67-B00C-B1EAA82B6B9F}" ShortID="429659784">
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyRFireSFX" ID="{FEBA0D17-6254-4C1A-9ECB-EB289FCFD997}" ShortID="981631592">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_bonk_03" ID="{C6AC73E0-CCBB-406E-96EA-D1326BFBF435}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_bonk_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="839389029"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_bonk_03" ID="{C6AC73E0-CCBB-406E-96EA-D1326BFBF435}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_bonk_04" ID="{D8B7BCB5-5459-4B48-BEE0-1BAA96CF375D}" ShortID="1011099690">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_bonk_04" ID="{30489DB7-9C02-44BD-97FC-D52E38FD749E}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_bonk_04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="611449624"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_bonk_04" ID="{30489DB7-9C02-44BD-97FC-D52E38FD749E}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyRFireSFX" ID="{FEBA0D17-6254-4C1A-9ECB-EB289FCFD997}" ShortID="981631592">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_r_release_01" ID="{9E22CD4F-0FAA-4A69-AFBE-3B7BD0B10FC4}" ShortID="47566968">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_release_01" ID="{3E2EC1AE-956B-4409-9DB8-081F95A0D743}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_release_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="581027283"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_release_01" ID="{3E2EC1AE-956B-4409-9DB8-081F95A0D743}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_release_02" ID="{5075905B-4F1C-4569-9C6F-2F55EDA80C7D}" ShortID="989264198">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_release_02" ID="{41EEF87D-F425-4308-8FC4-2CFCCF08CA51}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_release_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="841702846"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_release_02" ID="{41EEF87D-F425-4308-8FC4-2CFCCF08CA51}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_release_03" ID="{8205A047-15B2-479D-A2D5-02AE49C25621}" ShortID="562431566">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_release_03" ID="{E9CA8BA0-37AF-46D0-913C-1C44E4E359A5}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_release_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="142411385"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_release_03" ID="{E9CA8BA0-37AF-46D0-913C-1C44E4E359A5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyWSFX" ID="{7D276C42-6E24-406F-83EA-4E0EB3DD2F9C}" ShortID="71721669">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_w_01" ID="{55177E63-E05D-4E1E-8EE1-0CAA44AE2EEA}" ShortID="265764855">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_w_01" ID="{253147A2-C724-42B3-AC45-8666A4B1314F}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_w_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="89360747"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_w_01" ID="{253147A2-C724-42B3-AC45-8666A4B1314F}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_w_02" ID="{C47A923F-12B9-464F-8231-B353AC01E6EB}" ShortID="842309522">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_w_02" ID="{9BD00135-44E2-4BFF-8455-877D3FA14102}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_w_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="525633157"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_w_02" ID="{9BD00135-44E2-4BFF-8455-877D3FA14102}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyRChargeSFX" ID="{57B350BA-7967-4E7F-8602-D839F635EABE}" ShortID="614372138">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_r_charge_01" ID="{3A693C12-7BD9-4C23-8EB2-88D105345D35}" ShortID="527770066">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_01" ID="{03EDBF44-73BB-4E35-9B41-E11FB72FEFBA}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="899054514"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_01" ID="{03EDBF44-73BB-4E35-9B41-E11FB72FEFBA}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_charge_02" ID="{BFB2FFFA-59C1-436A-A901-A34F1DC6BB6E}" ShortID="629248632">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_02" ID="{60CE9F30-C98C-4DB7-8D63-BBA8A24B7027}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="683339036"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_02" ID="{60CE9F30-C98C-4DB7-8D63-BBA8A24B7027}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyESFX" ID="{5C116259-FF82-4665-81DD-A2F3072D1CE2}" ShortID="980067205">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_e_01" ID="{492DF560-AAFF-41B0-BCB0-78441A66C59F}" ShortID="120004511">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_e_01" ID="{AD785D27-74F1-4DB5-9B31-4E33A8A1F416}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_e_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="958846208"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_e_01" ID="{AD785D27-74F1-4DB5-9B31-4E33A8A1F416}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_e_02" ID="{69260EAC-0A03-4AE3-871E-19407B7BEC81}" ShortID="572067752">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_e_02" ID="{8EBA547B-E5D0-4B97-8093-2DF7AD4FDF44}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_e_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="297370849"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_e_02" ID="{8EBA547B-E5D0-4B97-8093-2DF7AD4FDF44}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_e_03" ID="{4A767C40-DD0A-425F-AC00-A1146FC45751}" ShortID="552436977">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_e_03" ID="{D4B5E8E5-2B27-4CD6-9D1F-5DCC88C2F338}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_e_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="637986757"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_e_03" ID="{D4B5E8E5-2B27-4CD6-9D1F-5DCC88C2F338}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_e_04" ID="{94474781-0996-4CB4-A259-DA2B0BE143F4}" ShortID="515093414">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_e_04" ID="{8964DC8F-51E5-415C-AEDD-F7A61ADDF7F7}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_e_04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="105987955"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_e_04" ID="{8964DC8F-51E5-415C-AEDD-F7A61ADDF7F7}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyQSFX" ID="{6640184F-403B-4641-AF5F-F771D985FB52}" ShortID="33018319">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_q_01" ID="{4016C18B-6225-4FCA-AA4E-14E0740EEE89}" ShortID="976652675">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>16</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_q_01" ID="{BDF80CB6-05B0-42AA-9D29-5507F620774F}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_q_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="647003820"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_q_01" ID="{BDF80CB6-05B0-42AA-9D29-5507F620774F}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_q_02" ID="{3B3665E2-0362-48A4-89F3-8B941E81475E}" ShortID="171455775">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>16</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_q_02" ID="{9EA7CC6E-2A3D-4ADE-A6C0-0E0773E46302}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_q_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="719295448"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_q_02" ID="{9EA7CC6E-2A3D-4ADE-A6C0-0E0773E46302}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_q_03" ID="{96FBCF07-5A6E-4440-B113-D274BF23113D}" ShortID="530382581">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>16</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_q_04" ID="{5D3CF5B4-B1AC-4B93-8D39-674FE3E8A551}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_q_04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="456596241"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_q_04" ID="{5D3CF5B4-B1AC-4B93-8D39-674FE3E8A551}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_q_04" ID="{AC01F489-2E22-4F5B-B07A-9A7B9C5490A8}" ShortID="170578438">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>16</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_q_05" ID="{B3DF7A3F-6236-48DE-94DB-FBC6337BBE8A}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_q_05.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="799992236"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_q_05" ID="{B3DF7A3F-6236-48DE-94DB-FBC6337BBE8A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_q_05" ID="{35F8183B-9DC6-4E40-8AFB-44EB9EC9E9EB}" ShortID="853033216">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>16</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_q_06" ID="{D0480E8B-5EDF-4CA4-8D4F-3407CB86711A}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_q_06.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="607417924"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_q_06" ID="{D0480E8B-5EDF-4CA4-8D4F-3407CB86711A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_q_06" ID="{CDCE7548-A6D7-4302-BE36-341921B45E84}" ShortID="1055278767">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>16</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_q_07" ID="{408E254E-6EF6-43AD-9DFF-20F09913E2A2}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_q_07.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="764420155"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_q_07" ID="{408E254E-6EF6-43AD-9DFF-20F09913E2A2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyRChargeFireSFX" ID="{1A71A6AC-5D59-420D-A05B-F0AC262BD867}" ShortID="620923640">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_r_charge_release_01" ID="{53172509-63B0-4CFF-9E79-5A490B30AED6}" ShortID="200765105">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_01" ID="{3B574645-A853-4212-B84C-321D36093BDA}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="597141628"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_01" ID="{3B574645-A853-4212-B84C-321D36093BDA}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_charge_release_02" ID="{06F834D6-06BC-4214-A510-54103692012F}" ShortID="514181424">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_02" ID="{A998C13E-B82E-4E1F-B3BE-A3680088D4A9}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="504956921"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_02" ID="{A998C13E-B82E-4E1F-B3BE-A3680088D4A9}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_charge_release_03" ID="{B80E7DBF-0EF9-4531-B147-376A1C0ED22F}" ShortID="295895360">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_03" ID="{0757CA7E-928C-4296-B170-E3A67E1FA776}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="996598876"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_03" ID="{0757CA7E-928C-4296-B170-E3A67E1FA776}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_charge_release_04" ID="{5D047664-2257-47E6-B56D-2861D05A1F0A}" ShortID="96034168">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_04" ID="{21EA31BC-9D8E-45DE-98F2-57B45FF9CCA4}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="944146455"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_04" ID="{21EA31BC-9D8E-45DE-98F2-57B45FF9CCA4}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyAttackSFX" ID="{72CD7C5D-86E1-43E9-9E27-8C0AEFD5647B}" ShortID="799673510">
-											<PropertyList>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>15</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_attack01" ID="{327D29CC-7B45-43C2-9CCB-73AA3E1D3BCE}" ShortID="317850696">
-													<PropertyList>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>20</Value>
 															</ValueList>
@@ -5125,21 +4405,101 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attack01" ID="{1EA41937-E557-4F05-B12F-14D707CBC96E}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attack01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="986563007"/>
-															</MediaIDList>
-														</AudioFileSource>
+														<Sound Name="poppy_skill_r_release_01" ID="{9E22CD4F-0FAA-4A69-AFBE-3B7BD0B10FC4}" ShortID="47566968">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_release_01" ID="{3E2EC1AE-956B-4409-9DB8-081F95A0D743}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_release_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="581027283"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_release_01" ID="{3E2EC1AE-956B-4409-9DB8-081F95A0D743}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_release_02" ID="{5075905B-4F1C-4569-9C6F-2F55EDA80C7D}" ShortID="989264198">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_release_02" ID="{41EEF87D-F425-4308-8FC4-2CFCCF08CA51}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_release_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="841702846"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_release_02" ID="{41EEF87D-F425-4308-8FC4-2CFCCF08CA51}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_release_03" ID="{8205A047-15B2-479D-A2D5-02AE49C25621}" ShortID="562431566">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_release_03" ID="{E9CA8BA0-37AF-46D0-913C-1C44E4E359A5}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_release_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="142411385"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_release_03" ID="{E9CA8BA0-37AF-46D0-913C-1C44E4E359A5}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attack01" ID="{1EA41937-E557-4F05-B12F-14D707CBC96E}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attack02" ID="{3FE4EF9F-26E5-4F87-95E4-C8DC51C6456E}" ShortID="958393096">
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyWSFX" ID="{7D276C42-6E24-406F-83EA-4E0EB3DD2F9C}" ShortID="71721669">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>20</Value>
 															</ValueList>
@@ -5154,21 +4514,58 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attack02" ID="{25CE72B3-9F12-4625-B625-A02E226F09E6}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attack02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="855397441"/>
-															</MediaIDList>
-														</AudioFileSource>
+														<Sound Name="poppy_skill_w_01" ID="{55177E63-E05D-4E1E-8EE1-0CAA44AE2EEA}" ShortID="265764855">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_w_01" ID="{253147A2-C724-42B3-AC45-8666A4B1314F}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_w_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="89360747"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_w_01" ID="{253147A2-C724-42B3-AC45-8666A4B1314F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_w_02" ID="{C47A923F-12B9-464F-8231-B353AC01E6EB}" ShortID="842309522">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_w_02" ID="{9BD00135-44E2-4BFF-8455-877D3FA14102}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_w_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="525633157"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_w_02" ID="{9BD00135-44E2-4BFF-8455-877D3FA14102}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attack02" ID="{25CE72B3-9F12-4625-B625-A02E226F09E6}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attack03" ID="{274F513C-EEF0-4033-AFC2-44056E0D0A04}" ShortID="423532688">
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyRChargeSFX" ID="{57B350BA-7967-4E7F-8602-D839F635EABE}" ShortID="614372138">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>20</Value>
 															</ValueList>
@@ -5183,21 +4580,72 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attack03" ID="{E933D8A1-7467-43B0-AC7B-5D384066E85D}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attack03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="967014971"/>
-															</MediaIDList>
-														</AudioFileSource>
+														<Sound Name="poppy_skill_r_charge_01" ID="{3A693C12-7BD9-4C23-8EB2-88D105345D35}" ShortID="527770066">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_01" ID="{03EDBF44-73BB-4E35-9B41-E11FB72FEFBA}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="899054514"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_01" ID="{03EDBF44-73BB-4E35-9B41-E11FB72FEFBA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_charge_02" ID="{BFB2FFFA-59C1-436A-A901-A34F1DC6BB6E}" ShortID="629248632">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_02" ID="{60CE9F30-C98C-4DB7-8D63-BBA8A24B7027}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="683339036"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_02" ID="{60CE9F30-C98C-4DB7-8D63-BBA8A24B7027}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attack03" ID="{E933D8A1-7467-43B0-AC7B-5D384066E85D}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attack04" ID="{387320B6-3F8C-45D6-B2CB-207F4F5478C6}" ShortID="281605776">
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyESFX" ID="{5C116259-FF82-4665-81DD-A2F3072D1CE2}" ShortID="980067205">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>20</Value>
 															</ValueList>
@@ -5212,21 +4660,130 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attack04" ID="{805322D1-3775-421C-AD69-14E161801D1A}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attack04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1048774831"/>
-															</MediaIDList>
-														</AudioFileSource>
+														<Sound Name="poppy_skill_e_01" ID="{492DF560-AAFF-41B0-BCB0-78441A66C59F}" ShortID="120004511">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_e_01" ID="{AD785D27-74F1-4DB5-9B31-4E33A8A1F416}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_e_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="958846208"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_e_01" ID="{AD785D27-74F1-4DB5-9B31-4E33A8A1F416}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_e_02" ID="{69260EAC-0A03-4AE3-871E-19407B7BEC81}" ShortID="572067752">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_e_02" ID="{8EBA547B-E5D0-4B97-8093-2DF7AD4FDF44}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_e_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="297370849"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_e_02" ID="{8EBA547B-E5D0-4B97-8093-2DF7AD4FDF44}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_e_03" ID="{4A767C40-DD0A-425F-AC00-A1146FC45751}" ShortID="552436977">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_e_03" ID="{D4B5E8E5-2B27-4CD6-9D1F-5DCC88C2F338}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_e_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="637986757"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_e_03" ID="{D4B5E8E5-2B27-4CD6-9D1F-5DCC88C2F338}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_e_04" ID="{94474781-0996-4CB4-A259-DA2B0BE143F4}" ShortID="515093414">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_e_04" ID="{8964DC8F-51E5-415C-AEDD-F7A61ADDF7F7}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_e_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="105987955"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_e_04" ID="{8964DC8F-51E5-415C-AEDD-F7A61ADDF7F7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attack04" ID="{805322D1-3775-421C-AD69-14E161801D1A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attack05" ID="{5874057C-F69B-407B-8CCF-567EEE54B290}" ShortID="1053200835">
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyQSFX" ID="{6640184F-403B-4641-AF5F-F771D985FB52}" ShortID="33018319">
 													<PropertyList>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>20</Value>
 															</ValueList>
@@ -5241,243 +4798,492 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attack05" ID="{F5690FB7-1798-4F9B-81DE-92B9AF62DD79}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attack05.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="32007833"/>
-															</MediaIDList>
-														</AudioFileSource>
+														<Sound Name="poppy_skill_q_01" ID="{4016C18B-6225-4FCA-AA4E-14E0740EEE89}" ShortID="976652675">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>16</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_q_01" ID="{BDF80CB6-05B0-42AA-9D29-5507F620774F}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_q_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="647003820"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_q_01" ID="{BDF80CB6-05B0-42AA-9D29-5507F620774F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_q_02" ID="{3B3665E2-0362-48A4-89F3-8B941E81475E}" ShortID="171455775">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>16</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_q_02" ID="{9EA7CC6E-2A3D-4ADE-A6C0-0E0773E46302}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_q_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="719295448"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_q_02" ID="{9EA7CC6E-2A3D-4ADE-A6C0-0E0773E46302}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_q_03" ID="{96FBCF07-5A6E-4440-B113-D274BF23113D}" ShortID="530382581">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>16</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_q_04" ID="{5D3CF5B4-B1AC-4B93-8D39-674FE3E8A551}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_q_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="456596241"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_q_04" ID="{5D3CF5B4-B1AC-4B93-8D39-674FE3E8A551}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_q_04" ID="{AC01F489-2E22-4F5B-B07A-9A7B9C5490A8}" ShortID="170578438">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>16</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_q_05" ID="{B3DF7A3F-6236-48DE-94DB-FBC6337BBE8A}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_q_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="799992236"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_q_05" ID="{B3DF7A3F-6236-48DE-94DB-FBC6337BBE8A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_q_05" ID="{35F8183B-9DC6-4E40-8AFB-44EB9EC9E9EB}" ShortID="853033216">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>16</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_q_06" ID="{D0480E8B-5EDF-4CA4-8D4F-3407CB86711A}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_q_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="607417924"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_q_06" ID="{D0480E8B-5EDF-4CA4-8D4F-3407CB86711A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_q_06" ID="{CDCE7548-A6D7-4302-BE36-341921B45E84}" ShortID="1055278767">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>16</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_q_07" ID="{408E254E-6EF6-43AD-9DFF-20F09913E2A2}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_q_07.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="764420155"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_q_07" ID="{408E254E-6EF6-43AD-9DFF-20F09913E2A2}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attack05" ID="{F5690FB7-1798-4F9B-81DE-92B9AF62DD79}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<Sound Name="poppy_world_jokesfx01" ID="{CD6B1F1B-33D3-4E9C-B7E5-57B66BB414F8}" ShortID="455077463">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_world_jokesfx01" ID="{5D75DA14-5DC9-424E-ABA5-4B8AB6C44213}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_world_jokesfx01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="7846490"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_world_jokesfx01" ID="{5D75DA14-5DC9-424E-ABA5-4B8AB6C44213}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="poppy_world_laughsfx" ID="{7BD91491-3942-492F-BB9F-218150C08F73}" ShortID="696318360">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_world_laughsfx" ID="{5B3D4EBA-4CF0-4800-8C01-0DE32A43DAB5}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_world_laughsfx.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="718902919"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_world_laughsfx" ID="{5B3D4EBA-4CF0-4800-8C01-0DE32A43DAB5}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="poppy_world_dancesfx01" ID="{E3DCDA74-40BD-4CFE-92F3-742BE138A4B4}" ShortID="835772036">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>30</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_world_dancesfx01" ID="{BAB732C0-9757-4E5A-AC2E-4143FF25D3D9}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_world_dancesfx01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="133888734"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_world_dancesfx01" ID="{BAB732C0-9757-4E5A-AC2E-4143FF25D3D9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="poppy_world_dancesfx02" ID="{73FD3DAC-CDA2-420D-9697-E7CD304BE8FD}" ShortID="741623754">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>40</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_world_dancesfx02" ID="{FD31C364-70EE-4C5E-957D-E11BB5472E82}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_world_dancesfx02.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="796186063"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_world_dancesfx02" ID="{FD31C364-70EE-4C5E-957D-E11BB5472E82}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="poppy_world_jokesfx02" ID="{AB04DE7E-C20A-4926-B6D2-75AF66B9C7ED}" ShortID="695160654">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_world_jokesfx02" ID="{76E3C6F0-81DB-495F-AA74-BAFD8C7D25A0}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_world_jokesfx02.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="229817802"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_world_jokesfx02" ID="{76E3C6F0-81DB-495F-AA74-BAFD8C7D25A0}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="poppy_world_tauntsfx" ID="{EEFA25BA-545E-454D-A049-62B46C17B8B8}" ShortID="258353080">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_world_tauntsfx" ID="{19C14CDA-74E1-4218-9746-ADA0837E57DC}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_world_tauntsfx.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="849450149"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_world_tauntsfx" ID="{19C14CDA-74E1-4218-9746-ADA0837E57DC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<RandomSequenceContainer Name="PlayPoppyRChargeFireHitSFX" ID="{A097B5A8-2EAF-4843-B4B2-B50739F747C9}" ShortID="215338725">
-											<PropertyList>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_r_charge_release_hit_01" ID="{67A9685B-4072-49C5-93A4-87C063D78171}" ShortID="970040494">
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyRChargeFireSFX" ID="{1A71A6AC-5D59-420D-A05B-F0AC262BD867}" ShortID="620923640">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>33</Value>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="poppy_skill_r_charge_release_01" ID="{53172509-63B0-4CFF-9E79-5A490B30AED6}" ShortID="200765105">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_01" ID="{3B574645-A853-4212-B84C-321D36093BDA}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="597141628"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_01" ID="{3B574645-A853-4212-B84C-321D36093BDA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_charge_release_02" ID="{06F834D6-06BC-4214-A510-54103692012F}" ShortID="514181424">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_02" ID="{A998C13E-B82E-4E1F-B3BE-A3680088D4A9}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="504956921"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_02" ID="{A998C13E-B82E-4E1F-B3BE-A3680088D4A9}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_charge_release_03" ID="{B80E7DBF-0EF9-4531-B147-376A1C0ED22F}" ShortID="295895360">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_03" ID="{0757CA7E-928C-4296-B170-E3A67E1FA776}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="996598876"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_03" ID="{0757CA7E-928C-4296-B170-E3A67E1FA776}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_charge_release_04" ID="{5D047664-2257-47E6-B56D-2861D05A1F0A}" ShortID="96034168">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_04" ID="{21EA31BC-9D8E-45DE-98F2-57B45FF9CCA4}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="944146455"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_04" ID="{21EA31BC-9D8E-45DE-98F2-57B45FF9CCA4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyAttackSFX" ID="{72CD7C5D-86E1-43E9-9E27-8C0AEFD5647B}" ShortID="799673510">
+													<PropertyList>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>15</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="poppy_skill_attack01" ID="{327D29CC-7B45-43C2-9CCB-73AA3E1D3BCE}" ShortID="317850696">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>20</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attack01" ID="{1EA41937-E557-4F05-B12F-14D707CBC96E}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attack01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="986563007"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attack01" ID="{1EA41937-E557-4F05-B12F-14D707CBC96E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attack02" ID="{3FE4EF9F-26E5-4F87-95E4-C8DC51C6456E}" ShortID="958393096">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>20</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attack02" ID="{25CE72B3-9F12-4625-B625-A02E226F09E6}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attack02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="855397441"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attack02" ID="{25CE72B3-9F12-4625-B625-A02E226F09E6}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attack03" ID="{274F513C-EEF0-4033-AFC2-44056E0D0A04}" ShortID="423532688">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>20</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attack03" ID="{E933D8A1-7467-43B0-AC7B-5D384066E85D}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attack03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="967014971"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attack03" ID="{E933D8A1-7467-43B0-AC7B-5D384066E85D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attack04" ID="{387320B6-3F8C-45D6-B2CB-207F4F5478C6}" ShortID="281605776">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>20</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attack04" ID="{805322D1-3775-421C-AD69-14E161801D1A}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attack04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1048774831"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attack04" ID="{805322D1-3775-421C-AD69-14E161801D1A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attack05" ID="{5874057C-F69B-407B-8CCF-567EEE54B290}" ShortID="1053200835">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>20</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attack05" ID="{F5690FB7-1798-4F9B-81DE-92B9AF62DD79}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attack05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="32007833"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attack05" ID="{F5690FB7-1798-4F9B-81DE-92B9AF62DD79}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<Sound Name="poppy_world_jokesfx01" ID="{CD6B1F1B-33D3-4E9C-B7E5-57B66BB414F8}" ShortID="455077463">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5493,24 +5299,24 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_hit_01" ID="{5E1FBE85-C18F-4EF2-A5DD-4CA78F913310}">
+														<AudioFileSource Name="poppy_world_jokesfx01" ID="{5D75DA14-5DC9-424E-ABA5-4B8AB6C44213}">
 															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_hit_01.wav</AudioFile>
+															<AudioFile>poppy_world_jokesfx01.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="619162345"/>
+																<MediaID ID="7846490"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_hit_01" ID="{5E1FBE85-C18F-4EF2-A5DD-4CA78F913310}" Platform="Linked"/>
+														<ActiveSource Name="poppy_world_jokesfx01" ID="{5D75DA14-5DC9-424E-ABA5-4B8AB6C44213}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="poppy_skill_r_charge_release_hit_02" ID="{9951EDE8-5022-48E0-A361-802384F9B064}" ShortID="42180005">
+												<Sound Name="poppy_world_laughsfx" ID="{7BD91491-3942-492F-BB9F-218150C08F73}" ShortID="696318360">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>33</Value>
+																<Value>20</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5526,24 +5332,24 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_hit_02" ID="{B29FE7CB-F2A6-4F7B-9538-3AD3BDDC22AF}">
+														<AudioFileSource Name="poppy_world_laughsfx" ID="{5B3D4EBA-4CF0-4800-8C01-0DE32A43DAB5}">
 															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_hit_02.wav</AudioFile>
+															<AudioFile>poppy_world_laughsfx.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="752010771"/>
+																<MediaID ID="718902919"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_hit_02" ID="{B29FE7CB-F2A6-4F7B-9538-3AD3BDDC22AF}" Platform="Linked"/>
+														<ActiveSource Name="poppy_world_laughsfx" ID="{5B3D4EBA-4CF0-4800-8C01-0DE32A43DAB5}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="poppy_skill_r_charge_release_hit_03" ID="{A3F52E30-73ED-4751-BB1E-C9CFB00BFC65}" ShortID="196740321">
+												<Sound Name="poppy_world_dancesfx01" ID="{E3DCDA74-40BD-4CFE-92F3-742BE138A4B4}" ShortID="835772036">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
+														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>33</Value>
+																<Value>30</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5559,493 +5365,712 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_charge_release_hit_03" ID="{9AC82E72-01E1-4916-94D7-B148F7EB7CD0}">
+														<AudioFileSource Name="poppy_world_dancesfx01" ID="{BAB732C0-9757-4E5A-AC2E-4143FF25D3D9}">
 															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_charge_release_hit_03.wav</AudioFile>
+															<AudioFile>poppy_world_dancesfx01.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="944542343"/>
+																<MediaID ID="133888734"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_charge_release_hit_03" ID="{9AC82E72-01E1-4916-94D7-B148F7EB7CD0}" Platform="Linked"/>
+														<ActiveSource Name="poppy_world_dancesfx01" ID="{BAB732C0-9757-4E5A-AC2E-4143FF25D3D9}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<Sound Name="poppy_world_dancesfx02" ID="{73FD3DAC-CDA2-420D-9697-E7CD304BE8FD}" ShortID="741623754">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>40</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="poppy_world_dancesfx02" ID="{FD31C364-70EE-4C5E-957D-E11BB5472E82}">
+															<Language>SFX</Language>
+															<AudioFile>poppy_world_dancesfx02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="796186063"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="poppy_world_dancesfx02" ID="{FD31C364-70EE-4C5E-957D-E11BB5472E82}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="poppy_world_jokesfx02" ID="{AB04DE7E-C20A-4926-B6D2-75AF66B9C7ED}" ShortID="695160654">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="poppy_world_jokesfx02" ID="{76E3C6F0-81DB-495F-AA74-BAFD8C7D25A0}">
+															<Language>SFX</Language>
+															<AudioFile>poppy_world_jokesfx02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="229817802"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="poppy_world_jokesfx02" ID="{76E3C6F0-81DB-495F-AA74-BAFD8C7D25A0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="poppy_world_tauntsfx" ID="{EEFA25BA-545E-454D-A049-62B46C17B8B8}" ShortID="258353080">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="poppy_world_tauntsfx" ID="{19C14CDA-74E1-4218-9746-ADA0837E57DC}">
+															<Language>SFX</Language>
+															<AudioFile>poppy_world_tauntsfx.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="849450149"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="poppy_world_tauntsfx" ID="{19C14CDA-74E1-4218-9746-ADA0837E57DC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="PlayPoppyRChargeFireHitSFX" ID="{A097B5A8-2EAF-4843-B4B2-B50739F747C9}" ShortID="215338725">
+													<PropertyList>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="poppy_skill_r_charge_release_hit_01" ID="{67A9685B-4072-49C5-93A4-87C063D78171}" ShortID="970040494">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_hit_01" ID="{5E1FBE85-C18F-4EF2-A5DD-4CA78F913310}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_hit_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="619162345"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_hit_01" ID="{5E1FBE85-C18F-4EF2-A5DD-4CA78F913310}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_charge_release_hit_02" ID="{9951EDE8-5022-48E0-A361-802384F9B064}" ShortID="42180005">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_hit_02" ID="{B29FE7CB-F2A6-4F7B-9538-3AD3BDDC22AF}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_hit_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="752010771"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_hit_02" ID="{B29FE7CB-F2A6-4F7B-9538-3AD3BDDC22AF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_charge_release_hit_03" ID="{A3F52E30-73ED-4751-BB1E-C9CFB00BFC65}" ShortID="196740321">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_charge_release_hit_03" ID="{9AC82E72-01E1-4916-94D7-B148F7EB7CD0}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_charge_release_hit_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="944542343"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_charge_release_hit_03" ID="{9AC82E72-01E1-4916-94D7-B148F7EB7CD0}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyRFireHitSFX" ID="{DB0C338C-3FA5-4E8A-AB26-6E0A49EAF8CB}" ShortID="1035943932">
+													<PropertyList>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="poppy_skill_r_release_hit_03" ID="{85789D33-94ED-4C2E-9F8D-7EAA93B244EF}" ShortID="131688378">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_release_hit_03" ID="{799CD4F7-A24E-42BF-A6EC-40B3085BA5E8}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_release_hit_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="202021362"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_release_hit_03" ID="{799CD4F7-A24E-42BF-A6EC-40B3085BA5E8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_release_hit_01" ID="{2DAB1A07-B32E-41D4-BE04-80241BD554C7}" ShortID="1047832968">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_release_hit_01" ID="{F6EB7FFE-B7B5-46D7-BD3A-09A8DEB874B8}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_release_hit_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="981798531"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_release_hit_01" ID="{F6EB7FFE-B7B5-46D7-BD3A-09A8DEB874B8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_r_release_hit_02" ID="{39DC9FB0-AD7F-41BA-B7E1-BFF270C2ECF0}" ShortID="124260279">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_r_release_hit_02" ID="{F455DF13-2E51-487D-8DAB-07F2C65D1286}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_r_release_hit_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="925938725"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_r_release_hit_02" ID="{F455DF13-2E51-487D-8DAB-07F2C65D1286}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<Sound Name="poppy_misc_mastery" ID="{9CC15C34-0142-49A0-BDD8-54AEA20A6CEE}" ShortID="585679637">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="poppy_misc_mastery" ID="{54F8C1A5-E440-4382-8A85-273B1E574D45}">
+															<Language>SFX</Language>
+															<AudioFile>poppy_misc_mastery.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="46107564"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="poppy_misc_mastery" ID="{54F8C1A5-E440-4382-8A85-273B1E574D45}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="poppy_skill_p_pickup" ID="{DF6E3F46-97C3-46BB-92A3-9503877E6F4C}" ShortID="729072926">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="poppy_skill_p_pickup" ID="{40C9605B-A801-4F56-BBF7-4D96C62226AF}">
+															<Language>SFX</Language>
+															<AudioFile>poppy_skill_p_pickup.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1067652842"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="poppy_skill_p_pickup" ID="{40C9605B-A801-4F56-BBF7-4D96C62226AF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="PlayPoppyPassiveThrowSFX" ID="{AD9D7616-9C9C-4958-9F1B-46EC6186FEFF}" ShortID="275241765">
+													<PropertyList>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="poppy_skill_p_throw_01" ID="{FF90F1CE-4B43-4C24-BC91-7AC6B2D34251}" ShortID="318857005">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_p_throw_01" ID="{A0B3EEBF-7B8A-448A-9BE1-6F5A7B3B166C}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_p_throw_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="704093546"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_p_throw_01" ID="{A0B3EEBF-7B8A-448A-9BE1-6F5A7B3B166C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_p_throw_03" ID="{606E7616-2461-4DB0-A34B-9118C4BA5C7E}" ShortID="652950679">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_p_throw_03" ID="{5F00C510-7B86-4B2C-92AE-1881EBF30510}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_p_throw_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1053998369"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_p_throw_03" ID="{5F00C510-7B86-4B2C-92AE-1881EBF30510}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_p_throw_02" ID="{94E3631E-E3FB-498A-90BD-8D382CD60FAE}" ShortID="328211313">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>33</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_p_throw_02" ID="{EE684134-C6CA-4558-800F-B2F15527A84A}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_p_throw_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="866159123"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_p_throw_02" ID="{EE684134-C6CA-4558-800F-B2F15527A84A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="PlayPoppyAttackHitSFX" ID="{6B32C60E-D52E-497B-BE1C-EF15E738C648}" ShortID="423304625">
+													<PropertyList>
+														<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{8DDD1783-B453-4791-BF35-F8FA4C357198}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="100"/>
+																			<Property Name="Min" Type="Real64" Value="-125"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="poppy_skill_attackhit01" ID="{027F8391-7A10-41A9-97B2-CDDEF88E503E}" ShortID="674073840">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attackhit01" ID="{665AF753-FA0D-4A92-8235-7D011CACB036}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attackhit01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="787469857"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attackhit01" ID="{665AF753-FA0D-4A92-8235-7D011CACB036}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attackhit02" ID="{C8AC88E7-F810-4B92-AECA-9E2A181B2E47}" ShortID="959734310">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attackhit02" ID="{C0A18A7C-1478-495B-B7E7-DD75DA5592AE}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attackhit02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1053906452"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attackhit02" ID="{C0A18A7C-1478-495B-B7E7-DD75DA5592AE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attackhit04" ID="{D347CDFA-1ED6-4E38-9A14-6C3FE36C12CC}" ShortID="397313618">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attackhit04" ID="{CE3EC3A1-7D7C-40B7-8EC6-3392DD981320}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attackhit04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="284064820"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attackhit04" ID="{CE3EC3A1-7D7C-40B7-8EC6-3392DD981320}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="poppy_skill_attackhit03" ID="{F9DF7414-BA87-4B9F-9516-8D36878ABA0E}" ShortID="979201169">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="poppy_skill_attackhit03" ID="{C750EAF2-AC9A-4357-9393-210DA232173E}">
+																	<Language>SFX</Language>
+																	<AudioFile>poppy_skill_attackhit03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="726810045"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="poppy_skill_attackhit03" ID="{C750EAF2-AC9A-4357-9393-210DA232173E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
 											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyRFireHitSFX" ID="{DB0C338C-3FA5-4E8A-AB26-6E0A49EAF8CB}" ShortID="1035943932">
-											<PropertyList>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_r_release_hit_03" ID="{85789D33-94ED-4C2E-9F8D-7EAA93B244EF}" ShortID="131688378">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_release_hit_03" ID="{799CD4F7-A24E-42BF-A6EC-40B3085BA5E8}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_release_hit_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="202021362"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_release_hit_03" ID="{799CD4F7-A24E-42BF-A6EC-40B3085BA5E8}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_release_hit_01" ID="{2DAB1A07-B32E-41D4-BE04-80241BD554C7}" ShortID="1047832968">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_release_hit_01" ID="{F6EB7FFE-B7B5-46D7-BD3A-09A8DEB874B8}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_release_hit_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="981798531"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_release_hit_01" ID="{F6EB7FFE-B7B5-46D7-BD3A-09A8DEB874B8}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_r_release_hit_02" ID="{39DC9FB0-AD7F-41BA-B7E1-BFF270C2ECF0}" ShortID="124260279">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_r_release_hit_02" ID="{F455DF13-2E51-487D-8DAB-07F2C65D1286}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_r_release_hit_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="925938725"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_r_release_hit_02" ID="{F455DF13-2E51-487D-8DAB-07F2C65D1286}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<Sound Name="poppy_misc_mastery" ID="{9CC15C34-0142-49A0-BDD8-54AEA20A6CEE}" ShortID="585679637">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_misc_mastery" ID="{54F8C1A5-E440-4382-8A85-273B1E574D45}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_misc_mastery.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="46107564"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_misc_mastery" ID="{54F8C1A5-E440-4382-8A85-273B1E574D45}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="poppy_skill_p_pickup" ID="{DF6E3F46-97C3-46BB-92A3-9503877E6F4C}" ShortID="729072926">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="poppy_skill_p_pickup" ID="{40C9605B-A801-4F56-BBF7-4D96C62226AF}">
-													<Language>SFX</Language>
-													<AudioFile>poppy_skill_p_pickup.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1067652842"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="poppy_skill_p_pickup" ID="{40C9605B-A801-4F56-BBF7-4D96C62226AF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<RandomSequenceContainer Name="PlayPoppyPassiveThrowSFX" ID="{AD9D7616-9C9C-4958-9F1B-46EC6186FEFF}" ShortID="275241765">
-											<PropertyList>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_p_throw_01" ID="{FF90F1CE-4B43-4C24-BC91-7AC6B2D34251}" ShortID="318857005">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_p_throw_01" ID="{A0B3EEBF-7B8A-448A-9BE1-6F5A7B3B166C}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_p_throw_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="704093546"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_p_throw_01" ID="{A0B3EEBF-7B8A-448A-9BE1-6F5A7B3B166C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_p_throw_03" ID="{606E7616-2461-4DB0-A34B-9118C4BA5C7E}" ShortID="652950679">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_p_throw_03" ID="{5F00C510-7B86-4B2C-92AE-1881EBF30510}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_p_throw_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1053998369"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_p_throw_03" ID="{5F00C510-7B86-4B2C-92AE-1881EBF30510}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_p_throw_02" ID="{94E3631E-E3FB-498A-90BD-8D382CD60FAE}" ShortID="328211313">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>33</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_p_throw_02" ID="{EE684134-C6CA-4558-800F-B2F15527A84A}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_p_throw_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="866159123"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_p_throw_02" ID="{EE684134-C6CA-4558-800F-B2F15527A84A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="PlayPoppyAttackHitSFX" ID="{6B32C60E-D52E-497B-BE1C-EF15E738C648}" ShortID="423304625">
-											<PropertyList>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{8DDD1783-B453-4791-BF35-F8FA4C357198}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="100"/>
-																	<Property Name="Min" Type="Real64" Value="-125"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="poppy_skill_attackhit01" ID="{027F8391-7A10-41A9-97B2-CDDEF88E503E}" ShortID="674073840">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attackhit01" ID="{665AF753-FA0D-4A92-8235-7D011CACB036}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attackhit01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="787469857"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attackhit01" ID="{665AF753-FA0D-4A92-8235-7D011CACB036}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attackhit02" ID="{C8AC88E7-F810-4B92-AECA-9E2A181B2E47}" ShortID="959734310">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attackhit02" ID="{C0A18A7C-1478-495B-B7E7-DD75DA5592AE}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attackhit02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1053906452"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attackhit02" ID="{C0A18A7C-1478-495B-B7E7-DD75DA5592AE}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attackhit04" ID="{D347CDFA-1ED6-4E38-9A14-6C3FE36C12CC}" ShortID="397313618">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attackhit04" ID="{CE3EC3A1-7D7C-40B7-8EC6-3392DD981320}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attackhit04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="284064820"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attackhit04" ID="{CE3EC3A1-7D7C-40B7-8EC6-3392DD981320}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="poppy_skill_attackhit03" ID="{F9DF7414-BA87-4B9F-9516-8D36878ABA0E}" ShortID="979201169">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="Weight" Type="Real64">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Attenuation">
-															<ObjectRef Name="MasterAttenuation" ID="{55F80760-4352-41E2-A188-0225F8A51E1D}" WorkUnitID="{9E43E098-CAAA-45C7-A7BC-60471FB66276}"/>
-														</Reference>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{23D30E30-34BD-4936-A9AF-C707D9CB03A6}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C8C087D6-F443-4936-8C4D-4E32B3FE9FE1}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="poppy_skill_attackhit03" ID="{C750EAF2-AC9A-4357-9393-210DA232173E}">
-															<Language>SFX</Language>
-															<AudioFile>poppy_skill_attackhit03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="726810045"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="poppy_skill_attackhit03" ID="{C750EAF2-AC9A-4357-9393-210DA232173E}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
+										</Folder>
 									</ChildrenList>
-								</Folder>
+								</ActorMixer>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">

@@ -67,7 +67,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             RecalculateRollSpeed();
 
             if (characterDirection) characterDirection.forward = forwardDirection;
-            if (cameraTargetParams) cameraTargetParams.fovOverride = Mathf.Lerp(dodgeFOV, 60f, fixedAge / duration);
+            //if (cameraTargetParams) cameraTargetParams.fovOverride = Mathf.Lerp(dodgeFOV, 60f, fixedAge / duration);
 
             Vector3 normalized = (transform.position - previousPosition).normalized;
             if (characterMotor && characterDirection && normalized != Vector3.zero)
@@ -90,7 +90,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
 
         public override void OnExit()
         {
-            if (cameraTargetParams) cameraTargetParams.fovOverride = -1f;
+            //if (cameraTargetParams) cameraTargetParams.fovOverride = -1f;
             base.OnExit();
 
             characterMotor.disableAirControlUntilCollision = false;

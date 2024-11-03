@@ -1,6 +1,6 @@
-﻿using PoppyMod.Modules;
+﻿using EntityStates.Missions.BrotherEncounter;
+using PoppyMod.Modules;
 using RoR2;
-using System;
 using UnityEngine;
 
 namespace PoppyMod.Survivors.Poppy.Components
@@ -16,8 +16,9 @@ namespace PoppyMod.Survivors.Poppy.Components
         private float shieldSoundTimer = 0.5f;
         private bool shieldVoiceCanFire = true;
         private bool passiveVoiceCanFire;
-        private bool hasFiredSpawn;
-        private bool hasFiredDefeat;
+        private static bool hasFiredBossSpawn;
+        private static int firedEnter = 0;
+        private static int firedDeath = 0;
         private CharacterBody body;
 
         public void Awake()
@@ -25,11 +26,12 @@ namespace PoppyMod.Survivors.Poppy.Components
             if (PoppyConfig.bossConfig.Value)
             {
                 BossGroup.onBossGroupStartServer += BossGroup_onBossGroupStartServer;
-                BossGroup.onBossGroupDefeatedServer += BossGroup_onBossGroupDefeatedServer; ;
+                On.EntityStates.Missions.BrotherEncounter.Phase1.OnEnter += Phase1_OnEnter;
+                On.EntityStates.Missions.BrotherEncounter.BossDeath.OnEnter += BossDeath_OnEnter;
             }
             if (PoppyConfig.purchaseVOConfig.Value)
             {
-                GlobalEventManager.OnInteractionsGlobal += GlobalEventManager_OnInteractionsGlobal;
+                On.RoR2.PurchaseInteraction.OnInteractionBegin += PurchaseInteraction_OnInteractionBegin;
             }
             body = gameObject.GetComponent<CharacterBody>();
         }
@@ -77,12 +79,8 @@ namespace PoppyMod.Survivors.Poppy.Components
                 if (playSound)
                 {
                     Util.PlaySound("PlayPoppyIdle", gameObject);
-                    idleStopwatch = 0f;
                 }
-                else
-                {
-                    idleStopwatch = 0f;
-                }
+                idleStopwatch = 0f;
             }
         }
 
@@ -107,47 +105,44 @@ namespace PoppyMod.Survivors.Poppy.Components
 
         private void BossGroup_onBossGroupStartServer(BossGroup obj)
         {
-            if (!hasFiredSpawn)
+            if (!hasFiredBossSpawn && firedEnter == 0)
             {
-                hasFiredSpawn = true;
+                hasFiredBossSpawn = true;
                 AkSoundEngine.StopAll(gameObject);
-                if (obj.bestObservedName == "BrotherBody")
-                {
-                    Util.PlaySound("PlayPoppyBossSpawnMoon", gameObject);
-                }
-                else
-                {
-                    Util.PlaySound("PlayPoppyBossSpawn", gameObject);
-                }
+                Util.PlaySound("PlayPoppyBossSpawn", gameObject);
             }
         }
 
-        private void BossGroup_onBossGroupDefeatedServer(BossGroup obj)
+        private void Phase1_OnEnter(On.EntityStates.Missions.BrotherEncounter.Phase1.orig_OnEnter orig, Phase1 self)
         {
-            if (!hasFiredDefeat)
+            if (firedEnter == 0)
             {
-                hasFiredDefeat = true;
+                firedEnter++;
                 AkSoundEngine.StopAll(gameObject);
-                if (obj && (obj.bestObservedName == "BrotherBody"))
-                {
-                    Util.PlaySound("PlayPoppyBossDeathMoon", gameObject);
-                }
+                Util.PlaySound("PlayPoppyBossSpawnMoon", gameObject);
             }
+            orig(self);
         }
 
-        private void GlobalEventManager_OnInteractionsGlobal(Interactor sender, IInteractable interactInfo, GameObject interactObject)
+        private void BossDeath_OnEnter(On.EntityStates.Missions.BrotherEncounter.BossDeath.orig_OnEnter orig, BossDeath self)
         {
-            try
+            if (firedDeath == 0)
             {
-                if (interactObject.GetComponent<PurchaseInteraction>() && body.outOfDanger && ReferenceEquals(sender.gameObject, gameObject))
-                {
-                    AkSoundEngine.StopAll(gameObject);
-                    Util.PlaySound("PlayPoppyItemBuy", gameObject);
-                }
+                firedDeath++;
+                AkSoundEngine.StopAll(gameObject);
+                Util.PlaySound("PlayPoppyBossDeathMoon", gameObject);
             }
-            catch (Exception e)
+            orig(self);
+        }
+
+        private void PurchaseInteraction_OnInteractionBegin(On.RoR2.PurchaseInteraction.orig_OnInteractionBegin orig, PurchaseInteraction self, Interactor activator)
+        {
+            orig(self, activator);
+            if (body.outOfDanger && self.CanBeAffordedByInteractor(activator) && ReferenceEquals(activator.gameObject, gameObject))
             {
-                //Debug.LogError($"{e}PoppyMod: VOComponent: CharacterBody body component null");
+                Debug.Log("VOComponent: PurchaseInteract Fired.");
+                AkSoundEngine.StopAll(gameObject);
+                Util.PlaySound("PlayPoppyItemBuy", gameObject);
             }
         }
     }

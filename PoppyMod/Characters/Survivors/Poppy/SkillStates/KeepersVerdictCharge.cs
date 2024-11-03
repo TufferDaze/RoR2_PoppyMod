@@ -15,15 +15,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float damageCoefficient = PoppyConfig.spec1MinDmgConfig.Value;
         private float charge;
         private float instantFireThreshhold = 0.1f;
-        private float chargeThreshhold = 1.0f;
+        //private float chargeThreshhold = 1.0f;
         private float walkSlowCoefficient = 0.5f;
         private uint soundId1;
         private uint soundId2;
-        private Transform chargeVfxInstanceTransform;
-        public static GameObject crosshairOverridePrefab;
-        private CrosshairUtils.OverrideRequest crosshairOverrideRequest;
-        public static string chargeVfxChildLocatorName;
-        public static GameObject chargeVfxPrefab;
+        //private Transform chargeVfxInstanceTransform;
+        //public GameObject crosshairOverridePrefab;
+        //private CrosshairUtils.OverrideRequest crosshairOverrideRequest;
+        //public string chargeVfxChildLocatorName;
+        //public GameObject chargeVfxPrefab;
 
         public override void OnEnter()
         {
@@ -36,14 +36,6 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             }
             soundId1 = Util.PlaySound("PlayPoppyRCharge", gameObject);
             soundId2 = Util.PlaySound("PlayPoppyRChargeSFX", gameObject);
-            /*if (GetModelAnimator().GetBool("isMoving"))
-            {
-                PlayAnimation("FullBody, Override", "KeepersVerdictChargeRun");
-            }
-            else
-            {
-                PlayAnimation("FullBody, Override", "KeepersVerdictChargeIdle");
-            }*/
             PlayAnimation("Gesture, Override", "KeepersVerdictCharge");
             GetModelAnimator().SetBool("isCharging", true);
         }
@@ -60,23 +52,23 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 this.outer.SetNextStateToMain();
                 return;
             }
-            if (this.charge >= chargeThreshhold && !this.chargeVfxInstanceTransform && chargeVfxPrefab)
-            {
-                if (crosshairOverridePrefab && this.crosshairOverrideRequest == null)
-                {
-                    this.crosshairOverrideRequest = CrosshairUtils.RequestOverrideForBody(base.characterBody, crosshairOverridePrefab, CrosshairUtils.OverridePriority.Skill);
-                }
-                /*Transform transform = base.FindModelChild(chargeVfxChildLocatorName);
-                if (transform)
-                {
-                    this.chargeVfxInstanceTransform = UnityEngine.Object.Instantiate<GameObject>(chargeVfxPrefab, transform).transform;
-                    ScaleParticleSystemDuration component = this.chargeVfxInstanceTransform.GetComponent<ScaleParticleSystemDuration>();
-                    if (component)
-                    {
-                        component.newDuration = (1f - chargeThreshhold) * this.newMaxChargeTime;
-                    }
-                }*/
-            }
+            //if (this.charge >= chargeThreshhold && !this.chargeVfxInstanceTransform && chargeVfxPrefab)
+            //{
+            //    if (crosshairOverridePrefab && this.crosshairOverrideRequest == null)
+            //    {
+            //        this.crosshairOverrideRequest = CrosshairUtils.RequestOverrideForBody(base.characterBody, crosshairOverridePrefab, CrosshairUtils.OverridePriority.Skill);
+            //    }
+            //    /*Transform transform = base.FindModelChild(chargeVfxChildLocatorName);
+            //    if (transform)
+            //    {
+            //        this.chargeVfxInstanceTransform = UnityEngine.Object.Instantiate<GameObject>(chargeVfxPrefab, transform).transform;
+            //        ScaleParticleSystemDuration component = this.chargeVfxInstanceTransform.GetComponent<ScaleParticleSystemDuration>();
+            //        if (component)
+            //        {
+            //            component.newDuration = (1f - chargeThreshhold) * this.newMaxChargeTime;
+            //        }
+            //    }*/
+            //}
             base.characterMotor.walkSpeedPenaltyCoefficient = walkSlowCoefficient;
             if (base.isAuthority)
             {

@@ -3,6 +3,7 @@ using UnityEngine;
 using PoppyMod.Modules;
 using RiskOfOptions;
 using RiskOfOptions.Options;
+using System.Runtime.CompilerServices;
 
 namespace PoppyMod.Survivors.Poppy
 {
@@ -31,6 +32,8 @@ namespace PoppyMod.Survivors.Poppy
         public static ConfigEntry<float> util2SpdConfig;
         public static ConfigEntry<float> spec1MinDmgConfig;
         public static ConfigEntry<float> spec1MaxDmgConfig;
+        public static ConfigEntry<float> spec1SlamForceConfig;
+        public static ConfigEntry<float> spec1WaveForceConfig;
         public static ConfigEntry<float> spec2DmgConfig;
         public static ConfigEntry<float> spec2HPConfig;
         public static ConfigEntry<KeyboardShortcut> jokeConfig;
@@ -45,6 +48,9 @@ namespace PoppyMod.Survivors.Poppy
             string statSection = "Stats";
             string abilitySection = "Abilities";
             string emoteSection = "Emotes";
+
+            ModSettingsManager.SetModIcon(PoppySurvivor.instance.assetBundle.LoadAsset<Sprite>("poppy_square"));
+            ModSettingsManager.SetModDescription("Small idiot rat thing.");
 
             // Volume Control
             bonkConfig = Config.BindAndOptions(audioSection, "Bonk", false, "Enable only if you are really truely absolutely prepared for maximum bonkage.");
@@ -82,8 +88,10 @@ namespace PoppyMod.Survivors.Poppy
             util2SpdConfig = Config.BindAndOptions<float>(abilitySection, "Utility #2 Movespeed", PoppyStaticValues.utility2MoveCoefficient, "Percentage of your base movespeed gained during Steadfast Presence.");
 
             // Special #1
-            spec1MinDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Min Damage", PoppyStaticValues.special1MinDamageCoefficient, "Minimum damage coefficient of Keepers Verdict. If the min > max, then the values are swapped.");
-            spec1MaxDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Max Damage", PoppyStaticValues.special1MaxDamageCoefficient, "Maximum damage coefficient of Keepers Verdict. If the min > max, then the values are swapped.");
+            spec1MinDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Min Damage", PoppyStaticValues.special1MinDamageCoefficient, "Minimum damage coefficient of Keeper\'s Verdict. If the min > max, then the values are swapped.");
+            spec1MaxDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Max Damage", PoppyStaticValues.special1MaxDamageCoefficient, "Maximum damage coefficient of Keeper\'s Verdict. If the min > max, then the values are swapped.");
+            spec1SlamForceConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Slam Force", PoppyStaticValues.specialSlamForce, "Slam force of Keeper\'s Verdict. Applies to direct hits.");
+            spec1WaveForceConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Wave Force", PoppyStaticValues.specialWaveForce, "Shockwave force of Keeper\'s Verdict. Applies to shockwaves.");
 
             // Special #2
             spec2DmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #2 Damage", PoppyStaticValues.special2DamageCoefficient, "Damage coefficient of Hammer Shock.");

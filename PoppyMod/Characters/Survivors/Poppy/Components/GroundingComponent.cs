@@ -10,7 +10,7 @@ namespace PoppyMod.Survivors.Poppy.Components
 		private RigidbodyMotor rigidMotor;
 		private float maxDuration = 4f;
 		private float stopwatch;
-		private float downForce = PoppyStaticValues.groundingSpeed;
+		private float downForce = 10f;
 
 		private void Awake()
 		{

@@ -103,7 +103,7 @@ namespace PoppyMod.Survivors.Poppy
             specDriver.skillSlot = SkillSlot.Special;
             specDriver.requireSkillReady = true;
             specDriver.minDistance = 0;
-            specDriver.maxDistance = 10;
+            specDriver.maxDistance = 8;
             specDriver.selectionRequiresTargetLoS = false;
             specDriver.selectionRequiresOnGround = false;
             specDriver.selectionRequiresAimTarget = false;

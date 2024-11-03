@@ -15,7 +15,7 @@ namespace PoppyMod.Characters.Survivors.Poppy.Components
         private CharacterMotor motor;
         private SphereCollider sphereCollider;
         private float stopwatch;
-        private float maxDuration = 0.3f;
+        public float maxDuration = 1f;
 
         private void Awake()
         {

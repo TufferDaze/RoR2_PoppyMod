@@ -41,11 +41,12 @@
 
         public const float special1MaxDamageCoefficient = 26f;
 
+        public const float specialSlamForce = 4000f;
+
+        public const float specialWaveForce = 12000f;
+
         public const float special2DamageCoefficient = 24f;
 
         public const float special2HPDamageCoefficient = 0.1f;
-
-        // Misc Values
-        public const float groundingSpeed = 10f;
     }
 }
