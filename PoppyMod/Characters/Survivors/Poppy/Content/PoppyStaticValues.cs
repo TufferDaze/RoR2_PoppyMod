@@ -41,9 +41,9 @@
 
         public const float special1MaxDamageCoefficient = 26f;
 
-        public const float specialSlamForce = 4000f;
+        public const float specialSlamForce = 12000f;
 
-        public const float specialWaveForce = 12000f;
+        public const float specialWaveForce = 4000f;
 
         public const float special2DamageCoefficient = 24f;
 

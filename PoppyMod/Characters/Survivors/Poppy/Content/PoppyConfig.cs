@@ -63,12 +63,12 @@ namespace PoppyMod.Survivors.Poppy
             voFreqConfig = Config.BindAndOptionsSlider(audioSection, "Chatter Freqency", 1f, "Frequency of idle chatter.", 0f, 1f);
 
             // Stats
-            baseHPConfig = Config.BindAndOptionsSlider(statSection, "Base HP", PoppyStaticValues.baseHealth, "", 1, 500, true);
-            baseArmorConfig = Config.BindAndOptions<int>(statSection, "Base Armor", PoppyStaticValues.baseArmor, "", true);
-            baseDamageConfig = Config.BindAndOptions<float>(statSection, "Base Damage", PoppyStaticValues.baseDamage, "", true);
+            baseHPConfig = Config.BindAndOptionsSlider(statSection, "Base HP", PoppyStaticValues.baseHealth, "", 1, 1000, true);
+            baseArmorConfig = Config.BindAndOptionsSlider(statSection, "Base Armor", PoppyStaticValues.baseArmor, "", 0, 1000, true);
+            baseDamageConfig = Config.BindAndOptionsSlider(statSection, "Base Damage", PoppyStaticValues.baseDamage, "", 0f, 1000f, true);
             baseCritConfig = Config.BindAndOptions<float>(statSection, "Base Crit", PoppyStaticValues.baseCrit, "", true);
-            baseAttackSpeedConfig = Config.BindAndOptions<float>(statSection, "Base Attack Speed", PoppyStaticValues.baseAttackSpeed, "", true);
-            baseMoveSpeedConfig = Config.BindAndOptions<float>(statSection, "Base Move Speed", PoppyStaticValues.baseMoveSpeed, "", true);
+            baseAttackSpeedConfig = Config.BindAndOptionsSlider(statSection, "Base Attack Speed", PoppyStaticValues.baseAttackSpeed, "", 0.01f, 1000f, true);
+            baseMoveSpeedConfig = Config.BindAndOptionsSlider(statSection, "Base Move Speed", PoppyStaticValues.baseMoveSpeed, "", 1f, 1000f, true);
 
             // Passive
             passiveConfig = Config.BindAndOptions<float>(abilitySection, "Passive Armor", PoppyStaticValues.passiveArmorIncreaseCoefficient, "Percentage of your base armor to gain at max passive stacks.");
@@ -90,8 +90,8 @@ namespace PoppyMod.Survivors.Poppy
             // Special #1
             spec1MinDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Min Damage", PoppyStaticValues.special1MinDamageCoefficient, "Minimum damage coefficient of Keeper\'s Verdict. If the min > max, then the values are swapped.");
             spec1MaxDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Max Damage", PoppyStaticValues.special1MaxDamageCoefficient, "Maximum damage coefficient of Keeper\'s Verdict. If the min > max, then the values are swapped.");
-            spec1SlamForceConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Slam Force", PoppyStaticValues.specialSlamForce, "Slam force of Keeper\'s Verdict. Applies to direct hits.");
-            spec1WaveForceConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Wave Force", PoppyStaticValues.specialWaveForce, "Shockwave force of Keeper\'s Verdict. Applies to shockwaves.");
+            spec1SlamForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Slam Force", PoppyStaticValues.specialSlamForce, "Slam force of Keeper\'s Verdict. Applies to direct hits.", 0f, 12000f);
+            spec1WaveForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Wave Force", PoppyStaticValues.specialWaveForce, "Shockwave force of Keeper\'s Verdict. Applies to shockwaves.", 0f, 12000f);
 
             // Special #2
             spec2DmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #2 Damage", PoppyStaticValues.special2DamageCoefficient, "Damage coefficient of Hammer Shock.");

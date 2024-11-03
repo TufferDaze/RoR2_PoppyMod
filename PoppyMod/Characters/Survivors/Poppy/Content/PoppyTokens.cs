@@ -26,8 +26,8 @@ namespace PoppyMod.Survivors.Poppy
                 + "< ! > Heroic Charge carries non-boss enemies with you." + Environment.NewLine + Environment.NewLine
                 + "< ! > Heroic Charge deals extra damage to bosses." + Environment.NewLine + Environment.NewLine
                 + "< ! > Steadfast Presence can be used to keep non-boss flying enemies on the ground." + Environment.NewLine + Environment.NewLine
-                + "< ! > Enemies hit with a Keeper\'s Verdict shockwave are launched toward Poppy." + Environment.NewLine + Environment.NewLine
-                + "< ! > Enemies hit with Keeper\'s Verdict are sent into the stratosphere." + Environment.NewLine + Environment.NewLine;
+                + "< ! > Enemies hit with Keeper\'s Verdict are sent into the stratosphere(FOR REAL THIS TIME)." + Environment.NewLine + Environment.NewLine
+                + "< ! > Most stats can be tweaked in mod settings/config." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so she left to continue her search.";
             string outroFailure = "You are definitely not the hero.";

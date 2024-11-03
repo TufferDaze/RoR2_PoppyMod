@@ -16,7 +16,7 @@ namespace PoppyMod.Survivors.Poppy.Components
         private float shieldSoundTimer = 0.5f;
         private bool shieldVoiceCanFire = true;
         private bool passiveVoiceCanFire;
-        private static bool hasFiredBossSpawn;
+        private bool hasFiredBossSpawn;
         private static int firedEnter = 0;
         private static int firedDeath = 0;
         private CharacterBody body;
@@ -34,6 +34,8 @@ namespace PoppyMod.Survivors.Poppy.Components
                 On.RoR2.PurchaseInteraction.OnInteractionBegin += PurchaseInteraction_OnInteractionBegin;
             }
             body = gameObject.GetComponent<CharacterBody>();
+            firedEnter = 0;
+            firedDeath = 0;
         }
 
         public void Update()
@@ -105,7 +107,7 @@ namespace PoppyMod.Survivors.Poppy.Components
 
         private void BossGroup_onBossGroupStartServer(BossGroup obj)
         {
-            if (!hasFiredBossSpawn && firedEnter == 0)
+            if (!hasFiredBossSpawn)
             {
                 hasFiredBossSpawn = true;
                 AkSoundEngine.StopAll(gameObject);
@@ -137,13 +139,14 @@ namespace PoppyMod.Survivors.Poppy.Components
 
         private void PurchaseInteraction_OnInteractionBegin(On.RoR2.PurchaseInteraction.orig_OnInteractionBegin orig, PurchaseInteraction self, Interactor activator)
         {
-            orig(self, activator);
-            if (body.outOfDanger && self.CanBeAffordedByInteractor(activator) && ReferenceEquals(activator.gameObject, gameObject))
+            GameObject cachedRef = LocalUserManager.GetFirstLocalUser().cachedBodyObject;
+            if (body.outOfDanger && self.CanBeAffordedByInteractor(activator) && ReferenceEquals(activator.gameObject, cachedRef))
             {
-                Debug.Log("VOComponent: PurchaseInteract Fired.");
-                AkSoundEngine.StopAll(gameObject);
-                Util.PlaySound("PlayPoppyItemBuy", gameObject);
+                //Debug.Log("VOComponent: PurchaseInteract Fired.");
+                AkSoundEngine.StopAll(cachedRef);
+                Util.PlaySound("PlayPoppyItemBuy", cachedRef);
             }
+            orig(self, activator);
         }
     }
 }

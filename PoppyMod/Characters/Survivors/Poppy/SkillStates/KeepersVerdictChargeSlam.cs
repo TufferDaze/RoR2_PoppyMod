@@ -26,8 +26,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float procCoefficient = 0.5f;
         public float waveProjectileArc = 1f;
         public int waveProjectileCount = 3;
-        public float slamForceDirect = PoppyStaticValues.specialSlamForce;
-        public float slamForceWave = PoppyStaticValues.specialWaveForce;
+        public float slamForceDirect = PoppyConfig.spec1SlamForceConfig.Value;
+        public float slamForceWave = PoppyConfig.spec1WaveForceConfig.Value;
         public NetworkSoundEventDef weaponImpactSound;
         private OverlapAttack weaponAttack;
         private Animator modelAnimator;

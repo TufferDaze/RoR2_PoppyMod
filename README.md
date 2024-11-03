@@ -38,6 +38,8 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 ## Issues
 `Other bugs or requests can be tossed over to the GitHub page up top^`
 * Mastery emote cannot be seen nor heard by other players.
+* Boss and purchase voicelines may not work under certain conditions.
+* Keeper's Verdict may clip enemies into terrain at a high enough force value.
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
 * Using Heroic Charge too close to bosses may clip the player into terrain.
@@ -46,15 +48,16 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Tweak for better network play.
 * Stop voicelines from overlapping/interrupting each other.
 * Add skin-unique animations.
+* Add skill FX.
 * Add something secret. ;)
 
 ## Patch Notes
 `1.2.3`
-* **PLEASE DELETE OLD CONFIG FILE**
+* **\<PLEASE DELETE OLD CONFIG FILE\>**
 * Fixed a bug where Iron Ambassador would not fire in multiplayer games
 * Iron Ambassador cooldown is now refunded if it fails to fire on all checks
 * Changed how force is applied by Keeper's Verdict
-* Keeper's Verdict now correctly sends enemies into the stratosphere(adjustable in mod config/settings)
+* Keeper's Verdict now correctly sends enemies into the stratosphere(adjustable in mod settings/config)
 * Fixed a bug where the Mastery Emote would only trigger on multiplayer hosts
 * Fixed a bug where an error would be thrown upon interacting with the Shieldy pickup while having Squid Polyps
 * Poppys can no longer trigger each others purchase voicelines
@@ -82,7 +85,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Removed extra mesh from Bewitching skin
 
 `1.2.0`
-* **PLEASE DELETE THE OLD CONFIG FILE**
+* **\<PLEASE DELETE THE OLD CONFIG FILE\>**
 * Updated for Seekers DLC
 * Forced Shieldy item to spawn when Command is on
 * Added new behavior to Shieldy skill to bounce back to player on enemy kill
