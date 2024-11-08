@@ -52,6 +52,9 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add something secret. ;)
 
 ## Patch Notes
+`1.2.4`
+* Added config/settings option to mute Shieldy pickup chat messages
+
 `1.2.3`
 * **\<PLEASE DELETE OLD CONFIG FILE\>**
 * Fixed a bug where Iron Ambassador would not fire in multiplayer games

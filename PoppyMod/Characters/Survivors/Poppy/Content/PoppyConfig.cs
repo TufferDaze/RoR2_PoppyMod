@@ -13,6 +13,7 @@ namespace PoppyMod.Survivors.Poppy
         public static ConfigEntry<bool> bossConfig;
         public static ConfigEntry<bool> purchaseVOConfig;
         public static ConfigEntry<bool> shieldyVOConfig;
+        public static ConfigEntry<bool> shieldyChatMsgConfig;
         public static ConfigEntry<bool> passiveVOConfig;
         public static ConfigEntry<bool> rChargeVOConfig;
         public static ConfigEntry<bool> idleVOConfig;
@@ -54,9 +55,10 @@ namespace PoppyMod.Survivors.Poppy
 
             // Volume Control
             bonkConfig = Config.BindAndOptions(audioSection, "Bonk", false, "Enable only if you are really truely absolutely prepared for maximum bonkage.");
-            bossConfig = Config.BindAndOptions(audioSection, "Boss Chatter", true, "Whether or not to say something when a teleporter boss spawns.");
-            purchaseVOConfig = Config.BindAndOptions(audioSection, "Purchase Chatter", true, "Whether or not to say something when interacting with chests and the like.");
+            bossConfig = Config.BindAndOptions(audioSection, "Boss Chatter", true, "Whether or not to say something when a teleporter boss spawns.", true);
+            purchaseVOConfig = Config.BindAndOptions(audioSection, "Purchase Chatter", true, "Whether or not to say something when interacting with chests and the like.", true);
             shieldyVOConfig = Config.BindAndOptions(audioSection, "Shieldy Pickup Chatter", true, "Whether or not to say something when picking up Shieldy.");
+            shieldyChatMsgConfig = Config.BindAndOptions(audioSection, "Shieldy Pickup Message", true, "Whether or not the pickup message shows up in chat.", true);
             passiveVOConfig = Config.BindAndOptions(audioSection, "Passive Chatter", true, "Whether or not to say something when below 50% HP.");
             rChargeVOConfig = Config.BindAndOptions(audioSection, "Keepers Verdict Chatter", true, "Whether or not to say something when firing a charged Keepers Verdict.");
             idleVOConfig = Config.BindAndOptions(audioSection, "Idle Chatter", true, "Whether or not the rat says something every 30 seconds.");

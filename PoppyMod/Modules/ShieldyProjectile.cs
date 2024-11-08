@@ -1,4 +1,5 @@
-﻿using RoR2;
+﻿using PoppyMod.Survivors.Poppy;
+using RoR2;
 using RoR2.Orbs;
 using System.Collections.Generic;
 using System.Linq;
@@ -185,7 +186,7 @@ namespace PoppyMod.Modules
 
         private void SpawnSheildy(Transform target, float velocity = 20f)
         {
-            PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)), target.position, target.forward * velocity);
+            PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name)), target.position, target.forward * velocity);
         }
     }
 }
