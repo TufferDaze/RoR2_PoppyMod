@@ -1147,7 +1147,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isMoving
+    m_ConditionEvent: isSprinting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7052843962192372670}
@@ -2570,7 +2570,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isMoving
+    m_ConditionEvent: isSprinting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7052843962192372670}
@@ -3056,9 +3056,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 0.4305038
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.19486822
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -3513,9 +3513,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 0.48720098
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.8707717
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -3938,9 +3938,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 1.0206009
   m_TransitionOffset: 0
-  m_ExitTime: 0.8
+  m_ExitTime: 0.24450363
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -4110,9 +4110,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 0.24977893
   m_TransitionOffset: 0
-  m_ExitTime: 0.8
+  m_ExitTime: 0.67960364
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -4182,9 +4182,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 1.108707
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.8081016
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -7057,9 +7057,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 1.1215373
   m_TransitionOffset: 0
-  m_ExitTime: 0.1428572
+  m_ExitTime: 0.38455966
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

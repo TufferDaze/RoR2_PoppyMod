@@ -834,17 +834,19 @@ namespace PoppyMod.Survivors.Poppy
         {
             //Debug.LogWarning("PoppySurvivor: ApplySkin On-Hook: selfGameObject: " + self.gameObject + " prefabCharacterModel: " + prefabCharacterModel.gameObject);
             orig(self, skinIndex);
+            // TODO Check for this Poppy, not Poppy model
             if (self.gameObject.name == "mdlPoppy")
             {
                 //Debug.LogWarning("PoppySurvivor: ApplySkin On-Hook: orig: " + orig + " self: " + self + " skinIndex: " + skinIndex);
+                RuntimeAnimatorController animatorController = null;
 
                 switch (self.currentSkinIndex)
                 {
                     case 0:
-                        RuntimeAnimatorController animatorController1 = instance.assetBundle.LoadAsset<RuntimeAnimatorController>("animPoppy");
-                        if (animatorController1)
+                        animatorController = instance.assetBundle.LoadAsset<RuntimeAnimatorController>("animPoppy");
+                        if (animatorController)
                         {
-                            self.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController1;
+                            self.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController;
                         }
                         else
                         {
@@ -852,10 +854,10 @@ namespace PoppyMod.Survivors.Poppy
                         }
                         break;
                     case 7:
-                        RuntimeAnimatorController animatorController2 = instance.assetBundle.LoadAsset<RuntimeAnimatorController>("animPoppySG");
-                        if (animatorController2)
+                        animatorController = instance.assetBundle.LoadAsset<RuntimeAnimatorController>("animPoppySG");
+                        if (animatorController)
                         {
-                            self.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController2;
+                            self.gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorController;
                         }
                         else
                         {
