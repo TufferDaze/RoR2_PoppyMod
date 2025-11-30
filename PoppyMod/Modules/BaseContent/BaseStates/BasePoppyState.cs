@@ -33,7 +33,7 @@ namespace PoppyMod.Modules.BaseContent.BaseStates
                 }
                 if (Config.GetKeyPressed(PoppyConfig.tauntConfig))
                 {
-                    this.outer.SetInterruptState(new TauntState(), InterruptPriority.Any);
+                    this.outer.SetInterruptState(new Modules.BaseStates.TauntState(), InterruptPriority.Any);
                     return;
                 }
                 if (Config.GetKeyPressed(PoppyConfig.danceConfig))

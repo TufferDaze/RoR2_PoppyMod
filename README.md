@@ -52,6 +52,9 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add something secret. ;)
 
 ## Patch Notes
+`1.2.6`
+* Updated for Collective DLC release
+
 `1.2.5`
 * Updated for Seekers DLC re-release
 

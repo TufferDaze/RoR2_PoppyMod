@@ -774,7 +774,7 @@ namespace PoppyMod.Survivors.Poppy
             On.RoR2.PickupDropletController.OnCollisionEnter += PickupDropletController_OnCollisionEnter;
             if (!PoppyConfig.shieldyChatMsgConfig.Value)
             {
-                On.RoR2.Chat.AddPickupMessage += Chat_AddPickupMessage;
+                On.RoR2.Chat.AddPickupMessage_CharacterBody_string_Color32_uint += Chat_AddPickupMessage_CharacterBody_string_Color32_uint;
             }
             //On.RoR2.ModelSkinController.ApplySkin += ModelSkinController_ApplySkin;
         }
@@ -819,7 +819,7 @@ namespace PoppyMod.Survivors.Poppy
         }
 
         // Disables chat pickup message for Shieldy item
-        private void Chat_AddPickupMessage(On.RoR2.Chat.orig_AddPickupMessage orig, CharacterBody body, string pickupToken, Color32 pickupColor, uint pickupQuantity)
+        private void Chat_AddPickupMessage_CharacterBody_string_Color32_uint(On.RoR2.Chat.orig_AddPickupMessage_CharacterBody_string_Color32_uint orig, CharacterBody body, string pickupToken, Color32 pickupColor, uint pickupQuantity)
         {
             //Debug.LogWarning("AddPickupMessage Hook: HookPickupToken: " + pickupToken + " defPickupToken: " + shieldyDef.nameToken);
             if (pickupToken == shieldyDef.nameToken)
