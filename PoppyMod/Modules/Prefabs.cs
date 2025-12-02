@@ -619,6 +619,12 @@ namespace PoppyMod.Modules
             {
                 setStateOnHurt.idleStateMachine = Array.Empty<EntityStateMachine>();
             }
+
+            CharacterBody characterBody = bodyPrefab.GetComponent<CharacterBody>();
+            if (characterBody)
+            {
+                characterBody.vehicleIdleStateMachine = Array.Empty<EntityStateMachine>();
+            }
         }
 
         public static void AddMainEntityStateMachine(GameObject bodyPrefab, string machineName = "Body", Type mainStateType = null, Type initalStateType = null)

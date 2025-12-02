@@ -53,12 +53,12 @@ namespace PoppyMod.Survivors.Poppy
             ModSettingsManager.SetModIcon(PoppySurvivor.instance.assetBundle.LoadAsset<Sprite>("poppy_square"));
             ModSettingsManager.SetModDescription("Small idiot rat thing.");
 
-            // Volume Control
+            // Audio Control
             bonkConfig = Config.BindAndOptions(audioSection, "Bonk", false, "Enable only if you are really truely absolutely prepared for maximum bonkage.");
             bossConfig = Config.BindAndOptions(audioSection, "Boss Chatter", true, "Whether or not to say something when a teleporter boss spawns.", true);
             purchaseVOConfig = Config.BindAndOptions(audioSection, "Purchase Chatter", true, "Whether or not to say something when interacting with chests and the like.", true);
             shieldyVOConfig = Config.BindAndOptions(audioSection, "Shieldy Pickup Chatter", true, "Whether or not to say something when picking up Shieldy.");
-            shieldyChatMsgConfig = Config.BindAndOptions(audioSection, "Shieldy Pickup Message", true, "Whether or not the pickup message shows up in chat.", true);
+            shieldyChatMsgConfig = Config.BindAndOptions(audioSection, "Shieldy Pickup Message", false, "Whether or not the pickup message shows up in chat.", true);
             passiveVOConfig = Config.BindAndOptions(audioSection, "Passive Chatter", true, "Whether or not to say something when below 50% HP.");
             rChargeVOConfig = Config.BindAndOptions(audioSection, "Keepers Verdict Chatter", true, "Whether or not to say something when firing a charged Keepers Verdict.");
             idleVOConfig = Config.BindAndOptions(audioSection, "Idle Chatter", true, "Whether or not the rat says something every 30 seconds.");
@@ -66,10 +66,10 @@ namespace PoppyMod.Survivors.Poppy
 
             // Stats
             baseHPConfig = Config.BindAndOptionsSlider(statSection, "Base HP", PoppyStaticValues.baseHealth, "", 1, 1000, true);
-            baseArmorConfig = Config.BindAndOptionsSlider(statSection, "Base Armor", PoppyStaticValues.baseArmor, "", 0, 1000, true);
-            baseDamageConfig = Config.BindAndOptionsSlider(statSection, "Base Damage", PoppyStaticValues.baseDamage, "", 0f, 1000f, true);
+            baseArmorConfig = Config.BindAndOptionsSlider(statSection, "Base Armor", PoppyStaticValues.baseArmor, "", 1, 1000, true);
+            baseDamageConfig = Config.BindAndOptionsSlider(statSection, "Base Damage", PoppyStaticValues.baseDamage, "", 1f, 1000f, true);
             baseCritConfig = Config.BindAndOptions<float>(statSection, "Base Crit", PoppyStaticValues.baseCrit, "", true);
-            baseAttackSpeedConfig = Config.BindAndOptionsSlider(statSection, "Base Attack Speed", PoppyStaticValues.baseAttackSpeed, "", 0.01f, 1000f, true);
+            baseAttackSpeedConfig = Config.BindAndOptionsSlider(statSection, "Base Attack Speed", PoppyStaticValues.baseAttackSpeed, "", 1f, 1000f, true);
             baseMoveSpeedConfig = Config.BindAndOptionsSlider(statSection, "Base Move Speed", PoppyStaticValues.baseMoveSpeed, "", 1f, 1000f, true);
 
             // Passive

@@ -12,6 +12,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using PoppyMod.Modules.BaseStates;
 using PoppyMod.Characters.Survivors.Poppy.Components;
+using System;
 
 namespace PoppyMod.Survivors.Poppy
 {
@@ -137,7 +138,13 @@ namespace PoppyMod.Survivors.Poppy
             bodyPrefab.gameObject.AddComponent<ArmorPassiveComponent>();
             bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
             bodyPrefab.gameObject.AddComponent<VOComponent>();
-            //bodyPrefab.AddComponent<PoppyWeaponComponent>();
+            /*EntityStateMachine[] array = bodyPrefab.gameObject.GetComponent<CharacterBody>().vehicleIdleStateMachine;
+            Array.Clear(array, 0, array.Length);
+            EntityStateMachine[] survivorStateMachines = bodyPrefab.gameObject.GetComponents<EntityStateMachine>();
+            Debug.LogWarning("AWAWAWAWAWAWAWAWA survivorStateMachine: " + survivorStateMachines.Length);
+            array = survivorStateMachines;
+            Debug.LogWarning("BLBLBLBLBLBLBLB array: " + array.Length);
+            *///bodyPrefab.AddComponent<PoppyWeaponComponent>();
         }
 
         public void AddHitboxes()
@@ -449,7 +456,7 @@ namespace PoppyMod.Survivors.Poppy
                 assetBundle.LoadAsset<Sprite>("poppy_square"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
-
+            skins.Add(defaultSkin);
             //these are your Mesh Replacements. The order here is based on your CustomRendererInfos from earlier
             //pass in meshes as they are named in your assetbundle
             //currently not needed as with only 1 skin they will simply take the default meshes

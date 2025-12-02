@@ -109,7 +109,7 @@ namespace PoppyMod.Modules
                     else if (!killConfirmed)
                     {
                         //Debug.LogWarning($"ReboundProjectile: {bouncesRemaining} bounces left. No additional targets found. Did not kill.");
-                        SpawnSheildy(lastLocation);
+                        SpawnShieldy(lastLocation);
                     }
                     else
                     {
@@ -121,7 +121,7 @@ namespace PoppyMod.Modules
                 else if (!killConfirmed)
                 {
                     //Debug.Log("ReboundProjectile: No bounces left. Did not kill.");
-                    SpawnSheildy(lastLocation);
+                    SpawnShieldy(lastLocation);
                 }
                 else if (bouncesRemaining > -1)
                 {
@@ -131,7 +131,8 @@ namespace PoppyMod.Modules
                 else
                 {
                     //Debug.Log("ReboundProjectile: No bounces left. Did kill. Has returned to player.");
-                    SpawnSheildy(lastLocation, 0f);
+                    //SpawnSheildy(lastLocation, 0f);
+                    GiveShieldy();
                 }
             }
         }
@@ -184,9 +185,15 @@ namespace PoppyMod.Modules
             OrbManager.instance.AddOrb(projectile);
         }
 
-        private void SpawnSheildy(Transform target, float velocity = 20f)
+        private void SpawnShieldy(Transform target, float velocity = 20f)
         {
             PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name)), target.position, target.forward * velocity);
+        }
+
+        private void GiveShieldy()
+        {
+            attacker.GetComponent<CharacterBody>().inventory.GiveItemTemp(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name), 0.001f);
+            //attacker.GetComponent<CharacterBody>().inventory.GiveItem(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name));
         }
     }
 }

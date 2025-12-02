@@ -22,7 +22,7 @@
         public const float passiveArmorIncreaseCoefficient = 20f;
 
         // Primary Values
-        public const float primaryDamageCoefficient = 3.2f;
+        public const float primaryDamageCoefficient = 3.4f;
 
         // Secondary Values
         public const float secondaryDamageCoefficient = 2.8f;
@@ -41,7 +41,7 @@
 
         public const float special1MaxDamageCoefficient = 26f;
 
-        public const float specialSlamForce = 12000f;
+        public const float specialSlamForce = 8000f;
 
         public const float specialWaveForce = 4000f;
 
