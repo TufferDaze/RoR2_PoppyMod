@@ -193,6 +193,7 @@ namespace PoppyMod.Modules
         private void GiveShieldy()
         {
             attacker.GetComponent<CharacterBody>().inventory.GiveItemTemp(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name), 0.001f);
+            attacker.GetComponent<SkillLocator>().secondary.rechargeStopwatch += 2f;
             //attacker.GetComponent<CharacterBody>().inventory.GiveItem(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name));
         }
     }

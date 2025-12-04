@@ -16,7 +16,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float hopStrength = 5f;
         private float antiGravStrength = 30f;
         private float procCoefficient = 0.8f;
-        private float bounceDamageIncreaseCoefficient = 1.3f;
+        private float bounceDamageCoefficient = PoppyStaticValues.secondaryBounceDamageCoefficient;
         private float damageCoefficient = PoppyConfig.secondayDmgConfig.Value;
         private int maxBounces = 2;
         private float travelSpeed = 50f;
@@ -98,7 +98,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             bucklerAttack.isCrit = Util.CheckRoll(characterBody.crit, characterBody.master);
             bucklerAttack.damageValue = damageStat * damageCoefficient;
             bucklerAttack.damageType = DamageType.Generic;
-            bucklerAttack.damageCoefficientPerBounce = bounceDamageIncreaseCoefficient;
+            bucklerAttack.damageCoefficientPerBounce = bounceDamageCoefficient;
             bucklerAttack.teamIndex = TeamComponent.GetObjectTeam(gameObject);
             bucklerAttack.attacker = base.gameObject;
             bucklerAttack.inflictor = base.gameObject;

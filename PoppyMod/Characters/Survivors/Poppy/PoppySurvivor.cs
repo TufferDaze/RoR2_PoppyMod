@@ -138,13 +138,6 @@ namespace PoppyMod.Survivors.Poppy
             bodyPrefab.gameObject.AddComponent<ArmorPassiveComponent>();
             bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
             bodyPrefab.gameObject.AddComponent<VOComponent>();
-            /*EntityStateMachine[] array = bodyPrefab.gameObject.GetComponent<CharacterBody>().vehicleIdleStateMachine;
-            Array.Clear(array, 0, array.Length);
-            EntityStateMachine[] survivorStateMachines = bodyPrefab.gameObject.GetComponents<EntityStateMachine>();
-            Debug.LogWarning("AWAWAWAWAWAWAWAWA survivorStateMachine: " + survivorStateMachines.Length);
-            array = survivorStateMachines;
-            Debug.LogWarning("BLBLBLBLBLBLBLB array: " + array.Length);
-            *///bodyPrefab.AddComponent<PoppyWeaponComponent>();
         }
 
         public void AddHitboxes()
@@ -183,38 +176,6 @@ namespace PoppyMod.Survivors.Poppy
 
         private void AddShieldy()
         {
-            //Items.shieldyDef = ScriptableObject.CreateInstance<ItemDef>();
-            //Items.shieldyDef.name = "Shieldy";
-            //Items.shieldyDef.nameToken = POPPY_PREFIX + "ITEM_SHIELDY_NAME";
-            //Items.shieldyDef.descriptionToken = POPPY_PREFIX + "ITEM_SHIELDY_DESCRIPTION";
-            //Items.shieldyDef.loreToken = POPPY_PREFIX + "ITEM_SHIELDY_LORE";
-            //Items.shieldyDef.pickupToken = POPPY_PREFIX + "ITEM_SHIELDY_PICKUP";
-
-            //Items.shieldyDef._itemTierDef = Items.itemTierDef;
-            //Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/SprintArmor/texBucklerIcon.png").WaitForCompletion();
-            //Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/SprintArmor/PickupBuckler.prefab").WaitForCompletion();
-
-            //Items.shieldyDef.canRemove = true;
-            //Items.shieldyDef.hidden = false;
-            //Items.shieldyDef.tags = new ItemTag[] { ItemTag.Utility, ItemTag.WorldUnique };
-
-            ////ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(null)));
-            //ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(
-            //    new ItemDisplayRule[]
-            //    {
-            //        new ItemDisplayRule
-            //        {
-            //            ruleType = ItemDisplayRuleType.ParentedPrefab,
-            //            followerPrefab = ItemDisplays.LoadDisplay("DisplayBuckler"),
-            //            childName = "LowerArmR",
-            //            localPos = new Vector3(-0.005f, 0.285f, 0.0074f),
-            //            localAngles = new Vector3(358.4802f, 192.347f, 88.4811f),
-            //            localScale = new Vector3(0.3351f, 0.3351f, 0.3351f),
-            //            limbMask = LimbFlags.None
-            //        }
-            //    }
-            //)));
-
             shieldyDef = ScriptableObject.CreateInstance<ItemDef>();
             shieldyDef.name = "Shieldy";
             shieldyDef.nameToken = POPPY_PREFIX + "ITEM_SHIELDY_NAME";
@@ -456,7 +417,6 @@ namespace PoppyMod.Survivors.Poppy
                 assetBundle.LoadAsset<Sprite>("poppy_square"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
-            skins.Add(defaultSkin);
             //these are your Mesh Replacements. The order here is based on your CustomRendererInfos from earlier
             //pass in meshes as they are named in your assetbundle
             //currently not needed as with only 1 skin they will simply take the default meshes
@@ -781,7 +741,7 @@ namespace PoppyMod.Survivors.Poppy
             On.RoR2.PickupDropletController.OnCollisionEnter += PickupDropletController_OnCollisionEnter;
             if (!PoppyConfig.shieldyChatMsgConfig.Value)
             {
-                On.RoR2.Chat.AddPickupMessage_CharacterBody_string_Color32_uint += Chat_AddPickupMessage_CharacterBody_string_Color32_uint;
+                On.RoR2.Chat.AddPickupMessage_CharacterBody_string_Color32_uint_bool += Chat_AddPickupMessage_CharacterBody_string_Color32_uint_bool; ;
             }
             //On.RoR2.ModelSkinController.ApplySkin += ModelSkinController_ApplySkin;
         }
@@ -826,14 +786,13 @@ namespace PoppyMod.Survivors.Poppy
         }
 
         // Disables chat pickup message for Shieldy item
-        private void Chat_AddPickupMessage_CharacterBody_string_Color32_uint(On.RoR2.Chat.orig_AddPickupMessage_CharacterBody_string_Color32_uint orig, CharacterBody body, string pickupToken, Color32 pickupColor, uint pickupQuantity)
+        private void Chat_AddPickupMessage_CharacterBody_string_Color32_uint_bool(On.RoR2.Chat.orig_AddPickupMessage_CharacterBody_string_Color32_uint_bool orig, CharacterBody body, string pickupToken, Color32 pickupColor, uint pickupQuantity, bool isTemporary)
         {
-            //Debug.LogWarning("AddPickupMessage Hook: HookPickupToken: " + pickupToken + " defPickupToken: " + shieldyDef.nameToken);
             if (pickupToken == shieldyDef.nameToken)
             {
                 return;
             }
-            orig(body, pickupToken, pickupColor, pickupQuantity);
+            orig(body, pickupToken, pickupColor, pickupQuantity, true);
         }
 
         // Switches out animation controller when a new skin is selected.

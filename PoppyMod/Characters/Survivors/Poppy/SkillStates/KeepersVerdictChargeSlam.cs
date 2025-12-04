@@ -20,14 +20,15 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public string attackSoundString;
         public string muzzleString = "Weapon3";
         public GameObject slamImpactEffect;
-        //public static float durationBeforePriorityReduces;
         public GameObject waveProjectilePrefab;
         private bool hasFired;
-        private float procCoefficient = 0.5f;
+        private float slamProcCoefficient = PoppyStaticValues.special1SlamProcCoefficient;
+        private float waveProcCoefficient = PoppyStaticValues.special1WaveProcCoefficient;
         public float waveProjectileArc = 1f;
         public int waveProjectileCount = 3;
         public float slamForceDirect = PoppyConfig.spec1SlamForceConfig.Value;
         public float slamForceWave = PoppyConfig.spec1WaveForceConfig.Value;
+        public float charge;
         public NetworkSoundEventDef weaponImpactSound;
         private OverlapAttack weaponAttack;
         private Animator modelAnimator;
@@ -64,8 +65,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 overlapAttack.impactSound = WeaponSlam.weaponImpactSound.index;
                 overlapAttack.inflictor = base.gameObject;
                 overlapAttack.procChainMask = default(ProcChainMask);
-                overlapAttack.forceVector = new Vector3(0, slamForceDirect, 0);
-                overlapAttack.procCoefficient = procCoefficient;
+                overlapAttack.forceVector = new Vector3(0, charge * slamForceDirect, 0);
+                overlapAttack.procCoefficient = slamProcCoefficient;
                 overlapAttack.teamIndex = base.GetTeam();
                 this.weaponAttack = overlapAttack;
             }
@@ -134,7 +135,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 bool isAuthority2 = base.isAuthority;
                 if (isAuthority2)
                 {
-                    waveProjectilePrefab.GetComponent<ProjectileOverlapAttack>().forceVector = new Vector3(0f, slamForceWave, 0f);
+                    waveProjectilePrefab.GetComponent<ProjectileOverlapAttack>().forceVector = new Vector3(0f, charge * slamForceWave, 0f);
 
                     FireProjectileInfo fireProjectileInfo = new FireProjectileInfo
                     {

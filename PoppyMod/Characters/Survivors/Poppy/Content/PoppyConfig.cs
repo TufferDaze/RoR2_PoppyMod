@@ -33,6 +33,7 @@ namespace PoppyMod.Survivors.Poppy
         public static ConfigEntry<float> util2SpdConfig;
         public static ConfigEntry<float> spec1MinDmgConfig;
         public static ConfigEntry<float> spec1MaxDmgConfig;
+        public static ConfigEntry<float> spec1FireForceConfig;
         public static ConfigEntry<float> spec1SlamForceConfig;
         public static ConfigEntry<float> spec1WaveForceConfig;
         public static ConfigEntry<float> spec2DmgConfig;
@@ -92,8 +93,9 @@ namespace PoppyMod.Survivors.Poppy
             // Special #1
             spec1MinDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Min Damage", PoppyStaticValues.special1MinDamageCoefficient, "Minimum damage coefficient of Keeper\'s Verdict. If the min > max, then the values are swapped.");
             spec1MaxDmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #1 Max Damage", PoppyStaticValues.special1MaxDamageCoefficient, "Maximum damage coefficient of Keeper\'s Verdict. If the min > max, then the values are swapped.");
-            spec1SlamForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Slam Force", PoppyStaticValues.specialSlamForce, "Slam force of Keeper\'s Verdict. Applies to direct hits.", 0f, 12000f);
-            spec1WaveForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Wave Force", PoppyStaticValues.specialWaveForce, "Shockwave force of Keeper\'s Verdict. Applies to shockwaves.", 0f, 12000f);
+            spec1FireForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Uncharged Force", PoppyStaticValues.special1FireForce, "Uncharged force of Keeper\'s Verdict. Applies to direct hits.", 100f, 10000f);
+            spec1SlamForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Slam Force", PoppyStaticValues.special1ChargeSlamForce, "Slam force of Keeper\'s Verdict. Applies to direct hits.", 100f, 10000f);
+            spec1WaveForceConfig = Config.BindAndOptionsSlider(abilitySection, "Special #1 Wave Force", PoppyStaticValues.special1ChargeWaveForce, "Shockwave force of Keeper\'s Verdict. Applies to shockwaves.", 100f, 10000f);
 
             // Special #2
             spec2DmgConfig = Config.BindAndOptions<float>(abilitySection, "Special #2 Damage", PoppyStaticValues.special2DamageCoefficient, "Damage coefficient of Hammer Shock.");

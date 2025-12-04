@@ -24,7 +24,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private Transform indicatorInstance;
         public static float hitPauseDuration = 0.25f;
         private float damageCoefficient = PoppyConfig.util2DmgConfig.Value * hitPauseDuration;
-        private float procCoefficient = 0.75f;
+        private float procCoefficient = PoppyStaticValues.utility2ProcCoefficient;
         private List<HurtBox> enemiesHit = new List<HurtBox>();
         private CameraTargetParams.CameraParamsOverrideHandle handle;
 
