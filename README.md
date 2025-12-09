@@ -62,7 +62,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Iron Ambassador is now added directly to inventory on kill
 * Increased Heroic Charge damage
 * Heroic Charge now gives a tiny speed boost
-* Fixed a bug where Steadfast Presence would do less damage than advertized
+* Fixed a bug where Steadfast Presence would do less damage than advertised
 * Slightly increased Keeper's Verdict damage
 * Slightly decreased Keeper's Verdict force
 
