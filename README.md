@@ -42,6 +42,7 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Keeper's Verdict may clip enemies into terrain at a high enough force value.
 * Standing still during Steadfast Presence looks jank.
 * Larger enemies may be clipped into terrain when using Heroic Charge.
+* Using Heroic Charge on large Gups may force player under the map.
 * Using Heroic Charge too close to bosses may clip the player into terrain.
 
 ## TODO
@@ -49,11 +50,21 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Stop voicelines from overlapping/interrupting each other.
 * Add skin-unique animations.
 * Add skill FX.
-* Add something secret. ;)
 
 ## Patch Notes
 `1.2.6`
+* **\<PLEASE DELETE OLD CONFIG FILE\>**
 * Updated for Collective DLC release
+* Slightly increased base HP
+* Slightly increased primary damage
+* Increased Iron Ambassador bounce range, travel speed, and return speed
+* Iron Ambassador now grants small cooldown refund on kill
+* Iron Ambassador is now added directly to inventory on kill
+* Increased Heroic Charge damage
+* Heroic Charge now gives a tiny speed boost
+* Fixed a bug where Steadfast Presence would do less damage than advertized
+* Slightly increased Keeper's Verdict damage
+* Slightly decreased Keeper's Verdict force
 
 `1.2.5`
 * Updated for Seekers DLC re-release

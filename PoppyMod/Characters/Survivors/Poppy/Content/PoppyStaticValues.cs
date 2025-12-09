@@ -79,7 +79,7 @@
         // Special #2 Values
         public const float special2ProcCoefficient = 0.7f;
 
-        public const float special2DamageCoefficient = 26f;
+        public const float special2DamageCoefficient = 24f;
 
         public const float special2HPDamageCoefficient = 0.1f; // Percent enemy max HP to deal as dmg
     }
