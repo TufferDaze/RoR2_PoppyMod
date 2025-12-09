@@ -22,11 +22,14 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private bool hasBlocked;
         private float hitPauseTimer;
         private Transform indicatorInstance;
-        public static float hitPauseDuration = 0.25f;
-        private float damageCoefficient = PoppyConfig.util2DmgConfig.Value * hitPauseDuration;
+        public static float hitPauseDuration = 0.2f;
+        private float damageCoefficient;
         private float procCoefficient = PoppyStaticValues.utility2ProcCoefficient;
         private List<HurtBox> enemiesHit = new List<HurtBox>();
         private CameraTargetParams.CameraParamsOverrideHandle handle;
+        
+        private float totalDmg = 0f;
+        private int fireTimes = 0;
 
         public override void OnEnter()
         {
@@ -38,13 +41,14 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             body = GetComponent<CharacterBody>();
             if (body)
             {
-                body.AddTimedBuff(PoppyBuffs.speedBuff, duration);
+                body.AddTimedBuff(PoppyBuffs.steadfastSpeedBuff, duration);
                 body.isSprinting = true;
             }
             if (modelTransform)
             {
                 hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "AuraGroup");
             }
+            damageCoefficient = (PoppyConfig.util2DmgConfig.Value / duration) * duration/13; // TODO find how to calculate denominator
             CreateNewAttack();
             CreateIndicator();
             Util.PlaySound("PlayPoppyW", gameObject);
@@ -75,6 +79,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             {
                 if (attack.Fire(enemiesHit))
                 {
+                    totalDmg += damageCoefficient;
+                    fireTimes++;
+                    //Debug.LogWarning("Steadfast Presence DAMAGE: " + totalDmg);
+                    //Debug.LogWarning("Steadfast Presence FIRE NUM: " + fireTimes);
                     inHitPause = true;
                     hitPauseTimer = hitPauseDuration;
                     for (int i = 0; i < enemiesHit.Count; i++)

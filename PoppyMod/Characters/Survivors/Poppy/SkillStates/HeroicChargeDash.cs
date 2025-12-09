@@ -146,9 +146,13 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         public override void OnExit()
         {
             HandleGrappleRelease();
-            characterBody.isSprinting = true;
-            gameObject.layer = LayerIndex.defaultLayer.intVal;
-            characterMotor.Motor.RebuildCollidableLayers();
+            if (characterBody)
+            {
+                gameObject.layer = LayerIndex.defaultLayer.intVal;
+                characterMotor.Motor.RebuildCollidableLayers();
+                characterBody.AddTimedBuff(PoppyBuffs.chargeSpeedBuff, PoppyStaticValues.utility1BuffDuration);
+                characterBody.isSprinting = true;
+            }
             base.OnExit();
         }
 

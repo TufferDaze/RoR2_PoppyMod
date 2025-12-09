@@ -10,9 +10,14 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         {
             hitboxGroupName = "HammerGroup";
 
+            float bonusDmg = PoppyStaticValues.primaryDamageBonusCoefficient * Mathf.Floor(Mathf.Max(0f, characterBody.maxBonusHealth) / PoppyStaticValues.primaryDamageBonusHPRequirement);
+
             damageType = DamageType.Generic;
             damageCoefficient = PoppyConfig.primaryDmgConfig.Value;
-            procCoefficient = 1f;
+            procCoefficient = PoppyStaticValues.primaryProcCoefficient;
+            //Debug.LogWarning("HP Bonus on Primary: " + bonusDmg);
+            //Debug.LogWarning("Bonus HP: " + characterBody.maxBonusHealth);
+            //Debug.LogWarning("Base HP: " + characterBody.maxHealth);
             pushForce = 300f;
             bonusForce = Vector3.zero;
             baseDuration = 2f;
@@ -20,6 +25,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
             attackStartPercentTime = 0.2f;
+            attackMoveStartPercentTime = 0.175f;
             attackEndPercentTime = 0.3f;
 
             //this is the point at which the attack can be interrupted by itself, continuing a combo
@@ -28,6 +34,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             hitStopDuration = 0.05f;
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
+            forceForwardVelocity = false;
+            forwardVelocityCurve = AnimationCurve.Linear(0f, 0f, 1f, 0.5f);
 
             if (PoppyConfig.bonkConfig.Value)
             {

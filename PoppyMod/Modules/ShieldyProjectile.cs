@@ -167,7 +167,7 @@ namespace PoppyMod.Modules
             projectile.search = search;
             projectile.procCoefficient = 0f;
             projectile.isCrit = false;
-            projectile.speed = speed * 1.5f;
+            projectile.speed = PoppyStaticValues.secondaryReturnSpeed;
             projectile.range = 9999f;
             projectile.damageValue = 0f;
             projectile.damageCoefficientPerBounce = 0f;

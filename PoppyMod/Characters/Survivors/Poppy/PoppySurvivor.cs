@@ -136,7 +136,7 @@ namespace PoppyMod.Survivors.Poppy
             bodyPrefab.gameObject.GetComponent<CharacterMotor>().mass = 300f;
             bodyPrefab.gameObject.AddComponent<MasteryEmoteComponent>();
             bodyPrefab.gameObject.AddComponent<ArmorPassiveComponent>();
-            bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = 60f;
+            bodyPrefab.gameObject.AddComponent<HuntressTracker>().maxTrackingDistance = PoppyStaticValues.secondaryLockOnRange;
             bodyPrefab.gameObject.AddComponent<VOComponent>();
         }
 
@@ -251,6 +251,7 @@ namespace PoppyMod.Survivors.Poppy
             //custom Skilldefs can have additional fields that you can set manually
             primarySkillDef1.stepCount = 3;
             primarySkillDef1.stepGraceDuration = 0.5f;
+            //primarySkillDef1.keywordTokens = new string[] { "KEYWORD_HEALTHY" };
 
             Skills.AddPrimarySkills(bodyPrefab, primarySkillDef1);
         }
@@ -755,10 +756,16 @@ namespace PoppyMod.Survivors.Poppy
                 args.armorAdd = sender.baseArmor * (buffStacks-1);
             }
 
-            if (sender.HasBuff(PoppyBuffs.speedBuff))
+            if (sender.HasBuff(PoppyBuffs.steadfastSpeedBuff))
             {
-                float buffStacks = sender.GetBuffCount(PoppyBuffs.speedBuff);
+                float buffStacks = sender.GetBuffCount(PoppyBuffs.steadfastSpeedBuff);
                 args.baseMoveSpeedAdd = sender.baseMoveSpeed * PoppyConfig.util2SpdConfig.Value * buffStacks;
+            }
+
+            if (sender.HasBuff(PoppyBuffs.chargeSpeedBuff))
+            {
+                float buffStacks = sender.GetBuffCount(PoppyBuffs.chargeSpeedBuff);
+                args.baseMoveSpeedAdd = sender.baseMoveSpeed * PoppyStaticValues.utility1MoveCoefficient * buffStacks;
             }
 
             try

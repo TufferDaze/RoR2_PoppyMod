@@ -25,8 +25,6 @@ namespace PoppyMod.Survivors.Poppy
                 + "< ! > Iron Ambassador will bounce back to Poppy if it kills an enemy." + Environment.NewLine + Environment.NewLine
                 + "< ! > Heroic Charge carries non-boss enemies with you." + Environment.NewLine + Environment.NewLine
                 + "< ! > Heroic Charge deals extra damage to bosses." + Environment.NewLine + Environment.NewLine
-                + "< ! > Steadfast Presence can be used to keep non-boss flying enemies on the ground." + Environment.NewLine + Environment.NewLine
-                + "< ! > Enemies hit with Keeper\'s Verdict are sent into the stratosphere(FOR REAL THIS TIME)." + Environment.NewLine + Environment.NewLine
                 + "< ! > Most stats can be tweaked in mod settings/config." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so she left to continue her search.";
@@ -60,8 +58,9 @@ namespace PoppyMod.Survivors.Poppy
             #endregion
 
             #region Primary
+            //Language.Add("KEYWORD_HEALTHY", $"{Tokens.KeywordText("Healthy", "Does more damage the more bonus HP you have.")}");
             Language.Add(prefix + "PRIMARY_HAMMER_NAME", "Uh... Hammer!");
-            Language.Add(prefix + "PRIMARY_HAMMER_DESCRIPTION", $"Swing hammer for <style=cIsDamage>{100f * PoppyConfig.primaryDmgConfig.Value}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_HAMMER_DESCRIPTION", $"Swing Hammer for <style=cIsDamage>{100f * PoppyConfig.primaryDmgConfig.Value}% damage</style>.");
             #endregion
 
             #region Secondary
@@ -70,12 +69,12 @@ namespace PoppyMod.Survivors.Poppy
             #endregion
 
             #region Utility
-            Language.Add("KEYWORD_GROUNDING", $"{Tokens.KeywordText("Grounding", "Forces flying enemies to the ground for a short time.")}") ;
+            Language.Add("KEYWORD_GROUNDING", $"{Tokens.KeywordText("Grounding", "Forces flying enemies to the ground for a short time.")}");
             Language.Add(prefix + "UTILITY_HEROICCHARGE_NAME", "Heroic Charge");
             Language.Add(prefix + "UTILITY_HEROICCHARGE_DESCRIPTION", Tokens.heavyPrefix + " " + Tokens.stunningPrefix + $" Dash forward dealing <style=cIsDamage>{100f * PoppyConfig.util1DmgConfig.Value}% damage</style>.");
 
             Language.Add(prefix + "UTILITY_STEADFAST_NAME", "Steadfast Presence");
-            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.groundingPrefix + " " + Tokens.stunningPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value * 3f}% damage</style> over 3 seconds and speeding you up.");
+            Language.Add(prefix + "UTILITY_STEADFAST_DESCRIPTION", Tokens.groundingPrefix + " " + Tokens.stunningPrefix + $" Release an aura dealing <style=cIsDamage>{100f * PoppyConfig.util2DmgConfig.Value}% damage</style> over 3 seconds and speeding you up.");
             #endregion
 
             #region Special

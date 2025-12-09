@@ -81,7 +81,7 @@ namespace PoppyMod.Survivors.Poppy
 
             // Secondary
             secondayDmgConfig = Config.BindAndOptions<float>(abilitySection, "Secondary Damage", PoppyStaticValues.secondaryDamageCoefficient, "Damage coefficient of Iron Ambassador.");
-            secondayHPConfig = Config.BindAndOptions<float>(abilitySection, "Secondary Shield", PoppyStaticValues.secondaryHPCoefficient, "Max HP shield coefficient of Shieldy.");
+            secondayHPConfig = Config.BindAndOptions<float>(abilitySection, "Secondary Shield", PoppyStaticValues.secondaryHPBarrierCoefficient, "Max HP shield coefficient of Shieldy.");
 
             // Utility #1
             util1DmgConfig = Config.BindAndOptions<float>(abilitySection, "Utility #1 Damage", PoppyStaticValues.utility1DamageCoefficient, "Damage coefficient of Heroic Charge.");

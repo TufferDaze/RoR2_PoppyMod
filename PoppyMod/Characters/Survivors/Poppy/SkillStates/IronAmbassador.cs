@@ -19,8 +19,8 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private float bounceDamageCoefficient = PoppyStaticValues.secondaryBounceDamageCoefficient;
         private float damageCoefficient = PoppyConfig.secondayDmgConfig.Value;
         private int maxBounces = 2;
-        private float travelSpeed = 50f;
-        private float bounceRange = 20f;
+        private float travelSpeed = PoppyStaticValues.secondaryTravelSpeed;
+        private float bounceRange = PoppyStaticValues.secondaryBounceRange;
         private float selfInterruptPercentTime = 0.5f;
         private bool attemptedFire;
         private bool hasFired;

@@ -22,6 +22,7 @@ namespace PoppyMod.Modules.BaseStates
         protected float baseDuration = 2f;
 
         protected float attackStartPercentTime = 0.2f;
+        protected float attackMoveStartPercentTime = 0.2f;
         protected float attackEndPercentTime = 0.4f;
 
         protected float earlyExitPercentTime = 0.4f;
@@ -29,6 +30,8 @@ namespace PoppyMod.Modules.BaseStates
         protected float hitStopDuration = 0.012f;
         protected float attackRecoil = 0.75f;
         protected float hitHopVelocity = 4f;
+        protected bool forceForwardVelocity = false;
+        protected AnimationCurve forwardVelocityCurve = AnimationCurve.Constant(0f, 2f, 1f);
 
         protected string swingSoundString = "";
         protected string hitSoundString = "";
@@ -155,8 +158,18 @@ namespace PoppyMod.Modules.BaseStates
             {
                 RemoveHitstop();
             }
+            else if (stopwatch >= duration * attackMoveStartPercentTime && this.forceForwardVelocity && base.characterMotor)
+            {
+                Vector3 vector = base.characterDirection.forward * this.forwardVelocityCurve.Evaluate(base.fixedAge / this.duration);
+                base.characterMotor.AddDisplacement(new Vector3(vector.x, 0f, vector.z));
+            }
 
-            if (!inHitPause)
+            if (stopwatch >= duration * attackEndPercentTime)
+            {
+                forceForwardVelocity = false;
+            }
+
+             if (!inHitPause)
             {
                 stopwatch += Time.fixedDeltaTime;
             }

@@ -7,19 +7,27 @@ namespace PoppyMod.Survivors.Poppy
     {
         // armor buff gained during roll
         public static BuffDef armorBuff;
-        public static BuffDef speedBuff;
+        public static BuffDef steadfastSpeedBuff;
+        public static BuffDef chargeSpeedBuff;
 
         public static void Init(AssetBundle assetBundle)
         {
             // For passive armor boost
-            armorBuff = Modules.Content.CreateAndAddBuff("SteadfastPressence",
+            armorBuff = Modules.Content.CreateAndAddBuff("Steadfast Presence",
                 LegacyResourcesAPI.Load<BuffDef>("BuffDefs/ArmorBoost").iconSprite,
                 Color.yellow,
                 true,
                 false);
 
             // For Steadfast Presence speed boost
-            speedBuff = Modules.Content.CreateAndAddBuff("SteadfastPressence",
+            steadfastSpeedBuff = Modules.Content.CreateAndAddBuff("Steadfast Presence",
+                LegacyResourcesAPI.Load<BuffDef>("BuffDefs/CloakSpeed").iconSprite,
+                Color.yellow,
+                true,
+                false);
+
+            // For Heroic Charge speed boost
+            chargeSpeedBuff = Modules.Content.CreateAndAddBuff("Heroic Charge",
                 LegacyResourcesAPI.Load<BuffDef>("BuffDefs/CloakSpeed").iconSprite,
                 Color.yellow,
                 true,

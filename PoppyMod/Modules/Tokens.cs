@@ -6,6 +6,7 @@
         public const string stunningPrefix = "<style=cIsUtility>Stunning.</style>";
         public const string heavyPrefix = "<style=cIsUtility>Heavy.</style>";
         public const string groundingPrefix = "<style=cIsUtility>Grounding.</style>";
+        public const string healthyPrefix = "<style=cIsUtility>Healthy.</style>";
 
         public static string DamageText(string text)
         {
