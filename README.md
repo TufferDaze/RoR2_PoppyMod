@@ -13,21 +13,21 @@ I couldn't help but notice the absence of a certain blue rat. Need I say more? H
 
 ## Abilities
 ### Passive
-![passive](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/22fb9b6d-2546-4393-9b40-1fb764b9371c)
+![passive](https://github.com/user-attachments/assets/6bdb6953-88d9-45ea-8168-6cfb98b2fd4a)
 
 ### Primary
-![primary1](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/9ea37dd3-1e4f-4379-9318-7f8bc1b3e776)
+![primary1](https://github.com/user-attachments/assets/e2b3e3b2-c22d-4932-a865-3b7f681175e5)
 
 ### Secondary
-![secondary1](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/0acac41d-2ae7-4fb4-b0bb-cf5d5051eb4a)
+![secondary1](https://github.com/user-attachments/assets/ca959112-c47a-4ad7-943d-f3327a2c01c5)
 
 ### Utility
-![util1](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/d93c4a19-671d-4d5e-96bf-286401cdc86a)
-![util2](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/fbc74ec0-68db-4898-ab67-5b0db7deb77f)
+![util1](https://github.com/user-attachments/assets/dc57b6ff-4112-48de-99cf-02d701132b99)
+![util2](https://github.com/user-attachments/assets/3218aa35-8510-4a1e-b646-69580d45930c)
 
 ### Special
-![spec1](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/6de097b9-a4d2-449c-8e35-53383edf852d)
-![spec2](https://github.com/TufferDaze/RoR2_PoppyMod/assets/118772744/4a2a160a-9db2-49ca-9e96-8fa3cb720050)
+![spec1](https://github.com/user-attachments/assets/54e71d2b-08b7-4adb-b208-ac34d170a9b9)
+![spec2](https://github.com/user-attachments/assets/b2083a1b-c7f2-4e51-8c64-a1e1b2acdc36)
 
 ## Install
 Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clean installation.
