@@ -47,7 +47,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             }
             swingSoundString = "PlayPoppyAttackSFX";
             muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
-            playbackRateParam = "Slash.playbackRate";
+            playbackRateParam = "Primary.playbackRate";
             swingEffectPrefab = PoppyAssets.hammerSwingEffect;
             hitEffectPrefab = PoppyAssets.hammerHitImpactEffect;
 

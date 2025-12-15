@@ -89,7 +89,7 @@ namespace PoppyMod.Modules.Characters
         public string subtitleNameToken = "";
 
         /// <summary> body prefab you're cloning for your character- commando is the safest </summary>
-        public string bodyNameToClone = "Commando";
+        public string bodyNameToClone = "Loader";
 
         public Color bodyColor = Color.white;
 

@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using R2API;
 using RoR2;
 using RoR2.UI;
 using RoR2BepInExPack.GameAssetPaths;
@@ -37,9 +38,10 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             PlayAnimation("Gesture, Override", "KeepersVerdictCharge");
             GetModelAnimator().SetBool("isCharging", true);
             chargeEffectPrefab = null;
-            crosshairPrefab = EntityStates.Loader.BaseChargeFist.crosshairOverridePrefab;
+            //crosshairPrefab = EntityStates.Loader.BaseChargeFist.crosshairOverridePrefab;
+            crosshairPrefab = PoppyAssets.chargeCrosshair;
             crosshairOverrideRequest = null;
-            base.characterBody.spreadBloomCurve = AnimationCurve.Linear(0f, 0f, 9.5f, 1f);
+            //base.characterBody.spreadBloomCurve = AnimationCurve.Linear(0f, 0f, 9.5f, 1f);
         }
 
         public override void FixedUpdate()
@@ -53,7 +55,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             {
                 if (crosshairPrefab && this.crosshairOverrideRequest == null)
                 {
-                    crosshairPrefab.transform.GetComponent<CrosshairController>().maxSpreadAngle = 0.1f;
+                    crosshairPrefab.transform.GetComponent<CrosshairController>().maxSpreadAngle = 12f;
                     this.crosshairOverrideRequest = CrosshairUtils.RequestOverrideForBody(base.characterBody, crosshairPrefab, CrosshairUtils.OverridePriority.Skill);
                 }
                 /*this.chargeEffectPrefab = Object.Instantiate<GameObject>(EntityStates.Loader.BaseChargeFist.chargeVfxPrefab, transform);

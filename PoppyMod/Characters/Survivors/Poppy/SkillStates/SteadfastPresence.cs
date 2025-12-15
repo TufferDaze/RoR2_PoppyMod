@@ -16,7 +16,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         //private GameObject hitImpactPrefab;
         private CharacterBody body;
         private HitBoxGroup hitBoxGroup;
-        private float downForce = -10f;
+        private Transform hitboxTransform;
         private float initialTime;
         private bool inHitPause = false;
         private bool hasBlocked;
@@ -47,8 +47,12 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             if (modelTransform)
             {
                 hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "AuraGroup");
+                if (hitBoxGroup)
+                {
+                    hitboxTransform = GetComponent<ChildLocator>().FindChild("AuraHitbox").transform;
+                }
             }
-            damageCoefficient = (PoppyConfig.util2DmgConfig.Value / duration) * duration/13; // TODO find how to calculate denominator
+            damageCoefficient = (PoppyConfig.util2DmgConfig.Value / duration) * duration/13; // TODO calculate denominator
             CreateNewAttack();
             CreateIndicator();
             Util.PlaySound("PlayPoppyW", gameObject);
@@ -97,7 +101,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                 bool isFlying = false;
                                 if (component)
                                 {
-                                    isFlying = !component.netIsGrounded;
+                                    isFlying = !component.netIsGrounded || (component.isFlying && !component.useGravity);
                                 }
                                 else if (component2)
                                 {
@@ -108,8 +112,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                                     && isFlying
                                     && !enemyBody.GetComponent<CharacterBody>().isChampion)
                                 {
-                                    // add grounding component to this enemy
-                                    enemyBody.AddComponent<GroundingComponent>();
+                                    enemyBody.AddComponent<GroundingComponent>(); // Add grounding component to this enemy
                                     if (!hasBlocked)
                                     {
                                         hasBlocked = true;
@@ -120,10 +123,9 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                         }
                         catch
                         {
-                            Debug.LogError("healthComponent null!");
+                            Debug.LogError("healthComponent null!"); // Health component can sometimes be null here for some reason :P
                         }
                     }
-                    //CreateNewAttack();
                     attack.ResetIgnoredHealthComponents();
                     return;
                 }
@@ -160,7 +162,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
                 procCoefficient = this.procCoefficient,
                 damageType = DamageType.Stun1s,
                 hitEffectPrefab = ToolbotDash.impactEffectPrefab,
-                forceVector = new Vector3(0, downForce, 0),
+                forceVector = new Vector3(0, 0, 0),
                 pushAwayForce = 0f,
                 hitBoxGroup = this.hitBoxGroup,
                 isCrit = RollCrit()
@@ -170,7 +172,7 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private void CreateIndicator()
         {
             indicatorInstance = UnityEngine.Object.Instantiate<GameObject>(ArrowRain.areaIndicatorPrefab).transform;
-            indicatorInstance.localScale = Vector3.one * 8f;
+            indicatorInstance.localScale = Vector3.one * hitboxTransform.localScale.x;
             indicatorInstance.transform.position = transform.position;
         }
 

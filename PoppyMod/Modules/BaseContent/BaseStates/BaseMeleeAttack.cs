@@ -36,7 +36,7 @@ namespace PoppyMod.Modules.BaseStates
         protected string swingSoundString = "";
         protected string hitSoundString = "";
         protected string muzzleString = "SwingCenter";
-        protected string playbackRateParam = "Slash.playbackRate";
+        protected string playbackRateParam = "Primary.playbackRate";
         protected GameObject swingEffectPrefab;
         protected GameObject hitEffectPrefab;
         protected NetworkSoundEventIndex impactSound;

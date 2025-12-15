@@ -46,7 +46,7 @@
 
         public const float secondaryHPBarrierCoefficient = 0.2f; // Percent max HP barrier on Shieldy pickup
 
-        // Utility Values
+        // Utility #1 Values
         public const float utilityProcCoefficient = 1f;
 
         public const float utility1DamageCoefficient = 3.2f;
@@ -55,11 +55,19 @@
 
         public const float utility1BuffDuration = 2f;
 
+        // Utility #2 Values
+
         public const float utility2ProcCoefficient = 0.6f;
 
         public const float utility2DamageCoefficient = 3f;
 
         public const float utility2MoveCoefficient = 0.4f;
+
+        public const float utility2GroundingDuration = 4f;
+
+        public const float utility2MotorDownForce = 10f; // For flying enemies that use CharacterMotor
+
+        public const float utility2RigidDownForce = 2f; // For flying enemies that use RigidBodyMotor
 
         // Special #1 Values
         public const float special1SlamProcCoefficient = 1f;

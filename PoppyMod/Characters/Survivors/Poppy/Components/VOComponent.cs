@@ -42,7 +42,7 @@ namespace PoppyMod.Survivors.Poppy.Components
         {
             if (body.inventory)
             {
-                if (body.inventory.GetItemCount(PoppySurvivor.shieldyDef) >= 1 && shieldVoiceCanFire)
+                if (body.inventory.GetItemCount(Items.shieldyDef) >= 1 && shieldVoiceCanFire)
                 {
                     if (PoppyConfig.shieldyVOConfig.Value)
                     {

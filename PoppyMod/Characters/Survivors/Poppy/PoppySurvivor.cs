@@ -33,8 +33,6 @@ namespace PoppyMod.Survivors.Poppy
         public override string modelPrefabName => "mdlPoppy";
         public override string displayPrefabName => "mdlPoppyDisplay";
 
-        public static ItemDef shieldyDef;
-
         public const string POPPY_PREFIX = PoppyPlugin.DEVELOPER_PREFIX + "_POP_";
 
         //used when registering your survivor's language tokens
@@ -50,7 +48,7 @@ namespace PoppyMod.Survivors.Poppy
             bodyColor = new Color(1f, 217f/255f, 122f/255f),
             sortPosition = 100,
 
-            crosshair = Modules.Assets.LoadCrosshair("Standard"),
+            crosshair = Modules.Assets.LoadCrosshair("SimpleDot"),
             podPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = PoppyStaticValues.baseHealth,
@@ -176,23 +174,23 @@ namespace PoppyMod.Survivors.Poppy
 
         private void AddShieldy()
         {
-            shieldyDef = ScriptableObject.CreateInstance<ItemDef>();
-            shieldyDef.name = "Shieldy";
-            shieldyDef.nameToken = POPPY_PREFIX + "ITEM_SHIELDY_NAME";
-            shieldyDef.descriptionToken = POPPY_PREFIX + "ITEM_SHIELDY_DESCRIPTION";
-            shieldyDef.loreToken = POPPY_PREFIX + "ITEM_SHIELDY_LORE";
-            shieldyDef.pickupToken = POPPY_PREFIX + "ITEM_SHIELDY_PICKUP";
+            Items.shieldyDef = ScriptableObject.CreateInstance<ItemDef>();
+            Items.shieldyDef.name = "Shieldy";
+            Items.shieldyDef.nameToken = POPPY_PREFIX + "ITEM_SHIELDY_NAME";
+            Items.shieldyDef.descriptionToken = POPPY_PREFIX + "ITEM_SHIELDY_DESCRIPTION";
+            Items.shieldyDef.loreToken = POPPY_PREFIX + "ITEM_SHIELDY_LORE";
+            Items.shieldyDef.pickupToken = POPPY_PREFIX + "ITEM_SHIELDY_PICKUP";
 
-            shieldyDef._itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/Base/Common/BossTierDef.asset").WaitForCompletion();
-            shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/SprintArmor/texBucklerIcon.png").WaitForCompletion();
-            shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/SprintArmor/PickupBuckler.prefab").WaitForCompletion();
+            Items.shieldyDef._itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/Base/Common/BossTierDef.asset").WaitForCompletion();
+            Items.shieldyDef.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/SprintArmor/texBucklerIcon.png").WaitForCompletion();
+            Items.shieldyDef.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/SprintArmor/PickupBuckler.prefab").WaitForCompletion();
 
-            shieldyDef.canRemove = true;
-            shieldyDef.hidden = false;
-            shieldyDef.tags = new ItemTag[] { ItemTag.Utility, ItemTag.WorldUnique };
+            Items.shieldyDef.canRemove = true;
+            Items.shieldyDef.hidden = false;
+            Items.shieldyDef.tags = new ItemTag[] { ItemTag.Utility, ItemTag.WorldUnique };
 
             //ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(null)));
-            ItemAPI.Add(new CustomItem(shieldyDef, new ItemDisplayRuleDict(
+            ItemAPI.Add(new CustomItem(Items.shieldyDef, new ItemDisplayRuleDict(
                 new ItemDisplayRule[]
                 {
                     new ItemDisplayRule
@@ -770,10 +768,10 @@ namespace PoppyMod.Survivors.Poppy
 
             try
             {
-                if (sender.inventory.GetItemCount(ItemCatalog.FindItemIndex(shieldyDef.name)) >= 1)
+                if (sender.inventory.GetItemCount(ItemCatalog.FindItemIndex(Items.shieldyDef.name)) >= 1)
                 {
                     sender.healthComponent.AddBarrier(sender.healthComponent.fullHealth * PoppyConfig.secondayHPConfig.Value);
-                    sender.inventory.RemoveItem(shieldyDef, 1);
+                    sender.inventory.RemoveItem(Items.shieldyDef, 1);
                 }
             }
             catch
@@ -785,7 +783,7 @@ namespace PoppyMod.Survivors.Poppy
         // Forces Shieldy to drop on when Command Artifact is enabled.
         private void PickupDropletController_OnCollisionEnter(On.RoR2.PickupDropletController.orig_OnCollisionEnter orig, PickupDropletController self, Collision collision)
         {
-            if (self.createPickupInfo.pickupIndex == PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(shieldyDef.name)))
+            if (self.createPickupInfo.pickupIndex == PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)))
             {
                 self.createPickupInfo.artifactFlag = GenericPickupController.PickupArtifactFlag.NONE;
             }
@@ -795,7 +793,7 @@ namespace PoppyMod.Survivors.Poppy
         // Disables chat pickup message for Shieldy item
         private void Chat_AddPickupMessage_CharacterBody_string_Color32_uint_bool(On.RoR2.Chat.orig_AddPickupMessage_CharacterBody_string_Color32_uint_bool orig, CharacterBody body, string pickupToken, Color32 pickupColor, uint pickupQuantity, bool isTemporary)
         {
-            if (pickupToken == shieldyDef.nameToken)
+            if (pickupToken == Items.shieldyDef.nameToken)
             {
                 return;
             }

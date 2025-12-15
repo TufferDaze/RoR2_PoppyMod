@@ -30,7 +30,6 @@ namespace PoppyMod.Modules
         public override void Begin()
         {
             base.duration = 0.1f;
-            string path = "Prefabs/Effects/OrbEffects/HuntressGlaiveOrbEffect";
             base.duration = base.distanceToTarget / speed;
             EffectData effectData = new EffectData
             {
@@ -38,7 +37,7 @@ namespace PoppyMod.Modules
                 genericFloat = base.duration
             };
             effectData.SetHurtBoxReference(target);
-            prefab = LegacyResourcesAPI.Load<GameObject>(path);
+            prefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/OrbEffects/HuntressGlaiveOrbEffect");
             if (prefab)
             {
                 EffectManager.SpawnEffect(prefab, effectData, true);
@@ -187,12 +186,12 @@ namespace PoppyMod.Modules
 
         private void SpawnShieldy(Transform target, float velocity = 20f)
         {
-            PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name)), target.position, target.forward * velocity);
+            PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ItemCatalog.FindItemIndex(Items.shieldyDef.name)), target.position, target.forward * velocity);
         }
 
         private void GiveShieldy()
         {
-            attacker.GetComponent<CharacterBody>().inventory.GiveItemTemp(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name), 0.001f);
+            attacker.GetComponent<CharacterBody>().inventory.GiveItemTemp(ItemCatalog.FindItemIndex(Items.shieldyDef.name), 0.001f);
             attacker.GetComponent<SkillLocator>().secondary.rechargeStopwatch += 2f;
             //attacker.GetComponent<CharacterBody>().inventory.GiveItem(ItemCatalog.FindItemIndex(PoppySurvivor.shieldyDef.name));
         }

@@ -1,7 +1,8 @@
-﻿using RoR2;
-using UnityEngine;
-using PoppyMod.Modules;
+﻿using PoppyMod.Modules;
+using R2API;
+using RoR2;
 using RoR2.Projectile;
+using UnityEngine;
 
 namespace PoppyMod.Survivors.Poppy
 {
@@ -13,6 +14,8 @@ namespace PoppyMod.Survivors.Poppy
         public static GameObject masteryEmote;
 
         public static GameObject bombExplosionEffect;
+
+        public static GameObject chargeCrosshair;
 
         // networked hit sounds
         public static NetworkSoundEventDef hammerHitSoundEvent;
@@ -27,6 +30,7 @@ namespace PoppyMod.Survivors.Poppy
 
             _assetBundle = assetBundle;
 
+            chargeCrosshair = PrefabAPI.InstantiateClone(Modules.Assets.LoadCrosshair("StraightBracket"), "poppyChargeCrosshair");
             hammerHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("PoppyHit");
             masteryEmote = PoppySurvivor.instance.assetBundle.LoadAsset<GameObject>("MasteryEmote");
 
