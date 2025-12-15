@@ -16,7 +16,6 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         //private GameObject hitImpactPrefab;
         private CharacterBody body;
         private HitBoxGroup hitBoxGroup;
-        private Transform hitboxTransform;
         private float initialTime;
         private bool inHitPause = false;
         private bool hasBlocked;
@@ -47,10 +46,6 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
             if (modelTransform)
             {
                 hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == "AuraGroup");
-                if (hitBoxGroup)
-                {
-                    hitboxTransform = GetComponent<ChildLocator>().FindChild("AuraHitbox").transform;
-                }
             }
             damageCoefficient = (PoppyConfig.util2DmgConfig.Value / duration) * duration/13; // TODO calculate denominator
             CreateNewAttack();
@@ -172,13 +167,23 @@ namespace PoppyMod.Survivors.Poppy.SkillStates
         private void CreateIndicator()
         {
             indicatorInstance = UnityEngine.Object.Instantiate<GameObject>(ArrowRain.areaIndicatorPrefab).transform;
-            indicatorInstance.localScale = Vector3.one * hitboxTransform.localScale.x;
-            indicatorInstance.transform.position = transform.position;
+            if (indicatorInstance)
+            {
+                indicatorInstance.localScale = Vector3.one * 8f;
+                indicatorInstance.transform.position = transform.position;
+            }
+            else
+            {
+                Debug.LogError("SteadfastPressence: Could not load Arrowrain indicator.");
+            }
         }
 
         private void UpdateIndicator()
         {
-            indicatorInstance.transform.position = transform.position;
+            if (indicatorInstance)
+            {
+                indicatorInstance.transform.position = transform.position;
+            }
         }
 
         private void OverrideCamera()

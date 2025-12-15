@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7274563064872794834}
   m_RootOrder: 5
@@ -57,6 +58,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3958523740722277401}
   m_RootOrder: 1
@@ -100,6 +102,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7178252732705481576}
   m_Father: {fileID: 7274563064872794834}
@@ -130,8 +133,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4690355269027452765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
-  m_LocalScale: {x: 8, y: 18, z: 8}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalScale: {x: 12, y: 40, z: 12}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7274563064872794834}
   m_RootOrder: 4
@@ -149,43 +153,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7980937887488912196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8052330839047610472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transformPairs:
-  - name: MainHurtbox
-    transform: {fileID: 6937335255890519385}
-  - name: BASE_PopMesh
-    transform: {fileID: 8257767849217350391}
-  - name: BASE_PopHam
-    transform: {fileID: 6199336964479993817}
-  - name: HammerHitbox
-    transform: {fileID: 4491290895063181267}
-  - name: GrappleCarryLocation
-    transform: {fileID: 7027857148239600573}
-  - name: HandL
-    transform: {fileID: 5118478286033762821}
-  - name: AuraHitbox
-    transform: {fileID: 5379403258347438407}
-  - name: MasteryEmoteLocation
-    transform: {fileID: 3405272092280877801}
-  - name: KeeperHitbox
-    transform: {fileID: 3318181120568611569}
-  - name: WeaponPivot
-    transform: {fileID: 7668094984796997255}
-  - name: Weapon3
-    transform: {fileID: 7743959816049916158}
-  - name: MasteryEmote
-    transform: {fileID: 7178252732705481576}
 --- !u!1 &8337918356804861823
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +181,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7274563064872794834}
   m_RootOrder: 8
@@ -237,10 +205,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -265,6 +235,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8646691385051406333
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +263,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 1.25}
   m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7274563064872794834}
   m_RootOrder: 6
@@ -336,6 +308,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0.5}
   m_LocalScale: {x: 5, y: 5, z: 6}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7274563064872794834}
   m_RootOrder: 3
@@ -424,7 +397,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 33e3198cce6731c45838e58d49ec5fe5, type: 2}
+      objectReference: {fileID: 9100000, guid: 41733908d9843ee4d9240e17941abba5, type: 2}
     - target: {fileID: 5866666021909216657, guid: 72f3b23f38c907548a2109525ba5f8bd,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -432,30 +405,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f3b23f38c907548a2109525ba5f8bd, type: 3}
---- !u!1 &8052330839047610472 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 72f3b23f38c907548a2109525ba5f8bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7169389680043367737}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7274563064872794834 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72f3b23f38c907548a2109525ba5f8bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7169389680043367737}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6199336964479993817 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -5370909850948511008, guid: 72f3b23f38c907548a2109525ba5f8bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7169389680043367737}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8257767849217350391 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7933172147379517490, guid: 72f3b23f38c907548a2109525ba5f8bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7169389680043367737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3958523740722277401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3057581635774598880, guid: 72f3b23f38c907548a2109525ba5f8bd,
@@ -468,15 +417,76 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7169389680043367737}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7743959816049916158 stripped
+--- !u!4 &6199336964479993817 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 578390952110712263, guid: 72f3b23f38c907548a2109525ba5f8bd,
+  m_CorrespondingSourceObject: {fileID: -5370909850948511008, guid: 72f3b23f38c907548a2109525ba5f8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7169389680043367737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7274563064872794834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72f3b23f38c907548a2109525ba5f8bd,
     type: 3}
   m_PrefabInstance: {fileID: 7169389680043367737}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7668094984796997255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 654220616170314686, guid: 72f3b23f38c907548a2109525ba5f8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7169389680043367737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7743959816049916158 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 578390952110712263, guid: 72f3b23f38c907548a2109525ba5f8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7169389680043367737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8052330839047610472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 72f3b23f38c907548a2109525ba5f8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7169389680043367737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7980937887488912196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052330839047610472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformPairs:
+  - name: MainHurtbox
+    transform: {fileID: 6937335255890519385}
+  - name: BASE_PopMesh
+    transform: {fileID: 8257767849217350391}
+  - name: BASE_PopHam
+    transform: {fileID: 6199336964479993817}
+  - name: HammerHitbox
+    transform: {fileID: 4491290895063181267}
+  - name: GrappleCarryLocation
+    transform: {fileID: 7027857148239600573}
+  - name: HandL
+    transform: {fileID: 5118478286033762821}
+  - name: AuraHitbox
+    transform: {fileID: 5379403258347438407}
+  - name: MasteryEmoteLocation
+    transform: {fileID: 3405272092280877801}
+  - name: KeeperHitbox
+    transform: {fileID: 3318181120568611569}
+  - name: WeaponPivot
+    transform: {fileID: 7668094984796997255}
+  - name: Weapon3
+    transform: {fileID: 7743959816049916158}
+  - name: MasteryEmote
+    transform: {fileID: 7178252732705481576}
+--- !u!4 &8257767849217350391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7933172147379517490, guid: 72f3b23f38c907548a2109525ba5f8bd,
     type: 3}
   m_PrefabInstance: {fileID: 7169389680043367737}
   m_PrefabAsset: {fileID: 0}
