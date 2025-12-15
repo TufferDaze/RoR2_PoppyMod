@@ -5,7 +5,7 @@ I couldn't help but notice the absence of a certain blue rat. Need I say more? H
 </p>
 
 ## Stats
-* Health - 160(+48 per level)
+* Health - 180(+48 per level)
 * Damage - 12(+2.4 per level)
 * Speed - 7m/s
 * Armor - 20
@@ -52,6 +52,12 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add skill FX.
 
 ## Patch Notes
+`1.2.7`
+* Fixed bug where Steadfast Presence would not ground enemies in certain circumstances
+* Increased Steadfast Presence hitbox
+* Lowered attenuation for sound effects and voicelines
+* Slightly reduced filesize
+
 `1.2.6`
 * **\<PLEASE DELETE OLD CONFIG FILE\>**
 * Updated for Collective DLC release
