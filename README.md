@@ -52,6 +52,9 @@ Use [r2modman](https://thunderstore.io/package/ebkr/r2modman/) for easy and clea
 * Add skill FX.
 
 ## Patch Notes
+`1.3.0`
+* Updated for Hallowed Concepts DLC
+
 `1.2.7`
 * Fixed bug where Steadfast Presence would not ground enemies in certain circumstances
 * Increased Steadfast Presence hitbox

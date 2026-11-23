@@ -768,10 +768,10 @@ namespace PoppyMod.Survivors.Poppy
 
             try
             {
-                if (sender.inventory.GetItemCount(ItemCatalog.FindItemIndex(Items.shieldyDef.name)) >= 1)
+                if (sender.inventory.GetItemCountEffective(ItemCatalog.FindItemIndex(Items.shieldyDef.name)) >= 1)
                 {
                     sender.healthComponent.AddBarrier(sender.healthComponent.fullHealth * PoppyConfig.secondayHPConfig.Value);
-                    sender.inventory.RemoveItem(Items.shieldyDef, 1);
+                    sender.inventory.RemoveItemPermanent(Items.shieldyDef, 1);
                 }
             }
             catch

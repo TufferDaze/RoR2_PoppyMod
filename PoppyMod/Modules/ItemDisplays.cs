@@ -44,7 +44,7 @@ namespace PoppyMod.Modules
             PopulateFromBody("CrocoBody");
             PopulateFromBody("MageBody");
 
-            PopulateCustomLightningArm();
+            //PopulateCustomLightningArm();
 
             //if you have any custom item displays to add here I would be very impressed
         }
