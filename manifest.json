@@ -6,7 +6,7 @@
   "dependencies": [
     "tristanmcpherson-R2API-5.0.5",
     "RiskofThunder-HookGenPatcher-1.2.9",
-    "bbepis-BepInExPack-5.4.2121",
-    "Rune580-Risk_Of_Options-2.8.4"
+    "bbepis-BepInExPack-5.4.2122",
+    "Rune580-Risk_Of_Options-2.8.6"
   ]
 }
